@@ -1,0 +1,29 @@
+= RFC: OpenPGP OSCCA Extensions
+
+== Fetching the document
+
+[source,sh]
+----
+git clone https://github.com/riboseinc/rfc-openpgp-oscca
+----
+
+== Prerequisites
+
+You will need `mmark` and `xml2rfc`.
+
+If you're on macOS you can run:
+
+[source,sh]
+----
+brew install mmark
+brew install xml2rfc
+----
+
+== Building the document
+
+[source,sh]
+----
+make
+open document.txt
+----
+
