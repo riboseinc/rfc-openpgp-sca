@@ -1,0 +1,50 @@
+# Supported Algorithms
+
+## Public Key Algorithms
+
+The SM2 algorithm is supported with the following extension.
+
+<!--ECDH is defined in Section 8 of this document.-->
+
+The following public key algorithm IDs are added to expand Section
+9.1 of [@RFC4880], "Public-Key Algorithms":
+
+ID | Description of Algorithm
+:--|:----------
+TBD | SM2
+
+Compliant applications **MUST** support both usages of SM2:
+
+* SM2 Digital Signature Algorithm (SM2DSA) [@I-D.shen-sm2-ecdsa][@SM2-2]
+* SM2 Public Key Encryption (SM2PKE) [@SM2-4]
+
+
+## Symmetric Key Algorithms
+
+The SM4 algorithm is supported with the following extension.
+
+The following symmetric encryption algorithm ID is added to expand
+Section 9.2 of [@RFC4880], "Symmetric-Key Algorithms":
+
+ID | Description of Algorithm
+:--|:----------
+TBD | SM4
+
+Compliant applications **MUST** support SM4.
+
+
+## Hash Algorithms
+
+The SM3 algorithm is supported with the following extension.
+
+The following symmetric encryption algorithm IDs are added to expand
+Section 9.3 of [@RFC4880], "Hash Algorithms":
+
+ID | Description of Algorithm
+:--|:----------
+TBD | SM3
+
+Compliant applications **MUST** support SM3.
+
+
+
