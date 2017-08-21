@@ -6,7 +6,7 @@ Network Working Group                                             R. Tse
 Internet-Draft                                                    Ribose
 Updates: 4880, 6637 (if approved)                                W. Wong
 Intended status: Standards Track            Hang Seng Management College
-Expires: February 20, 2018                               August 19, 2017
+Expires: February 22, 2018                               August 21, 2017
 
 
                       OSCCA Extensions For OpenPGP
@@ -18,7 +18,7 @@ Abstract
    [OSCCA] regulations for use within China.
 
    Specifically, it extends OpenPGP [RFC4880] to support the usage of
-   SM2, SM3 and SM4 algorithms.
+   SM2 [SM2], SM3 [SM3] and SM4 [SM4] algorithms.
 
 Status of This Memo
 
@@ -35,7 +35,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 20, 2018.
+   This Internet-Draft will expire on February 22, 2018.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Tse & Wong              Expires February 20, 2018               [Page 1]
+Tse & Wong              Expires February 22, 2018               [Page 1]
 
 Internet-Draft                                               August 2017
 
@@ -66,88 +66,95 @@ Table of Contents
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Conventions Used in This Document . . . . . . . . . . . . . .   3
      2.1.  Definitions . . . . . . . . . . . . . . . . . . . . . . .   4
-   3.  SM2 Algorithm . . . . . . . . . . . . . . . . . . . . . . . .   4
+   3.  SM2 ECC Algorithms  . . . . . . . . . . . . . . . . . . . . .   4
      3.1.  SM2 Digital Signature Algorithm . . . . . . . . . . . . .   4
      3.2.  SM2 Key Exchange Protocol . . . . . . . . . . . . . . . .   5
      3.3.  SM2 Public Key Encryption . . . . . . . . . . . . . . . .   5
-     3.4.  Recommended SM2 Curve . . . . . . . . . . . . . . . . . .   5
+     3.4.  Recommended SM2 Curve . . . . . . . . . . . . . . . . . .   6
        3.4.1.  Definitions . . . . . . . . . . . . . . . . . . . . .   6
        3.4.2.  Eliptical Curve Formula . . . . . . . . . . . . . . .   6
        3.4.3.  Curve Parameters  . . . . . . . . . . . . . . . . . .   6
-   4.  SM3 Algorithm . . . . . . . . . . . . . . . . . . . . . . . .   6
+   4.  SM3 Hash Algorithm  . . . . . . . . . . . . . . . . . . . . .   6
    5.  SM4 Symmetric Encryption Algorithm  . . . . . . . . . . . . .   7
    6.  Supported Algorithms  . . . . . . . . . . . . . . . . . . . .   7
      6.1.  Public Key Algorithms . . . . . . . . . . . . . . . . . .   7
      6.2.  Symmetric Key Algorithms  . . . . . . . . . . . . . . . .   8
      6.3.  Hash Algorithms . . . . . . . . . . . . . . . . . . . . .   8
    7.  Conversion Primitives . . . . . . . . . . . . . . . . . . . .   8
-   8.  SM2 Key Derivation Function . . . . . . . . . . . . . . . . .   8
+   8.  SM2 Key Derivation Function . . . . . . . . . . . . . . . . .   9
      8.1.  Inputs  . . . . . . . . . . . . . . . . . . . . . . . . .   9
      8.2.  Output  . . . . . . . . . . . . . . . . . . . . . . . . .   9
-     8.3.  Function  . . . . . . . . . . . . . . . . . . . . . . . .   9
+     8.3.  Pseudocode  . . . . . . . . . . . . . . . . . . . . . . .   9
      8.4.  Notes . . . . . . . . . . . . . . . . . . . . . . . . . .   9
-   9.  Encoding of Public and Private Keys . . . . . . . . . . . . .   9
+   9.  Encoding of Public and Private Keys . . . . . . . . . . . . .  10
    10. Message Encoding with Public Keys . . . . . . . . . . . . . .  11
    11. ECC Curve OID . . . . . . . . . . . . . . . . . . . . . . . .  11
-   12. Compatibility Profiles  . . . . . . . . . . . . . . . . . . .  11
-     12.1.  OSCCA Compliant Profile  . . . . . . . . . . . . . . . .  11
+   12. Compatibility Profiles  . . . . . . . . . . . . . . . . . . .  12
+     12.1.  OSCCA Compliant Profile  . . . . . . . . . . . . . . . .  12
    13. Security Considerations . . . . . . . . . . . . . . . . . . .  12
    14. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  12
    15. Examples  . . . . . . . . . . . . . . . . . . . . . . . . . .  12
    16. References  . . . . . . . . . . . . . . . . . . . . . . . . .  12
      16.1.  Normative References . . . . . . . . . . . . . . . . . .  12
-     16.2.  Informative References . . . . . . . . . . . . . . . . .  13
+     16.2.  Informative References . . . . . . . . . . . . . . . . .  14
    Appendix A.  Acknowledgements . . . . . . . . . . . . . . . . . .  15
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  15
 
 1.  Introduction
 
-   SM2 [SM2], SM3 [SM3] and SM4 [SM4] are cryptographic standards issued
-   by the Organization of State Commercial Administration of China
-   [OSCCA] as authorized cryptographic algorithms for the use within
-   China.  These algorithms are published in public.
+   SM2 [I-D.shen-sm2-ecdsa] [SM2], SM3 [I-D.shen-sm3-hash] [SM3] and SM4
+   [SM4] are cryptographic standards issued by the Organization of State
+   Commercial Administration of China [OSCCA] as authorized
 
 
 
-Tse & Wong              Expires February 20, 2018               [Page 2]
+
+Tse & Wong              Expires February 22, 2018               [Page 2]
 
 Internet-Draft                                               August 2017
 
 
-   SM2 is a set of public key cryptographic algorithms based on elliptic
-   curves that includes:
-
-   o  Digital Signature Algorithm
-
-   o  Key Exchange Protocol
-
-   o  Public Key Encryption Algorithm
-
-   SM3 is a hash algorithm designed for electronic authentication
-   purposes.
-
-   SM4 is a symmetric encryption algorithm designed for data encryption.
-
-   This document extends OpenPGP [RFC4880] and its ECC extension
-   [RFC6637] to support SM2 and SM3:
-
-   o  support the SM3 hash algorithm for data validation purposes
-
-   o  allowing signatures utilizing the combination of SM3 and RSA, SM3
-      and SM2
-
-   o  support the SM2 asymmetric encryption algorithm for public key
-      operations
-
-   o  the usage of SM2 in combination with existing supported hashes,
-      such as SHA-256
-
-   o  support the SM4 symmetric encryption algorithm for data protection
-      purposes
+   cryptographic algorithms for the use within China.  These algorithms
+   are published in public.
 
    Adoption of this document enables exchange of OpenPGP-secured email
    in a OSCCA-compliant manner through usage of the authorized
    combination of SM2, SM3 and SM4.
+
+   SM2 is a set of public key cryptographic algorithms based on elliptic
+   curves that includes:
+
+   o  Digital Signature Algorithm [SM2-2]
+
+   o  Key Exchange Protocol [SM2-3]
+
+   o  Public Key Encryption Algorithm [SM2-4]
+
+   SM3 [I-D.shen-sm3-hash] is a hash algorithm designed for electronic
+   authentication purposes.
+
+   SM4 [SM4] is a symmetric encryption algorithm designed for data
+   encryption.
+
+   This document extends OpenPGP [RFC4880] and its ECC extension
+   [RFC6637] to support SM2, SM3 and SM4:
+
+   o  support the SM3 hash algorithm for data validation purposes
+
+   o  support signatures utilizing the combination of SM3 with other
+      digital signing algorithms, such as RSA and SM2
+
+   o  support the SM2 asymmetric encryption algorithm for public key
+      operations
+
+   o  support usage of SM2 in combination with supported hash
+      algorithms, such as SHA-256 and SM4
+
+   o  support the SM4 symmetric encryption algorithm for data protection
+      purposes
+
+   o  defines the OpenPGP "OSCCA-compliant profile" to enable usage of
+      OpenPGP in an OSCCA-compliant manner.
 
 2.  Conventions Used in This Document
 
@@ -155,20 +162,17 @@ Internet-Draft                                               August 2017
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
    document are to be interpreted as described in [RFC2119].
 
-   Compliant applications are a subset of the broader set of OpenPGP
-   applications described in [RFC4880].  Any [RFC2119] keyword within
-   this document applies to compliant applications only.
 
 
 
-
-
-
-
-Tse & Wong              Expires February 20, 2018               [Page 3]
+Tse & Wong              Expires February 22, 2018               [Page 3]
 
 Internet-Draft                                               August 2017
 
+
+   Compliant applications are a subset of the broader set of OpenPGP
+   applications described in [RFC4880].  Any [RFC2119] keyword within
+   this document applies to compliant applications only.
 
 2.1.  Definitions
 
@@ -186,10 +190,10 @@ Internet-Draft                                               August 2017
    SM2PKE
       The public key encryption algorithm defined in [SM2-4]
 
-3.  SM2 Algorithm
+3.  SM2 ECC Algorithms
 
    SM2 is an elliptic curve based cryptosystem (ECC) [SM2] designed by
-   Xiaoyun Wang et al and published by [OSCCA].
+   Xiaoyun Wang et al and published by [OSCCA] [I-D.shen-sm2-ecdsa].
 
    The SM2 cryptosystem is composed of three distinct algorithms:
 
@@ -215,16 +219,16 @@ Internet-Draft                                               August 2017
 
    o  verification of data authenticity
 
-   The process of digital signature signing and verifying along with
-   their examples are found in [SM2-2], and also described in
-   [I-D.shen-sm2-ecdsa].
 
 
-
-Tse & Wong              Expires February 20, 2018               [Page 4]
+Tse & Wong              Expires February 22, 2018               [Page 4]
 
 Internet-Draft                                               August 2017
 
+
+   The process of digital signature signing and verifying along with
+   their examples are found in [SM2-2], and also described in
+   [I-D.shen-sm2-ecdsa].
 
    In OpenPGP, SM2DSA is an alternative to the ECDSA algorithm specified
    in [RFC6637].
@@ -269,18 +273,19 @@ Internet-Draft                                               August 2017
 
    In OpenPGP, SM2PKE is an alternative to RSA specified in [RFC4880].
 
+
+
+
+
+Tse & Wong              Expires February 22, 2018               [Page 5]
+
+Internet-Draft                                               August 2017
+
+
 3.4.  Recommended SM2 Curve
 
    The recommended curve is specified in [SM2-5] and provided here for
    reference.  SM2 uses a 256-bit eliptical curve.
-
-
-
-
-Tse & Wong              Expires February 20, 2018               [Page 5]
-
-Internet-Draft                                               August 2017
-
 
 3.4.1.  Definitions
 
@@ -318,11 +323,20 @@ Internet-Draft                                               August 2017
                  y_G = BC3736A2 F4F6779C 59BDCEE3 6B692153
                        D0A9877C C62A4740 02DF32E5 2139F0A0
 
-4.  SM3 Algorithm
+4.  SM3 Hash Algorithm
 
    The SM3 Cryptographic Hash Algorithm [SM3] is an iterated hash
    function designed by Xiaoyun Wang et al., published by [OSCCA] as an
    alternative to SHA-2 [NIST.FIPS.180-4].
+
+
+
+
+
+Tse & Wong              Expires February 22, 2018               [Page 6]
+
+Internet-Draft                                               August 2017
+
 
    The algorithm is designed to be used for various commercial
    cryptographic applications including, but not limited to:
@@ -330,13 +344,6 @@ Internet-Draft                                               August 2017
    o  digital signatures and their verification
 
    o  message authentication code generation and their verification
-
-
-
-Tse & Wong              Expires February 20, 2018               [Page 6]
-
-Internet-Draft                                               August 2017
-
 
    o  generation of random numbers
 
@@ -376,6 +383,17 @@ Internet-Draft                                               August 2017
    The following public key algorithm IDs are added to expand
    Section 9.1 of [RFC4880], "Public-Key Algorithms":
 
+
+
+
+
+
+
+Tse & Wong              Expires February 22, 2018               [Page 7]
+
+Internet-Draft                                               August 2017
+
+
                     +-----+--------------------------+
                     | ID  | Description of Algorithm |
                     +-----+--------------------------+
@@ -384,15 +402,8 @@ Internet-Draft                                               August 2017
 
    Compliant applications MUST support both usages of SM2:
 
-   o  SM2 Digital Signature Algorithm (SM2DSA)
-      [I-D.shen-sm2-ecdsa][SM2-2]
-
-
-
-Tse & Wong              Expires February 20, 2018               [Page 7]
-
-Internet-Draft                                               August 2017
-
+   o  SM2 Digital Signature Algorithm (SM2DSA) [I-D.shen-sm2-ecdsa]
+      [SM2-2]
 
    o  SM2 Public Key Encryption (SM2PKE) [SM2-4]
 
@@ -431,6 +442,14 @@ Internet-Draft                                               August 2017
    The encoding method of x and y coordinates of [RFC6637] is used and
    is compatible with the definition given in [SEC1].
 
+
+
+
+Tse & Wong              Expires February 22, 2018               [Page 8]
+
+Internet-Draft                                               August 2017
+
+
    Therefore the exact size of the MPI payload for the "SM2 Recommended
    Curve" is TODO xxx-bits.
 
@@ -440,15 +459,6 @@ Internet-Draft                                               August 2017
    encryption.  The SM2PKE KDF is defined in Section 5.4.3 of [SM2-4]
    and can be used with the SM3 hash algorithm [SM3].  It is provided
    here for convenience.
-
-
-
-
-
-Tse & Wong              Expires February 20, 2018               [Page 8]
-
-Internet-Draft                                               August 2017
-
 
 8.1.  Inputs
 
@@ -460,9 +470,9 @@ Internet-Draft                                               August 2017
 
    o  Key "K" of length "klen"
 
-8.3.  Function
+8.3.  Pseudocode
 
- function KDF (Z, klen) {
+ KDF (Z, klen) {
    ct = 0x00000001
    n = klen / v
 
@@ -487,6 +497,15 @@ Internet-Draft                                               August 2017
 
    o  "ct" is a 32-bit register
 
+
+
+
+
+Tse & Wong              Expires February 22, 2018               [Page 9]
+
+Internet-Draft                                               August 2017
+
+
 9.  Encoding of Public and Private Keys
 
    The following algorithm-specific packets are added to Section 5.5.2
@@ -496,15 +515,6 @@ Internet-Draft                                               August 2017
    This algorithm-specific portion is:
 
    Algorithm-Specific Fields for SM2DSA keys:
-
-
-
-
-
-Tse & Wong              Expires February 20, 2018               [Page 9]
-
-Internet-Draft                                               August 2017
-
 
    o  a variable-length field containing a curve OID, formatted as
       follows:
@@ -545,22 +555,17 @@ Internet-Draft                                               August 2017
    of [RFC4880], "Secret-Key Packet Formats", to support SM2DSA and
    SM2PKE.
 
+
+
+Tse & Wong              Expires February 22, 2018              [Page 10]
+
+Internet-Draft                                               August 2017
+
+
    Algorithm-Specific Fields for SM2DSA or SM2PKE secret keys:
 
    o  an MPI of an integer representing the secret key, which is a
       scalar of the public EC point
-
-
-
-
-
-
-
-
-Tse & Wong              Expires February 20, 2018              [Page 10]
-
-Internet-Draft                                               August 2017
-
 
 10.  Message Encoding with Public Keys
 
@@ -602,6 +607,17 @@ Internet-Draft                                               August 2017
    octets.  Only the truncated sequence of octets is the valid
    representation of a curve OID.
 
+
+
+
+
+
+
+Tse & Wong              Expires February 22, 2018              [Page 11]
+
+Internet-Draft                                               August 2017
+
+
 12.  Compatibility Profiles
 
 12.1.  OSCCA Compliant Profile
@@ -609,14 +625,6 @@ Internet-Draft                                               August 2017
    A compliant application MUST implement:
 
    o  SM2 Recommended Curve
-
-
-
-
-Tse & Wong              Expires February 20, 2018              [Page 11]
-
-Internet-Draft                                               August 2017
-
 
    o  SM2 (SM2DSA and SM2PKE)
 
@@ -630,7 +638,15 @@ Internet-Draft                                               August 2017
 
 14.  IANA Considerations
 
-   TODO
+   IANA has assigned the following algorithm numbers from the "Pretty
+   Good Privacy (PGP)" registry (or "name space" in the terminology of
+   [RFC5226]) for algorithms specified in this document, specifically:
+
+   o  ID XXX for Section 3 from the "Public Key Algorithms" range
+
+   o  ID XXX for Section 4 from the "Hash Algorithms" range
+
+   o  ID XXX for Section 5 from the "Symmetric Key Algorithms" range
 
 15.  Examples
 
@@ -646,6 +662,17 @@ Internet-Draft                                               August 2017
               Based on Elliptic Curves Part 1: General", March 2012,
               <http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/
               SM2_1.pdf>.
+
+
+
+
+
+
+
+Tse & Wong              Expires February 22, 2018              [Page 12]
+
+Internet-Draft                                               August 2017
+
 
    [I-D.shen-sm2-ecdsa]
               Shen, S., Shen, S., and X. Lee, "SM2 Digital Signature
@@ -665,14 +692,6 @@ Internet-Draft                                               August 2017
               Thayer, "OpenPGP Message Format", RFC 4880,
               DOI 10.17487/RFC4880, November 2007, <https://www.rfc-
               editor.org/info/rfc4880>.
-
-
-
-
-Tse & Wong              Expires February 20, 2018              [Page 12]
-
-Internet-Draft                                               August 2017
-
 
    [RFC6637]  Jivsov, A., "Elliptic Curve Cryptography (ECC) in
               OpenPGP", RFC 6637, DOI 10.17487/RFC6637, June 2012,
@@ -703,6 +722,14 @@ Internet-Draft                                               August 2017
               <http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/
               SM2_5.pdf>.
 
+
+
+
+Tse & Wong              Expires February 22, 2018              [Page 13]
+
+Internet-Draft                                               August 2017
+
+
    [SM3]      Organization of State Commercial Administration of China,
               "SM3 Cryptographic Hash Algorithm", December 2010,
               <http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/
@@ -714,21 +741,6 @@ Internet-Draft                                               August 2017
               SM4.pdf>.
 
 16.2.  Informative References
-
-
-
-
-
-
-
-
-
-
-
-Tse & Wong              Expires February 20, 2018              [Page 13]
-
-Internet-Draft                                               August 2017
-
 
    [GB15629.11-2003]
               Standardization Administration of the People's Republic of
@@ -763,6 +775,17 @@ Internet-Draft                                               August 2017
               Elliptic Curve Cryptography", September 2010,
               <http://www.secg.org/SEC1-Ver-1.0.pdf>.
 
+
+
+
+
+
+
+Tse & Wong              Expires February 22, 2018              [Page 14]
+
+Internet-Draft                                               August 2017
+
+
    [SM2-3]    Organization of State Commercial Administration of China,
               "Public Key Cryptographic Algorithm SM2 Based on Elliptic
               Curves -- Part 3: Key Exchange Protocol", December 2010,
@@ -774,17 +797,6 @@ Internet-Draft                                               August 2017
               X. Zheng, "Practical Lattice-Based Fault Attack and
               Countermeasure on SM2 Signature Algorithm", November 2016,
               <https://doi.org/10.1007/978-3-319-29814-6_6>.
-
-
-
-
-
-
-
-Tse & Wong              Expires February 20, 2018              [Page 14]
-
-Internet-Draft                                               August 2017
-
 
    [SM2-DSA-Nonces]
               Liu, M., Chen, J., and H. Li, "Partially Known Nonces and
@@ -819,6 +831,17 @@ Appendix A.  Acknowledgements
 
 Authors' Addresses
 
+
+
+
+
+
+
+Tse & Wong              Expires February 22, 2018              [Page 15]
+
+Internet-Draft                                               August 2017
+
+
    Ronald Henry Tse
    Ribose
    Suite 1111, 1 Pedder Street
@@ -827,19 +850,6 @@ Authors' Addresses
 
    Email: ronald.tse@ribose.com
    URI:   https://www.ribose.com
-
-
-
-
-
-
-
-
-
-
-Tse & Wong              Expires February 20, 2018              [Page 15]
-
-Internet-Draft                                               August 2017
 
 
    Dr. Wai Kit Wong
@@ -883,14 +893,4 @@ Internet-Draft                                               August 2017
 
 
 
-
-
-
-
-
-
-
-
-
-
-Tse & Wong              Expires February 20, 2018              [Page 16]
+Tse & Wong              Expires February 22, 2018              [Page 16]

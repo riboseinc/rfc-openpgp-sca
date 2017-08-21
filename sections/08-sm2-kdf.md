@@ -14,10 +14,10 @@ It is provided here for convenience.
 
 * Key `K` of length `klen`
 
-## Function
+## Pseudocode
 
 ~~~ c
-function KDF (Z, klen) {
+KDF (Z, klen) {
   ct = 0x00000001
   n = klen / v
 

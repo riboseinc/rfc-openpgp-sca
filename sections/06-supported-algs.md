@@ -15,7 +15,7 @@ TBD | SM2
 
 Compliant applications **MUST** support both usages of SM2:
 
-* SM2 Digital Signature Algorithm (SM2DSA) [@I-D.shen-sm2-ecdsa][@SM2-2]
+* SM2 Digital Signature Algorithm (SM2DSA) [@I-D.shen-sm2-ecdsa] [@SM2-2]
 * SM2 Public Key Encryption (SM2PKE) [@SM2-4]
 
 

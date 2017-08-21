@@ -1,4 +1,4 @@
-# ECC Curve OID
+# SM2 ECC Curve OID
 
 <!--TODO: what other curves are available? GmSSL lists 3 other ones.-->
 
@@ -26,7 +26,7 @@ encoded Object Identifier.  The first omitted field is one octet
 representing the Object Identifier tag, and the second omitted field
 is the length of the Object Identifier body.
 
-Note that the complete ASN.1 DER encoding for the SM2 Recommended curve
+The complete ASN.1 DER encoding for the SM2 Recommended curve
 OID is "06 08 2A 81 1C CF 55 01 82 2D", from which the first entry in
 the table above is constructed by omitting the first two octets. Only
 the truncated sequence of octets is the valid representation of a curve
