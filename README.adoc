@@ -17,13 +17,25 @@ If you're on macOS you can run:
 ----
 brew install mmark
 brew install xml2rfc
+brew install idnits
 ----
 
 == Building the document
 
 [source,sh]
 ----
-make
-open document.txt
+make draft-openpgp-oscca.txt
+open draft-openpgp-oscca.txt
+----
+
+== Checking against idnits
+
+https://tools.ietf.org/tools/idnits/[idnits] is the RFC checking tool prior to
+submissions.
+
+[source,sh]
+----
+make draft-openpgp-oscca.txt
+idnits --verbose draft-openpgp-oscca-00.txt
 ----
 
