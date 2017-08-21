@@ -1,0 +1,1203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rfc SYSTEM 'rfc2629.dtd' []>
+<rfc ipr="trust200902" category="std" docName="draft-openpgp-oscca-00" updates="4880, 6637">
+<?rfc toc="yes"?>
+<?rfc symrefs="yes"?>
+<?rfc sortrefs="yes"?>
+<?rfc compact="yes"?>
+<?rfc subcompact="no"?>
+<?rfc private=""?>
+<?rfc topblock="yes"?>
+<?rfc comments="no"?>
+<front>
+<title abbrev="">OSCCA Extensions For OpenPGP</title>
+
+<author initials="R. H." surname="Tse" fullname="Ronald Henry Tse">
+<organization>Ribose</organization>
+<address>
+<postal>
+<street>Suite 1111, 1 Pedder Street</street>
+<city>Central</city>
+<code></code>
+<country>Hong Kong</country>
+<region>Hong Kong</region>
+</postal>
+<phone></phone>
+<email>ronald.tse@ribose.com</email>
+<uri>https://www.ribose.com</uri>
+</address>
+</author>
+<author initials="W. K." surname="Wong" fullname="Dr. Wai Kit Wong">
+<organization>Hang Seng Management College</organization>
+<address>
+<postal>
+<street>Hang Shin Link, Siu Lek Yuen</street>
+<city>Shatin</city>
+<code></code>
+<country>Hong Kong</country>
+<region>New Territories</region>
+</postal>
+<phone></phone>
+<email>wongwk@hsmc.edu.hk</email>
+<uri>https://www.hsmc.edu.hk</uri>
+</address>
+</author>
+<date year="2017" month="August" day="21"/>
+
+<area>Internet</area>
+<workgroup></workgroup>
+
+
+<abstract>
+<t>This document enables OpenPGP (RFC4880) usage in an compliant manner
+with OSCCA regulations for use within China.
+</t>
+<t>Specifically, it extends OpenPGP to support the usage of SM2,
+SM3 and SM4 algorithms.
+</t>
+</abstract>
+
+
+</front>
+
+<middle>
+
+<section anchor="introduction" title="Introduction">
+<t>SM2 <xref target="I-D.shen-sm2-ecdsa"/> <xref target="SM2"/>,
+SM3 <xref target="I-D.shen-sm3-hash"/> <xref target="SM3"/>
+and SM4 <xref target="SM4"/> are cryptographic standards issued by the
+Organization of State Commercial Administration of China <xref target="OSCCA"/> as
+authorized cryptographic algorithms for the use within China. These
+algorithms are published in public.
+</t>
+<t>Adoption of this document enables exchange of OpenPGP-secured email in a
+OSCCA-compliant manner through usage of the authorized combination of
+SM2, SM3 and SM4.
+</t>
+<t>SM2 is a set of public key cryptographic algorithms based on elliptic
+curves that includes:
+</t>
+<t>
+<list style="symbols">
+<t>Digital Signature Algorithm <xref target="SM2-2"/></t>
+<t>Key Exchange Protocol <xref target="SM2-3"/></t>
+<t>Public Key Encryption Algorithm <xref target="SM2-4"/></t>
+</list>
+</t>
+<t>SM3 <xref target="I-D.shen-sm3-hash"/> is a hash algorithm designed for electronic
+authentication purposes.
+</t>
+<t>SM4 <xref target="SM4"/> is a symmetric encryption algorithm designed for data encryption.
+</t>
+<t>This document extends OpenPGP <xref target="RFC4880"/> and its ECC extension
+<xref target="RFC6637"/> to support SM2, SM3 and SM4:
+</t>
+<t>
+<list style="symbols">
+<t>support the SM3 hash algorithm for data validation purposes</t>
+<t>support signatures utilizing the combination of SM3 with other digital signing algorithms, such as RSA and SM2</t>
+<t>support the SM2 asymmetric encryption algorithm for public key operations</t>
+<t>support usage of SM2 in combination with supported hash algorithms, such as SHA-256 and SM4</t>
+<t>support the SM4 symmetric encryption algorithm for data protection purposes</t>
+<t>defines the OpenPGP &quot;OSCCA-compliant profile&quot; to enable usage of OpenPGP
+in an OSCCA-compliant manner.</t>
+</list>
+</t>
+</section>
+
+<section anchor="conventions-used-in-this-document" title="Conventions Used in This Document">
+<t>The key words &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;,
+&quot;SHALL NOT&quot;, &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;,
+&quot;MAY&quot;, and &quot;OPTIONAL&quot; in this document are to be interpreted
+as described in <xref target="RFC2119"/>.
+</t>
+<t>Compliant applications are a subset of the broader set of OpenPGP
+applications described in <xref target="RFC4880"/>. Any <xref target="RFC2119"/> keyword within
+this document applies to compliant applications only.
+</t>
+
+<section anchor="definitions" title="Definitions">
+<t>
+<list style="hanging">
+<t hangText="OSCCA-compliant">
+<vspace />
+All algorithms used for encryption and signatures are compliant with
+OSCCA regulations.</t>
+<t hangText="SM2DSA">
+<vspace />
+The elliptic curve digital signature algorithm defined in <xref target="SM2-2"/> and
+<xref target="I-D.shen-sm2-ecdsa"/></t>
+<t hangText="SM2KEP">
+<vspace />
+The elliptic curve key exchange protocol defined in <xref target="SM2-3"/></t>
+<t hangText="SM2PKE">
+<vspace />
+The public key encryption algorithm defined in <xref target="SM2-4"/></t>
+</list>
+</t>
+</section>
+</section>
+
+<section anchor="sm2-algorithm" title="SM2 ECC Algorithms">
+<t>SM2 is an elliptic curve based cryptosystem (ECC) <xref target="SM2"/> designed by
+Xiaoyun Wang et al and published by <xref target="OSCCA"/> <xref target="I-D.shen-sm2-ecdsa"/>.
+</t>
+<t>The SM2 cryptosystem is composed of three distinct algorithms:
+</t>
+<t>
+<list style="symbols">
+<t>an elliptical curve digital signature algorithm (&quot;SM2DSA&quot;) <xref target="SM2-2"/>, also
+described in <xref target="I-D.shen-sm2-ecdsa"/>;</t>
+<t>a key exchange protocol (&quot;SM2KEP&quot;) <xref target="SM2-3"/>; and</t>
+<t>a public key encryption algorithm (&quot;SM2PKE&quot;) <xref target="SM2-4"/>.</t>
+</list>
+</t>
+<t>This document will refer to all three algorithms for the usage of
+OpenPGP <xref target="RFC4880"/>.
+</t>
+
+<section anchor="sm2-digital-signature-algorithm" title="SM2 Digital Signature Algorithm">
+<t>The SM2 Digital Signature Algorithm is intended for digital signature
+and verififications in commercial cryptographic applications, including,
+but not limited to:
+</t>
+<t>
+<list style="symbols">
+<t>identity authentication</t>
+<t>protection of data integrity</t>
+<t>verification of data authenticity</t>
+</list>
+</t>
+<t>The process of digital signature signing and verifying along with their
+examples are found in <xref target="SM2-2"/>, and also described in <xref target="I-D.shen-sm2-ecdsa"/>.
+</t>
+<t>In OpenPGP, SM2DSA is an alternative to the ECDSA algorithm specified in
+<xref target="RFC6637"/>.
+</t>
+<t>The SM2DSA algorithm has been cryptanalyzed to a certain extent, with the
+current strongest attack being nonce <xref target="SM2-DSA-Nonces"/> <xref target="SM2-DSA-Nonces2"/>
+and lattice attacks <xref target="SM2-DSA-Lattice"/>.
+</t>
+</section>
+
+<section anchor="sm2-key-exchange-protocol" title="SM2 Key Exchange Protocol">
+<t>The SM2 Key Exchange Protocol is used for cryptographic key exchange,
+allowing the negoatiation and exchange of a session key within two to
+three message transfers.
+</t>
+<t>The process of key exchange and verification along with their examples
+are found in <xref target="SM2-3"/>, and also described in <xref target="I-D.shen-sm2-ecdsa"/>.
+</t>
+<t>SM2KEP is not used with OpenPGP as it is a two- to three- pass key
+exchange mechanism, while in OpenPGP public keys of receipients are
+available initially.
+</t>
+<t>The SM2KEP is now considered insecure due to <xref target="SM2-KEP-Comments"/>, similar
+in status to the Unified Model and MQV schemes described in <xref target="NIST.SP.800-56Ar2"/>.
+</t>
+</section>
+
+<section anchor="sm2-public-key-encryption" title="SM2 Public Key Encryption">
+<t>The SM2 Public Key Encryption algorithm is an elliptic curve
+(ECC) based asymmetric encryption algorithm. It is used for
+cryptographic encryption and decryption, allowing the message sender to
+utilize the public key of the message receiver to encrypt the message,
+with the receipient decrypting the messaging using his private key.
+</t>
+<t>The full description of SM2PKE is provided in <xref target="I-D.shen-sm2-ecdsa"/>.
+</t>
+<t>It utilizes a public key size of 512 bits and private key size of 256
+bits <xref target="GMT-0003.1-2012"/>.
+</t>
+<t>The process of encryption and decryption, along with their examples are
+found in <xref target="SM2-4"/>.
+</t>
+<t>In OpenPGP, SM2PKE is an alternative to RSA specified in <xref target="RFC4880"/>.
+</t>
+</section>
+
+<section anchor="recommended-sm2-curve" title="Recommended SM2 Curve">
+<t>The recommended curve is specified in <xref target="SM2-5"/> and provided here for reference.
+SM2 uses a 256-bit eliptical curve.
+</t>
+
+<section anchor="definitions-1" title="Definitions">
+<t>
+<list style="hanging">
+<t hangText="p">
+<vspace />
+a number larger than 3</t>
+<t hangText="a, b">
+<vspace />
+elements of F_q, defines an eliptical curve E on F_q</t>
+<t hangText="n">
+<vspace />
+Order of base point G (n is a prime factor of E(F_q))</t>
+<t hangText="x_G">
+<vspace />
+x-cooridnates of generator G</t>
+<t hangText="y_G">
+<vspace />
+y-cooridnates of generator G</t>
+</list>
+</t>
+</section>
+
+<section anchor="eliptical-curve-formula" title="Eliptical Curve Formula">
+<t>
+y^2 = x^3 + ax + b
+
+</t>
+</section>
+
+<section anchor="curve-parameters" title="Curve Parameters">
+
+<figure align="center"><artwork align="center">
+p   = FFFFFFFE FFFFFFFF FFFFFFFF FFFFFFFF
+      FFFFFFFF 00000000 FFFFFFFF FFFFFFFF
+a   = FFFFFFFE FFFFFFFF FFFFFFFF FFFFFFFF
+      FFFFFFFF 00000000 FFFFFFFF FFFFFFFC
+b   = 28E9FA9E 9D9F5E34 4D5A9E4B CF6509A7
+      F39789F5 15AB8F92 DDBCBD41 4D940E93
+n   = FFFFFFFE FFFFFFFF FFFFFFFF FFFFFFFF
+      7203DF6B 21C6052B 53BBF409 39D54123
+x_G = 32C4AE2C 1F198119 5F990446 6A39C994
+      8FE30BBF F2660BE1 715A4589 334C74C7
+y_G = BC3736A2 F4F6779C 59BDCEE3 6B692153
+      D0A9877C C62A4740 02DF32E5 2139F0A0
+</artwork></figure>
+</section>
+</section>
+</section>
+
+<section anchor="sm3-algorithm" title="SM3 Hash Algorithm">
+<t>The SM3 Cryptographic Hash Algorithm <xref target="SM3"/> is an iterated hash function
+designed by Xiaoyun Wang et al., published by <xref target="OSCCA"/> as an alternative
+to SHA-2 <xref target="NIST.FIPS.180-4"/>.
+</t>
+<t>The algorithm is designed to be used for various commercial
+cryptographic applications including, but not limited to:
+</t>
+<t>
+<list style="symbols">
+<t>digital signatures and their verification</t>
+<t>message authentication code generation and their verification</t>
+<t>generation of random numbers</t>
+</list>
+</t>
+<t>According to the authors, SM3 is designed with a Merkle-Damgard
+construction and is very similar to SHA-2 <xref target="NIST.FIPS.180-4"/>
+of the MD4 <xref target="RFC6150"/> family, with
+the addition of several strenghtening features such as a more complex
+step function and stronger message dependency than SHA-256
+<xref target="SM3-Boomerang"/>.
+</t>
+<t>SM3 produces an output hash value of 256 bits long, based on 512-bit
+input message blocks <xref target="SM3-Boomerang"/>, on input lengths up to 2^(m).
+</t>
+<t>The specification of SM3 is described in <xref target="SM3"/> and <xref target="I-D.shen-sm3-hash"/>.
+</t>
+</section>
+
+<section anchor="sm4-algorithm" title="SM4 Symmetric Encryption Algorithm">
+<t>SM4 <xref target="SM4"/> is a symmetric encryption algorithm designed by Shuwang Lu et
+al. in 2006 as SMS4, and officially published published by the OSCCA in
+2012 as SM4.
+</t>
+<t>The algorithm is publicly described in
+&quot;GM/T 0002-2012 SM4 Block Cipher Algorithm Standard&quot; <xref target="SM4"/>,
+and is used in WAPI (Wired Authentication and Privacy Infrastructure),
+the Chinese National Standard for Wireless LAN <xref target="GB15629.11-2003"/>.
+</t>
+<t>SM4 is a 128-bit block cipher, uses a key size of 128 bits and
+internally uses an 8-bit S-box.
+It performs 32 rounds per block, and decryption simply reverses the
+order of encryption.
+</t>
+</section>
+
+<section anchor="supported-algorithms" title="Supported Algorithms">
+
+<section anchor="public-key-algorithms" title="Public Key Algorithms">
+<t>The SM2 algorithm is supported with the following extension.
+</t>
+<t>The following public key algorithm IDs are added to expand Section
+9.1 of <xref target="RFC4880"/>, &quot;Public-Key Algorithms&quot;:
+</t>
+<texttable>
+<ttcol align="left">ID</ttcol>
+<ttcol align="left">Description of Algorithm</ttcol>
+
+<c>TBD</c><c>SM2</c>
+</texttable>
+<t>Compliant applications MUST support both usages of SM2:
+</t>
+<t>
+<list style="symbols">
+<t>SM2 Digital Signature Algorithm (SM2DSA) <xref target="I-D.shen-sm2-ecdsa"/> <xref target="SM2-2"/></t>
+<t>SM2 Public Key Encryption (SM2PKE) <xref target="SM2-4"/></t>
+</list>
+</t>
+</section>
+
+<section anchor="symmetric-key-algorithms" title="Symmetric Key Algorithms">
+<t>The SM4 algorithm is supported with the following extension.
+</t>
+<t>The following symmetric encryption algorithm ID is added to expand
+Section 9.2 of <xref target="RFC4880"/>, &quot;Symmetric-Key Algorithms&quot;:
+</t>
+<texttable>
+<ttcol align="left">ID</ttcol>
+<ttcol align="left">Description of Algorithm</ttcol>
+
+<c>TBD</c><c>SM4</c>
+</texttable>
+<t>Compliant applications MUST support SM4.
+</t>
+</section>
+
+<section anchor="hash-algorithms" title="Hash Algorithms">
+<t>The SM3 algorithm is supported with the following extension.
+</t>
+<t>The following symmetric encryption algorithm IDs are added to expand
+Section 9.3 of <xref target="RFC4880"/>, &quot;Hash Algorithms&quot;:
+</t>
+<texttable>
+<ttcol align="left">ID</ttcol>
+<ttcol align="left">Description of Algorithm</ttcol>
+
+<c>TBD</c><c>SM3</c>
+</texttable>
+<t>Compliant applications MUST support SM3.
+</t>
+</section>
+</section>
+
+<section anchor="conversion-primitives" title="Conversion Primitives">
+<t>The encoding method of x and y coordinates of <xref target="RFC6637"/> is used and is
+compatible with the definition given in <xref target="SEC1"/>.
+</t>
+<t>Therefore the exact size of the MPI payload for the &quot;SM2 Recommended
+Curve&quot; is TODO xxx-bits.
+</t>
+</section>
+
+<section anchor="sm2-key-derivation-function" title="SM2 Key Derivation Function">
+<t>A key derivation function (KDF) is necessary to implement EC encryption.
+</t>
+<t>The SM2PKE KDF is defined in Section 5.4.3 of <xref target="I-D.shen-sm2-ecdsa"/>
+(originally from Section 3.4.3 of <xref target="SM2-4"/>) and
+should be used in conjunction with the SM3 hash algorithm <xref target="SM3"/>.
+</t>
+<t>The pseudocode is provided here for convenience.
+</t>
+
+<section anchor="inputs" title="Inputs">
+<t>
+<list style="symbols">
+<t>Bit stream <spanx style="verb">Z</spanx></t>
+<t>Length of key <spanx style="verb">klen</spanx> (an integer less than (2^32 - 1)v).</t>
+</list>
+</t>
+</section>
+
+<section anchor="output" title="Output">
+<t>
+<list style="symbols">
+<t>Key <spanx style="verb">K</spanx> of length <spanx style="verb">klen</spanx></t>
+</list>
+</t>
+</section>
+
+<section anchor="pseudocode" title="Pseudocode">
+
+<figure align="center"><artwork align="center" type="c">
+KDF (Z, klen) {
+  Counter = 0x00000001
+  n = klen / v
+
+  Iterate from i = 1 to Ceil(n)
+    Ha[i] = H_v( Z || Counter )
+    Counter++
+
+  If n is a whole number
+    Ha![Ceil(n)] = Ha[Ceil(n)]
+  Else
+    Ha![Ceil(n)] = leftmost (klen − (v × Floor(n))) bits of Ha[Ceil(n)]
+
+  K = Ha[1] || Ha[2] || ... || Ha[Ceil(n)−1] || Ha![Ceil(n)]
+}
+</artwork></figure>
+</section>
+
+<section anchor="notes" title="Notes">
+<t>
+<list style="symbols">
+<t>H_v() is the hash function that outputs a v-bit long hash value.</t>
+<t><spanx style="verb">ct</spanx> is a 32-bit register</t>
+</list>
+</t>
+</section>
+</section>
+
+<section anchor="encoding-of-public-and-private-keys" title="Encoding of Public and Private Keys">
+<t>The following algorithm-specific packets are added to Section 5.5.2
+of <xref target="RFC4880"/>, &quot;Public-Key Packet Formats&quot;, to support SM2DSA and
+SM2PKE.
+</t>
+<t>This algorithm-specific portion is:
+</t>
+<t>Algorithm-Specific Fields for SM2DSA keys:
+</t>
+<t>
+<list style="symbols">
+<t>a variable-length field containing a curve OID, formatted
+as follows:
+<list style="symbols">
+<t>a one-octet size of the following field; values 0 and
+0xFF are reserved for future extensions</t>
+<t>octets representing a curve OID, defined in Section 11</t>
+</list></t>
+<t>MPI of an EC point representing a public key</t>
+</list>
+</t>
+<t>Algorithm-Specific Fields for SM2PKE keys:
+</t>
+<t>
+<list style="symbols">
+<t>a variable-length field containing a curve OID, formatted
+as follows:
+<list style="symbols">
+<t>a one-octet size of the following field; values 0 and
+0xFF are reserved for future extensions</t>
+<t>octets representing a curve OID, defined in Section 11</t>
+</list></t>
+<t>MPI of an EC point representing a public key</t>
+</list>
+</t>
+<t>
+<list style="symbols">
+<t>a variable-length field containing KDF parameters, formatted as
+follows:
+<list style="symbols">
+<t>a one-octet size of the following fields; values 0 and 0xff are
+reserved for future extensions</t>
+<t>a one-octet value 01, reserved for future extensions</t>
+<t>a one-octet hash function ID used with a KDF</t>
+</list></t>
+</list>
+</t>
+<t>An SM2PKE public key is composed of the same sequence of fields that
+define an SM2DSA key, plus the KDF parameters field.
+</t>
+<t>The following algorithm-specific packets are added to Section 5.5.3.
+of <xref target="RFC4880"/>, &quot;Secret-Key Packet Formats&quot;, to support SM2DSA and
+SM2PKE.
+</t>
+<t>Algorithm-Specific Fields for SM2DSA or SM2PKE secret keys:
+</t>
+<t>
+<list style="symbols">
+<t>an MPI of an integer representing the secret key, which is a
+scalar of the public EC point</t>
+</list>
+</t>
+</section>
+
+<section anchor="message-encoding-with-public-keys" title="Message Encoding with Public Keys">
+<t>Section 5.2.2 of <xref target="RFC4880"/>, &quot;Version 3 Signature Packet Format&quot;
+defines signature formats.  No changes in the format are needed for
+ECDSA.
+</t>
+</section>
+
+<section anchor="sm2-ecc-curve-oid" title="SM2 ECC Curve OID">
+<t>This section provides the &quot;SM2 Recommended Curve&quot; described in
+<xref target="SM2-5"/> according to the method of <xref target="RFC6637"/>.
+</t>
+<t>The named curves are referenced as a sequence of bytes in this
+document, called throughout, curve OID.  Section 11 describes in
+detail how this sequence of bytes is formed.
+The parameter curve OID is an array of octets that define a named
+curve.  The table below specifies the exact sequence of bytes for
+each named curve referenced in this document:
+</t>
+<texttable>
+<ttcol align="left">ASN.1 Object Identifier</ttcol>
+<ttcol align="left">OID len</ttcol>
+<ttcol align="left">Curve OID bytes in hexadecimal representation</ttcol>
+<ttcol align="left">Curve name</ttcol>
+
+<c>1.2.156.10197.1.301</c><c>8</c><c>2A 81 1C CF 55 01 82 2D</c><c>SM2 Recommended</c>
+</texttable>
+<t>The sequence of octets in the third column is the result of applying
+the Distinguished Encoding Rules (DER) to the ASN.1 Object Identifier
+with subsequent truncation.  The truncation removes the two fields of
+encoded Object Identifier.  The first omitted field is one octet
+representing the Object Identifier tag, and the second omitted field
+is the length of the Object Identifier body.
+</t>
+<t>The complete ASN.1 DER encoding for the SM2 Recommended curve
+OID is &quot;06 08 2A 81 1C CF 55 01 82 2D&quot;, from which the first entry in
+the table above is constructed by omitting the first two octets. Only
+the truncated sequence of octets is the valid representation of a curve
+OID.
+</t>
+</section>
+
+<section anchor="compatibility-profiles" title="Compatibility Profiles">
+
+<section anchor="oscca-compliant-profile" title="OSCCA Compliant Profile">
+<t>A compliant application MUST implement:
+</t>
+<t>
+<list style="symbols">
+<t>SM2 Recommended Curve</t>
+<t>SM2 (SM2DSA and SM2PKE)</t>
+<t>SM3</t>
+<t>SM4</t>
+</list>
+</t>
+</section>
+</section>
+
+<section anchor="security-considerations" title="Security Considerations">
+<t>TODO
+</t>
+</section>
+
+<section anchor="iana-considerations" title="IANA Considerations">
+<t>The IANA &quot;Pretty Good Privacy (PGP)&quot; registry <xref target="RFC8126"/> has made the following
+assignments for algorithms described in this document, namely:
+</t>
+<t>
+<list style="symbols">
+<t>ID XXX of the &quot;Public Key Algorithms&quot; namespace for <xref target="sm2-algorithm"/></t>
+<t>ID XXX of the &quot;Hash Algorithms&quot; namespace for <xref target="sm3-algorithm"/></t>
+<t>ID XXX of the &quot;Symmetric Key Algorithms&quot; namespace for <xref target="sm4-algorithm"/></t>
+</list>
+</t>
+</section>
+
+<section anchor="examples" title="Examples">
+<t>TODO!
+</t>
+</section>
+
+</middle>
+<back>
+<references title="Normative References">
+<reference anchor='GMT-0003.1-2012' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_1.pdf'>
+<!--<reference anchor='SM2-1' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>-->
+  <front>
+    <title>GM/T 0003.1-2012: Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves Part 1: General</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+    </author>
+    <date day='21' month='March' year='2012'/>
+  </front>
+</reference>
+<?rfc include="http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.shen-sm2-ecdsa.xml"?>
+<?rfc include="http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.shen-sm3-hash.xml"?>
+<?rfc include="http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"?>
+<?rfc include="http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4880.xml"?>
+<?rfc include="http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6637.xml"?>
+<reference anchor='SM2' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>
+  <front>
+    <title>Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+    </author>
+    <date month='December' year='2010'/>
+  </front>
+</reference>
+<reference anchor='SM2-2' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_2.pdf'>
+<!--<reference anchor='SM2-2' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>-->
+  <front>
+  <!--GM/T 0003.2-2012-->
+    <title>Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves -- Part 2: Digital Signature Algorithm</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+    </author>
+    <date month='December' year='2010'/>
+  </front>
+</reference>
+<reference anchor='SM2-4' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_4.pdf'>
+  <front>
+  <!--GM/T 0003.4-2012-->
+    <title>Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves -- Part 4: Public Key Encryption Algorithm</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+
+    </author>
+    <date month='December' year='2010'/>
+  </front>
+</reference>
+<reference anchor='SM2-5' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_5.pdf'>
+<!--<reference anchor='SM2-PARAMS' target='http://www.oscca.gov.cn/UpFile/2010122214836668.pdf'>-->
+  <front>
+    <!--<title>Public Key Cryptographic Algorithm SM2 Recommended Elliptic Curves Parameters</title>-->
+    <title>Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves -- Part 5: Parameter definitions</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+    </author>
+    <date month='December' year='2010'/>
+  </front>
+</reference>
+<reference anchor='SM3' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM3.pdf'>
+  <front>
+  <!--GM/T 0003.5-2012-->
+    <title>SM3 Cryptographic Hash Algorithm</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+    </author>
+    <date month='December' year='2010'/>
+  </front>
+</reference>
+<reference anchor='SM4' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM4.pdf'>
+  <front>
+    <title>SM4 block cipher algorithm</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+    </author>
+    <date month='December' year='2010'/>
+  </front>
+</reference>
+</references>
+<references title="Informative References">
+<reference anchor='GB15629.11-2003' target='http://www.gb688.cn/bzgk/gb/newGbInfo?hcno=74B9DD11287E72408C19C4D3A360D1BD'>
+  <front>
+    <title>Information technology -- Telecommunications and information exchange between systems -- Local and metropolitan area networks -- Specific requirements -- Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications</title>
+    <author>
+      <organization>Standardization Administration of the People's Republic of China</organization>
+      <address>
+        <postal>
+         <street>No. 9 Madian Donglu, Haidian District</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100088</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 8226-2609</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.sac.gov.cn</uri>
+      </address>
+    </author>
+    <date day='12' month='May' year='2003'/>
+  </front>
+</reference>
+<reference anchor='NIST.FIPS.180-4' target=' http://dx.doi.org/10.6028/NIST.FIPS.180-4'>
+  <front>
+    <title>FIPS 180-4 Secure Hash Standard (SHS)</title>
+    <author>
+      <organization>National Institute of Standards and Technology</organization>
+      <address>
+        <postal>
+          <street>100 Bureau Drive</street>
+          <city>Gaithersburg</city>
+          <region>MD</region>
+          <code>20899-8900</code>
+          <country>United States</country>
+        </postal>
+        <uri>http://www.nist.gov/</uri>
+      </address>
+    </author>
+    <date month='August' year='2015'/>
+  </front>
+</reference>
+<reference anchor='NIST.SP.800-56Ar2' target='http://dx.doi.org/10.6028/NIST.SP.800-56Ar2'>
+  <front>
+    <title>SP 800-56Ar2 Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography</title>
+    <author initials="B." surname="Barker" fullname="Elaine B. Barker">
+      <organization>National Institute of Standards and Technology</organization>
+      <address>
+        <postal>
+          <street>100 Bureau Drive</street>
+          <city>Gaithersburg</city>
+          <region>MD</region>
+          <code>20899</code>
+          <country>United States</country>
+        </postal>
+        <uri>http://www.nist.gov/</uri>
+      </address>
+    </author>
+    <author initials="L." surname="Chen" fullname="Lily Chen">
+      <organization>National Institute of Standards and Technology</organization>
+      <address>
+        <postal>
+          <street>100 Bureau Drive</street>
+          <city>Gaithersburg</city>
+          <region>MD</region>
+          <code>20899</code>
+          <country>United States</country>
+        </postal>
+        <uri>http://www.nist.gov/</uri>
+      </address>
+    </author>
+    <author initials="A." surname="Roginsky" fullname="Allen Roginsky">
+      <organization>National Institute of Standards and Technology</organization>
+      <address>
+        <postal>
+          <street>100 Bureau Drive</street>
+          <city>Gaithersburg</city>
+          <region>MD</region>
+          <code>20899</code>
+          <country>United States</country>
+        </postal>
+        <uri>http://www.nist.gov/</uri>
+      </address>
+    </author>
+    <author initials="M." surname="Smid" fullname="Miles Smid">
+      <organization>Orion Security Solutions, Inc.</organization>
+      <address>
+        <postal>
+          <street>1489 Chain Bridge Road</street>
+          <street>Suite 300</street>
+          <city>McLean</city>
+          <region>VA</region>
+          <code>22101</code>
+          <country>United States</country>
+        </postal>
+        <uri>http://www.orionsecuritysolutions.com</uri>
+      </address>
+    </author>
+    <date month='May' year='2013'/>
+  </front>
+</reference>
+<reference anchor='OSCCA' target='http://www.oscca.gov.cn'>
+  <front>
+    <title>Organization of State Commercial Administration of China</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+    </author>
+    <date month='May' year='2017'/>
+  </front>
+</reference>
+<?rfc include="http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6150.xml"?>
+<?rfc include="http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8126.xml"?>
+<reference anchor='SEC1' target='http://www.secg.org/SEC1-Ver-1.0.pdf'>
+  <front>
+    <title>SEC 1: Elliptic Curve Cryptography</title>
+    <author>
+      <organization>Standards for Efficient Cryptography Group</organization>
+    </author>
+    <date month='September' year='2010'/>
+  </front>
+</reference>
+<reference anchor='SM2-3' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_3.pdf'>
+<!--<reference anchor='SM2-3' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>-->
+  <front>
+  <!--GM/T 0003.3-2012-->
+    <title>Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves -- Part 3: Key Exchange Protocol</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+    </author>
+    <date month='December' year='2010'/>
+  </front>
+</reference>
+<reference anchor='SM2-DSA-Lattice' target='https://doi.org/10.1007/978-3-319-29814-6_6'>
+  <front>
+    <title>Practical Lattice-Based Fault Attack and Countermeasure on SM2 Signature Algorithm</title>
+<!--Information and Communications Security. ICICS 2015. Lecture Notes in Computer Science, vol 9543. Springer, Cham-->
+    <author initials="W." surname="Cao" fullname="Weiqiong Cao">
+      <organization>Trusted Computing and Information Assurance Laboratory, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://english.is.cas.cn</uri>
+      </address>
+    </author>
+    <author initials="J." surname="Feng" fullname="Jingyi Feng">
+      <organization>Trusted Computing and Information Assurance Laboratory, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://english.is.cas.cn</uri>
+      </address>
+    </author>
+    <author initials="S." surname="Zhu" fullname="Shaofeng Zhu">
+      <organization>Trusted Computing and Information Assurance Laboratory, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://english.is.cas.cn</uri>
+      </address>
+    </author>
+    <author initials="H." surname="Chen" fullname="Hua Chen">
+      <organization>Trusted Computing and Information Assurance Laboratory, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://english.is.cas.cn</uri>
+      </address>
+    </author>
+    <author initials="W." surname="Wu" fullname="Wenling Wu">
+      <organization>Trusted Computing and Information Assurance Laboratory, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://english.is.cas.cn</uri>
+      </address>
+    </author>
+    <author initials="X." surname="Han" fullname="Xucang Han">
+      <organization>Beijing Key Laboratory of RFID Chip Test Technology, CEC Huada Electronic Design Co., Ltd</organization>
+      <address>
+        <postal>
+          <street>Building C, CEC Network Security and Information Technology Base, South Region of Future Science And Technology Park, Beiqijia county, Changping District</street>
+          <city>Beijing</city>
+          <code>102209</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.hed.com.cn</uri>
+      </address>
+    </author>
+    <author initials="X." surname="Zheng" fullname="Xiaoguang Zheng">
+      <organization>Beijing Key Laboratory of RFID Chip Test Technology, CEC Huada Electronic Design Co., Ltd</organization>
+      <address>
+        <postal>
+          <street>Building C, CEC Network Security and Information Technology Base, South Region of Future Science And Technology Park, Beiqijia county, Changping District</street>
+          <city>Beijing</city>
+          <code>102209</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.hed.com.cn</uri>
+      </address>
+    </author>
+    <date month='November' year='2016'/>
+  </front>
+</reference>
+<reference anchor='SM2-DSA-Nonces' target='https://dx.doi.org/10.1007/978-3-319-12087-4_22'>
+  <front>
+    <title>Partially Known Nonces and Fault Injection Attacks on SM2 Signature Algorithm</title>
+<!--Information Security and Cryptology: 9th International Conference, Inscrypt 2013, Guangzhou, China, November 27-30, 2013, Revised Selected Papers-->
+    <author initials="M." surname="Liu" fullname="Mingjie Liu">
+      <organization>Beijing International Center for Mathematical Research, Peking University</organization>
+      <address>
+        <postal>
+          <street>No. 5 Yiheyuan Road Haidian District</street>
+          <city>Beijing</city>
+          <code>100871</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.bicmr.org</uri>
+      </address>
+    </author>
+    <author initials="J." surname="Chen" fullname="Jiazhe Chen">
+      <organization>China Information Technology Security Evaluation Center</organization>
+      <address>
+        <postal>
+          <street>Building 1, No.8, Shangdi West Road, Haidian District</street>
+          <city>Beijing</city>
+          <code>100085</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.itsec.gov.cn</uri>
+      </address>
+    </author>
+    <author initials="H." surname="Li" fullname="Hexin Li">
+      <organization>China Information Technology Security Evaluation Center</organization>
+      <address>
+        <postal>
+          <street>Building 1, No.8, Shangdi West Road, Haidian District</street>
+          <city>Beijing</city>
+          <code>100085</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.itsec.gov.cn</uri>
+      </address>
+    </author>
+    <date day='27' month='November' year='2013'/>
+  </front>
+</reference>
+<reference anchor='SM2-DSA-Nonces2' target='https://doi.acm.org/10.1145/2714576.2714587'>
+  <front>
+    <title>Mind Your Nonces Moving: Template-Based Partially-Sharing Nonces Attack on SM2 Digital Signature Algorithm</title>
+<!--Proceedings of the 10th ACM Symposium on Information, Computer and Communications Security (ASIA CCS '15)-->
+    <author initials="J." surname="Chen" fullname="Jiazhe Chen">
+      <organization>China Information Technology Security Evaluation Center</organization>
+      <address>
+        <postal>
+          <street>Building 1, No.8, Shangdi West Road, Haidian District</street>
+          <city>Beijing</city>
+          <code>100085</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>jiazhechen@gmail.com</email>
+        <uri>http://www.itsec.gov.cn</uri>
+      </address>
+    </author>
+    <author initials="M." surname="Liu" fullname="Mingjie Liu">
+      <organization>Beijing Research Institute of Telemetry, China Aerospace Science and Technology Corporation</organization>
+      <address>
+        <postal>
+          <street>1 Nan Da Hong Men Lu, Fengtai Qu</street>
+          <city>Beijing</city>
+          <code>100194</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>liumj9705@gmail.com</email>
+        <uri>http://www.spacechina.com</uri>
+      </address>
+    </author>
+    <author initials="H." surname="Shi" fullname="Hongsong Shi">
+      <organization>China Information Technology Security Evaluation Center</organization>
+      <address>
+        <postal>
+          <street>Building 1, No.8, Shangdi West Road, Haidian District</street>
+          <city>Beijing</city>
+          <code>100085</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.itsec.gov.cn</uri>
+        <!--<email>unknown</email>-->
+      </address>
+    </author>
+    <author initials="H." surname="Li" fullname="Hexin Li">
+      <organization>China Information Technology Security Evaluation Center</organization>
+      <address>
+        <postal>
+          <street>Building 1, No.8, Shangdi West Road, Haidian District</street>
+          <city>Beijing</city>
+          <code>100085</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>lihx@secemail.cn</email>
+        <uri>http://www.itsec.gov.cn</uri>
+      </address>
+    </author>
+    <date day='27' month='November' year='2015'/>
+  </front>
+</reference>
+<reference anchor='SM2-KEP-Comments' target='https://dx.doi.org/10.1007/978-3-642-25513-7_12'>
+  <front>
+    <title>Comments on the SM2 Key Exchange Protocol</title>
+<!--bookTitle="Cryptology and Network Security: 10th International Conference, CANS 2011, Sanya, China, December 10-12, 2011. Proceedings",-->
+    <author initials="X." surname="Xu" fullname="Jing Xu">
+      <organization>State Key Laboratory of Information Security, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>xujing@is.iscas.ac.cn</email>
+        <uri>http://english.is.cas.cn</uri>
+      </address>
+    </author>
+    <author initials="D." surname="Feng" fullname="Dengguo Feng">
+      <organization>State Key Laboratory of Information Security, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://english.is.cas.cn</uri>
+      </address>
+    </author>
+    <date day='10' month='December' year='2011'/>
+  </front>
+</reference>
+<reference anchor='SM3-Boomerang' target='https://doi.org/10.1049/iet-ifs.2013.0380'>
+  <front>
+    <title>Improved Boomerang Attacks on Round-Reduced SM3 and Keyed Permutation of BLAKE-256</title>
+      <!--IET Information Security ( Volume: 9, Issue: 3, 5 2015 )-->
+    <author initials="D." surname="Bai" fullname="Dongxia Bai">
+      <organization>Department of Computer Science and Technology, Tsinghua University</organization>
+      <address>
+        <postal>
+          <street>Tsinghua University</street>
+          <city>Beijing</city>
+          <code>100084</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>baidx10@mails.tsinghua.edu.cn</email>
+        <uri>http://www.tsinghua.edu.cn</uri>
+      </address>
+    </author>
+    <author initials="H." surname="Yu" fullname="Hongbo Yu">
+      <address>
+        <postal>
+          <street>Tsinghua University</street>
+          <city>Beijing</city>
+          <code>100084</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>yuhongbo@mail.tsinghua.edu.cn</email>
+        <uri>http://www.tsinghua.edu.cn</uri>
+      </address>
+    </author>
+    <author initials="G." surname="Wang" fullname="Gaoli Wang">
+      <organization>School of Computer Science and Technology, Donghua University</organization>
+      <address>
+        <postal>
+         <street>Donghua University</street>
+         <city>Shanghai</city>
+         <!--<region>CA</region>-->
+         <code>201620</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <email>wanggaoli@dhu.edu.cn</email>
+        <uri>https://www.dhu.edu.cn</uri>
+      </address>
+    </author>
+    <author initials="X." surname="Wang" fullname="Xiaoyun Wang">
+      <organization>Institute for Advanced Study, Tsinghua University</organization>
+      <address>
+        <postal>
+          <street>Tsinghua University</street>
+          <city>Beijing</city>
+          <code>100084</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>xiaoyunwang@mail.tsinghua.edu.cn</email>
+        <uri>http://www.tsinghua.edu.cn</uri>
+      </address>
+    </author>
+    <date day='16' month='April' year='2015'/>
+  </front>
+</reference>
+</references>
+
+<section anchor="acknowledgements" title="Acknowledgements">
+<t>The authors would like to thank the following persons for their valuable advice and input.
+</t>
+<t>
+<list style="symbols">
+<t>Jack Lloyd and Daniel Wyatt of the Ribose rnp team for their input and implementation</t>
+</list>
+</t>
+</section>
+
+</back>
+</rfc>

@@ -12,10 +12,10 @@ CWD  := `pwd`
 # Ensure the xml2rfc cache directory exists locally
 IGNORE := $(shell mkdir -p $(HOME)/.cache/xml2rfc)
 
-all: $(TXT) $(HTML)
+all: $(TXT) $(HTML) $(XML)
 
 clean:
-	rm -f $(TXT) $(XML)
+	rm -f $(TXT) $(HTML) $(XML)
 
 # %.txt: %.md
 # 	docker run --rm \
@@ -25,10 +25,14 @@ clean:
 # 		paulej/rfctools \
 # 		md2rfc $^
 
-%.txt: %.md
-	mmark -xml2 -page $^ > $@.xml && \
-	xml2rfc --text $@.xml && \
-	rm $@.xml && mv $@.txt $@
+%.xml: %.md
+	mmark -xml2 -page $^ > $@
+
+%.txt: %.xml
+	xml2rfc --text $^ $@
+
+%.html: %.xml
+	xml2rfc --html $^ $@
 
 open:
 	open *.txt

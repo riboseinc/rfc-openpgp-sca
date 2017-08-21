@@ -1,9 +1,12 @@
 # SM2 Key Derivation Function
 
-A key derivation function (KDF) is necessary to implement the EC
-encryption. The SM2PKE KDF is defined in Section 5.4.3 of [@SM2-4] and
-can be used with the SM3 hash algorithm [@SM3].
-It is provided here for convenience.
+A key derivation function (KDF) is necessary to implement EC encryption.
+
+The SM2PKE KDF is defined in Section 5.4.3 of [@I-D.shen-sm2-ecdsa]
+(originally from Section 3.4.3 of [@SM2-4]) and
+should be used in conjunction with the SM3 hash algorithm [@SM3].
+
+The pseudocode is provided here for convenience.
 
 ## Inputs
 
@@ -16,26 +19,23 @@ It is provided here for convenience.
 
 ## Pseudocode
 
-~~~ c
+```c
 KDF (Z, klen) {
-  ct = 0x00000001
+  Counter = 0x00000001
   n = klen / v
 
-  for i = 1 to ceil(n) {
-    Ha[i] = H_v( Z || ct )
-    ct++
-  }
+  Iterate from i = 1 to Ceil(n)
+    Ha[i] = H_v( Z || Counter )
+    Counter++
 
-  if ( n is a whole number ) {
-    Ha![ceil(n)] = Ha[ceil(n)]
-  } else {
-    Ha![ceil(n)] = leftmost (klen − (v × floor(n))) bits of Ha[ceil(n)]
-  }
+  If n is a whole number
+    Ha![Ceil(n)] = Ha[Ceil(n)]
+  Else
+    Ha![Ceil(n)] = leftmost (klen − (v × Floor(n))) bits of Ha[Ceil(n)]
 
-  # Key `K` of length `klen`
-  return Ha[1] || Ha[2] || ... || Ha[ceil(n)−1] || Ha![ceil(n)]
+  K = Ha[1] || Ha[2] || ... || Ha[Ceil(n)−1] || Ha![Ceil(n)]
 }
-~~~
+```
 
 ## Notes
 

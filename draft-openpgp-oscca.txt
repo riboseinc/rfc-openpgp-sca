@@ -10,15 +10,15 @@ Expires: February 22, 2018                               August 21, 2017
 
 
                       OSCCA Extensions For OpenPGP
-                          draft-openpgp-oscca
+                         draft-openpgp-oscca-00
 
 Abstract
 
-   This document enables OpenPGP usage in an compliant manner with OSCCA
-   [OSCCA] regulations for use within China.
+   This document enables OpenPGP (RFC4880) usage in an compliant manner
+   with OSCCA regulations for use within China.
 
-   Specifically, it extends OpenPGP [RFC4880] to support the usage of
-   SM2 [SM2], SM3 [SM3] and SM4 [SM4] algorithms.
+   Specifically, it extends OpenPGP to support the usage of SM2, SM3 and
+   SM4 algorithms.
 
 Status of This Memo
 
@@ -88,7 +88,7 @@ Table of Contents
      8.4.  Notes . . . . . . . . . . . . . . . . . . . . . . . . . .   9
    9.  Encoding of Public and Private Keys . . . . . . . . . . . . .  10
    10. Message Encoding with Public Keys . . . . . . . . . . . . . .  11
-   11. ECC Curve OID . . . . . . . . . . . . . . . . . . . . . . . .  11
+   11. SM2 ECC Curve OID . . . . . . . . . . . . . . . . . . . . . .  11
    12. Compatibility Profiles  . . . . . . . . . . . . . . . . . . .  12
      12.1.  OSCCA Compliant Profile  . . . . . . . . . . . . . . . .  12
    13. Security Considerations . . . . . . . . . . . . . . . . . . .  12
@@ -98,7 +98,7 @@ Table of Contents
      16.1.  Normative References . . . . . . . . . . . . . . . . . .  12
      16.2.  Informative References . . . . . . . . . . . . . . . . .  14
    Appendix A.  Acknowledgements . . . . . . . . . . . . . . . . . .  15
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  15
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  16
 
 1.  Introduction
 
@@ -349,7 +349,7 @@ Internet-Draft                                               August 2017
 
    According to the authors, SM3 is designed with a Merkle-Damgard
    construction and is very similar to SHA-2 [NIST.FIPS.180-4] of the
-   MD4 [RFC1320] family, with the addition of several strenghtening
+   MD4 [RFC6150] family, with the addition of several strenghtening
    features such as a more complex step function and stronger message
    dependency than SHA-256 [SM3-Boomerang].
 
@@ -455,10 +455,14 @@ Internet-Draft                                               August 2017
 
 8.  SM2 Key Derivation Function
 
-   A key derivation function (KDF) is necessary to implement the EC
-   encryption.  The SM2PKE KDF is defined in Section 5.4.3 of [SM2-4]
-   and can be used with the SM3 hash algorithm [SM3].  It is provided
-   here for convenience.
+   A key derivation function (KDF) is necessary to implement EC
+   encryption.
+
+   The SM2PKE KDF is defined in Section 5.4.3 of [I-D.shen-sm2-ecdsa]
+   (originally from Section 3.4.3 of [SM2-4]) and should be used in
+   conjunction with the SM3 hash algorithm [SM3].
+
+   The pseudocode is provided here for convenience.
 
 8.1.  Inputs
 
@@ -473,22 +477,19 @@ Internet-Draft                                               August 2017
 8.3.  Pseudocode
 
  KDF (Z, klen) {
-   ct = 0x00000001
+   Counter = 0x00000001
    n = klen / v
 
-   for i = 1 to ceil(n) {
-     Ha[i] = H_v( Z || ct )
-     ct++
-   }
+   Iterate from i = 1 to Ceil(n)
+     Ha[i] = H_v( Z || Counter )
+     Counter++
 
-   if ( n is a whole number ) {
-     Ha![ceil(n)] = Ha[ceil(n)]
-   } else {
-     Ha![ceil(n)] = leftmost (klen - (v x floor(n))) bits of Ha[ceil(n)]
-   }
+   If n is a whole number
+     Ha![Ceil(n)] = Ha[Ceil(n)]
+   Else
+     Ha![Ceil(n)] = leftmost (klen - (v x Floor(n))) bits of Ha[Ceil(n)]
 
-   # Key `K` of length `klen`
-   return Ha[1] || Ha[2] || ... || Ha[ceil(n)-1] || Ha![ceil(n)]
+   K = Ha[1] || Ha[2] || ... || Ha[Ceil(n)-1] || Ha![Ceil(n)]
  }
 
 8.4.  Notes
@@ -496,7 +497,6 @@ Internet-Draft                                               August 2017
    o  H_v() is the hash function that outputs a v-bit long hash value.
 
    o  "ct" is a 32-bit register
-
 
 
 
@@ -573,7 +573,7 @@ Internet-Draft                                               August 2017
    defines signature formats.  No changes in the format are needed for
    ECDSA.
 
-11.  ECC Curve OID
+11.  SM2 ECC Curve OID
 
    This section provides the "SM2 Recommended Curve" described in
    [SM2-5] according to the method of [RFC6637].
@@ -601,11 +601,11 @@ Internet-Draft                                               August 2017
    representing the Object Identifier tag, and the second omitted field
    is the length of the Object Identifier body.
 
-   Note that the complete ASN.1 DER encoding for the SM2 Recommended
-   curve OID is "06 08 2A 81 1C CF 55 01 82 2D", from which the first
-   entry in the table above is constructed by omitting the first two
-   octets.  Only the truncated sequence of octets is the valid
-   representation of a curve OID.
+   The complete ASN.1 DER encoding for the SM2 Recommended curve OID is
+   "06 08 2A 81 1C CF 55 01 82 2D", from which the first entry in the
+   table above is constructed by omitting the first two octets.  Only
+   the truncated sequence of octets is the valid representation of a
+   curve OID.
 
 
 
@@ -638,15 +638,15 @@ Internet-Draft                                               August 2017
 
 14.  IANA Considerations
 
-   IANA has assigned the following algorithm numbers from the "Pretty
-   Good Privacy (PGP)" registry (or "name space" in the terminology of
-   [RFC5226]) for algorithms specified in this document, specifically:
+   The IANA "Pretty Good Privacy (PGP)" registry [RFC8126] has made the
+   following assignments for algorithms described in this document,
+   namely:
 
-   o  ID XXX for Section 3 from the "Public Key Algorithms" range
+   o  ID XXX of the "Public Key Algorithms" namespace for Section 3
 
-   o  ID XXX for Section 4 from the "Hash Algorithms" range
+   o  ID XXX of the "Hash Algorithms" namespace for Section 4
 
-   o  ID XXX for Section 5 from the "Symmetric Key Algorithms" range
+   o  ID XXX of the "Symmetric Key Algorithms" namespace for Section 5
 
 15.  Examples
 
@@ -767,14 +767,14 @@ Internet-Draft                                               August 2017
               "Organization of State Commercial Administration of
               China", May 2017, <http://www.oscca.gov.cn>.
 
-   [RFC1320]  Rivest, R., "The MD4 Message-Digest Algorithm", RFC 1320,
-              DOI 10.17487/RFC1320, April 1992, <https://www.rfc-
-              editor.org/info/rfc1320>.
+   [RFC6150]  Turner, S. and L. Chen, "MD4 to Historic Status",
+              RFC 6150, DOI 10.17487/RFC6150, March 2011,
+              <https://www.rfc-editor.org/info/rfc6150>.
 
-   [SEC1]     Standards for Efficient Cryptography Group, "SEC 1:
-              Elliptic Curve Cryptography", September 2010,
-              <http://www.secg.org/SEC1-Ver-1.0.pdf>.
-
+   [RFC8126]  Cotton, M., Leiba, B., and T. Narten, "Guidelines for
+              Writing an IANA Considerations Section in RFCs", BCP 26,
+              RFC 8126, DOI 10.17487/RFC8126, June 2017,
+              <https://www.rfc-editor.org/info/rfc8126>.
 
 
 
@@ -785,6 +785,10 @@ Tse & Wong              Expires February 22, 2018              [Page 14]
 
 Internet-Draft                                               August 2017
 
+
+   [SEC1]     Standards for Efficient Cryptography Group, "SEC 1:
+              Elliptic Curve Cryptography", September 2010,
+              <http://www.secg.org/SEC1-Ver-1.0.pdf>.
 
    [SM2-3]    Organization of State Commercial Administration of China,
               "Public Key Cryptographic Algorithm SM2 Based on Elliptic
@@ -829,10 +833,6 @@ Appendix A.  Acknowledgements
    o  Jack Lloyd and Daniel Wyatt of the Ribose rnp team for their input
       and implementation
 
-Authors' Addresses
-
-
-
 
 
 
@@ -841,6 +841,8 @@ Tse & Wong              Expires February 22, 2018              [Page 15]
 
 Internet-Draft                                               August 2017
 
+
+Authors' Addresses
 
    Ronald Henry Tse
    Ribose
@@ -860,8 +862,6 @@ Internet-Draft                                               August 2017
 
    Email: wongwk@hsmc.edu.hk
    URI:   https://www.hsmc.edu.hk
-
-
 
 
 

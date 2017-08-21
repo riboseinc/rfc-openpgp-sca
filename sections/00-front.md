@@ -2,7 +2,7 @@
 
 Title = "OSCCA Extensions For OpenPGP"
 category = "std"
-docName = "draft-openpgp-oscca"
+docName = "draft-openpgp-oscca-00"
 updates = [4880, 6637]
 ipr= "trust200902"
 
