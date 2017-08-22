@@ -12,7 +12,7 @@ OSCCA-compliant manner through usage of the authorized combination of
 SM2, SM3 and SM4.
 
 SM2 is a set of public key cryptographic algorithms based on elliptic
-curves that includes:
+curves that include:
 
 * Digital Signature Algorithm [@!SM2-2]
 * Key Exchange Protocol [@SM2-3]
