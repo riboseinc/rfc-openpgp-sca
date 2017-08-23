@@ -1,17 +1,11 @@
 # Message Encoding with Public Keys
 
 Section 5.2.2 of [@!RFC4880], "Version 3 Signature Packet Format"
-defines signature formats.  No changes in the format are needed for
-ECDSA.
+defines signature formats. Similar to ECDSA [@RFC6637], no changes in
+the format is necessary for SM2DSA.
 
-<!-- Section 5.1 of [@!RFC4880], "Public-Key Encrypted Session Key Packets
-(Tag 1)" is extended to support ECDH.  The following two fields are
-the result of applying the KDF, as described in Section 8.
+TODO: Jack
 
-Algorithm-Specific Fields for ECDH:
+The SM2 ciphertext has a specific form (it's a triplet of an ECC point, the masked plaintext, and a SM3 hash that serves as an authenticator). However here it's just formatted as a BIGNUM holding an opaque block of bits. Which I think is fairly consistent with OpenPGPs approach to such things (eg using a single BIGNUM to hold ECC points).
 
-  o an MPI of an EC point representing an ephemeral public key
 
-  o a one-octet size, followed by a symmetric key encoded using the
-     method described in Section 8
- -->

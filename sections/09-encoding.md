@@ -11,9 +11,9 @@ Algorithm-Specific Fields for SM2DSA keys:
 * a variable-length field containing a curve OID, formatted
   as follows:
 
-   -  a one-octet size of the following field; values 0 and
+ - a one-octet size of the following field; values 0 and
       0xFF are reserved for future extensions
-   -  octets representing a curve OID, defined in Section 11
+ - octets representing a curve OID, defined in (#sm2-curve)
 
 *  MPI of an EC point representing a public key
 
@@ -22,9 +22,9 @@ Algorithm-Specific Fields for SM2PKE keys:
 * a variable-length field containing a curve OID, formatted
   as follows:
 
-   -  a one-octet size of the following field; values 0 and
+ - a one-octet size of the following field; values 0 and
       0xFF are reserved for future extensions
-   -  octets representing a curve OID, defined in Section 11
+ - octets representing a curve OID, defined in (#sm2-curve)
 
 *  MPI of an EC point representing a public key
 
@@ -33,12 +33,12 @@ Algorithm-Specific Fields for SM2PKE keys:
 * a variable-length field containing KDF parameters, formatted as
   follows:
 
-  - a one-octet size of the following fields; values 0 and 0xff are
-    reserved for future extensions
+ - a one-octet size of the following fields; values 0 and 0xff are
+   reserved for future extensions
 
-  - a one-octet value 01, reserved for future extensions
+ - a one-octet value 01, reserved for future extensions
 
-  - a one-octet hash function ID used with a KDF
+ - a one-octet hash function ID used with a KDF
 
 <!--
   - a one-octet algorithm ID for the symmetric algorithm used to wrap
@@ -57,4 +57,3 @@ Algorithm-Specific Fields for SM2DSA or SM2PKE secret keys:
 
 *  an MPI of an integer representing the secret key, which is a
    scalar of the public EC point
-

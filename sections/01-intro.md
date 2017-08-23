@@ -1,14 +1,14 @@
 #  Introduction {#introduction}
 
 SM2 [@!I-D.shen-sm2-ecdsa] [@!SM2],
-SM3 [@I-D.shen-sm3-hash] [@!SM3]
-and SM4 [@!SM4] are cryptographic standards issued by the
+SM3 [@!I-D.shen-sm3-hash] [@!SM3] and SM4 [@!SM4]
+are cryptographic standards issued by the
 Organization of State Commercial Administration of China [@OSCCA] as
 authorized cryptographic algorithms for the use within China. These
 algorithms are published in public.
 
-Adoption of this document enables exchange of OpenPGP-secured email in a
-OSCCA-compliant manner through usage of the authorized combination of
+Adoption of this document enables exchange of OpenPGP-secured email [@!RFC4880]
+in a OSCCA-compliant manner through usage of the authorized combination of
 SM2, SM3 and SM4.
 
 SM2 is a set of public key cryptographic algorithms based on elliptic

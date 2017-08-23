@@ -1,8 +1,8 @@
 # Conversion Primitives
 
-The encoding method of x and y coordinates of [@RFC6637] is used and is
+The encoding method of [@RFC6637] Section 6 **MUST** be used, and is
 compatible with the definition given in [@SEC1].
 
-Therefore the exact size of the MPI payload for the "SM2 Recommended
-Curve" is TODO xxx-bits.
-
+For clarity, according to the EC curve MPI encoding method of [@RFC6637],
+the exact size of the MPI payload for the "SM2 Recommended" 256-bit curve,
+is 515 bits.

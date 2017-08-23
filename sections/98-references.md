@@ -20,8 +20,8 @@
   </front>
 </reference>
 
-<reference anchor='GMT-0003.1-2012' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_1.pdf'>
-<!--<reference anchor='SM2-1' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>-->
+<reference anchor='GMT-0003.1-2012' target='http://www.oscca.gov.cn/Column/Column_32.htm'>
+<!-- <reference anchor='SM2-1' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'> -->
   <front>
     <title>GM/T 0003.1-2012: Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves Part 1: General</title>
     <author>
@@ -44,8 +44,8 @@
 </reference>
 
 
-<reference anchor='SM2-1' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_1.pdf'>
-<!--<reference anchor='SM2-1' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>-->
+<!-- <reference anchor='SM2-1' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_1.pdf'> -->
+<reference anchor='SM2-1' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>
   <front>
   <!--GM/T 0003.1-2012-->
     <title>Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves -- Part 1: General</title>
@@ -92,8 +92,8 @@
   </front>
 </reference>
 
-<reference anchor='SM2-3' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_3.pdf'>
-<!--<reference anchor='SM2-3' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>-->
+<!-- <reference anchor='SM2-3' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_3.pdf'> -->
+<reference anchor='SM2-3' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>
   <front>
   <!--GM/T 0003.3-2012-->
     <title>Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves -- Part 3: Key Exchange Protocol</title>
@@ -116,8 +116,8 @@
   </front>
 </reference>
 
-<!--<reference anchor='SM2-4' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>-->
-<reference anchor='SM2-4' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_4.pdf'>
+<reference anchor='SM2-4' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>
+<!-- <reference anchor='SM2-4' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_4.pdf'> -->
   <front>
   <!--GM/T 0003.4-2012-->
     <title>Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves -- Part 4: Public Key Encryption Algorithm</title>
@@ -141,8 +141,8 @@
   </front>
 </reference>
 
-<reference anchor='SM2-5' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_5.pdf'>
-<!--<reference anchor='SM2-PARAMS' target='http://www.oscca.gov.cn/UpFile/2010122214836668.pdf'>-->
+<!-- <reference anchor='SM2-5' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_5.pdf'> -->
+<reference anchor='SM2-5' target='http://www.oscca.gov.cn/UpFile/2010122214836668.pdf'>
   <front>
     <!--<title>Public Key Cryptographic Algorithm SM2 Recommended Elliptic Curves Parameters</title>-->
     <title>Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves -- Part 5: Parameter definitions</title>
@@ -165,8 +165,8 @@
   </front>
 </reference>
 
-<!--<reference anchor='SM3' target='http://www.oscca.gov.cn/UpFile/20101222141857786.pdf'>-->
-<reference anchor='SM3' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM3.pdf'>
+<reference anchor='SM3' target='http://www.oscca.gov.cn/UpFile/20101222141857786.pdf'>
+<!-- <reference anchor='SM3' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM3.pdf'> -->
   <front>
   <!--GM/T 0003.5-2012-->
     <title>SM3 Cryptographic Hash Algorithm</title>
@@ -189,8 +189,8 @@
   </front>
 </reference>
 
-<!--<reference anchor='SM4' target='http://www.oscca.gov.cn/UpFile/200621016423197990.pdf'>-->
-<reference anchor='SM4' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM4.pdf'>
+<reference anchor='SM4' target='http://www.oscca.gov.cn/UpFile/200621016423197990.pdf'>
+<!-- <reference anchor='SM4' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM4.pdf'> -->
   <front>
     <title>SM4 block cipher algorithm</title>
     <author>

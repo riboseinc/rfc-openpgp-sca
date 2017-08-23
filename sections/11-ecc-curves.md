@@ -1,4 +1,4 @@
-# SM2 ECC Curve OID
+# SM2 ECC Curve OID {#sm2-curve}
 
 <!--TODO: what other curves are available? GmSSL lists 3 other ones.-->
 
