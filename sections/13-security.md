@@ -33,10 +33,12 @@
 * SM2 has a key length of 512 bits for public key and 256 bits for private key.
   It is considered an alternative to ECDSA P-256 [@RFC6637]. Its security strength
   is comparable to a 128-bit symmetric key strength [@I-D.ietf-msec-mikey-ecc],
-  e.g., AES-128.
+  e.g., AES-128 [@NIST.FIPS.197].
 
 * SM3 is a hash function that generates a 256-bit hash value. It is considered
   as an alternative to SHA-256.
 
 * SM4 is a block cipher symmetric algorithm with key length of 128 bits. It is
-  considered as an alternative to AES-128.
+  considered as an alternative to AES-128 [@NIST.FIPS.197].
+
+* Security considerations offered in [@RFC6637] and [@RFC4880] also apply.

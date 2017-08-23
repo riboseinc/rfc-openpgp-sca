@@ -669,7 +669,7 @@
   </front>
 </reference>
 
-<reference anchor='NIST.FIPS.180-4' target=' http://dx.doi.org/10.6028/NIST.FIPS.180-4'>
+<reference anchor='NIST.FIPS.180-4' target='http://dx.doi.org/10.6028/NIST.FIPS.180-4'>
   <front>
     <title>FIPS 180-4 Secure Hash Standard (SHS)</title>
     <author>
@@ -699,7 +699,7 @@
   </front>
 </reference>
 
-<reference anchor='SM4-Power' target=' http://dx.doi.org/10.6028/NIST.FIPS.180-4'>
+<reference anchor='SM4-Power' target='http://dx.doi.org/10.6028/NIST.FIPS.180-4'>
   <front>
     <!-- Journal on Communications Vol. 36 No 10. -->
     <title>Improved chosen-plaintext power analysis attack against SM4 at the round-output</title>
@@ -756,5 +756,25 @@
       </address>
     </author>
     <date month='October' year='2015'/>
+  </front>
+</reference>
+
+<reference anchor='NIST.FIPS.197' target='https://doi.org/10.6028/NIST.FIPS.197'>
+  <front>
+    <title>FIPS 197 Advanced Encryption Standard (AES)</title>
+    <author>
+      <organization>National Institute of Standards and Technology</organization>
+      <address>
+        <postal>
+          <street>100 Bureau Drive</street>
+          <city>Gaithersburg</city>
+          <region>MD</region>
+          <code>20899-8900</code>
+          <country>United States</country>
+        </postal>
+        <uri>http://www.nist.gov/</uri>
+      </address>
+    </author>
+    <date month='November' year='2001'/>
   </front>
 </reference>
