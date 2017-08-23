@@ -1,10 +1,13 @@
 # Encoding of Public and Private Keys
 
+## Public-Key Packet Formats
+
 The following algorithm-specific packets are added to Section 5.5.2
 of [@RFC4880], "Public-Key Packet Formats", to support SM2DSA and
 SM2PKE.
 
-This algorithm-specific portion is:
+This document extends the algorithm-specific portion with the following
+fields.
 
 Algorithm-Specific Fields for SM2DSA keys:
 
@@ -12,7 +15,8 @@ Algorithm-Specific Fields for SM2DSA keys:
   as follows:
 
  - a one-octet size of the following field; values 0 and
-      0xFF are reserved for future extensions
+   0xFF are reserved for future extensions
+
  - octets representing a curve OID, defined in (#sm2-curve)
 
 *  MPI of an EC point representing a public key
@@ -23,7 +27,8 @@ Algorithm-Specific Fields for SM2PKE keys:
   as follows:
 
  - a one-octet size of the following field; values 0 and
-      0xFF are reserved for future extensions
+   0xFF are reserved for future extensions
+
  - octets representing a curve OID, defined in (#sm2-curve)
 
 *  MPI of an EC point representing a public key
@@ -49,9 +54,15 @@ Algorithm-Specific Fields for SM2PKE keys:
 An SM2PKE public key is composed of the same sequence of fields that
 define an SM2DSA key, plus the KDF parameters field.
 
+
+## Secret-Key Packet Formats
+
 The following algorithm-specific packets are added to Section 5.5.3.
 of [@RFC4880], "Secret-Key Packet Formats", to support SM2DSA and
 SM2PKE.
+
+This document extends the algorithm-specific portion with the following
+fields.
 
 Algorithm-Specific Fields for SM2DSA or SM2PKE secret keys:
 

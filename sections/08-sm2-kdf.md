@@ -1,4 +1,4 @@
-# SM2 Key Derivation Function
+# SM2 Key Derivation Function {#sm2-kdf}
 
 A key derivation function (KDF) is necessary to implement EC encryption.
 
