@@ -11,11 +11,11 @@ in (#sm2-kdf).
 
 Algorithm Specific Fields for SM2 encryption:
 
-* MPI of SM2 encrypted value `C = (C1 || C2 || C3)`, defined in step A2 of
+* MPI of SM2 encrypted value `C = (C1 || C2 || C3)`, described in step A2 of
   Section 7.2.1. of [@I-D.shen-sm2-ecdsa]
 
 * A one-octet number giving the hash algorithm used for the calculation of
-  `C3`, defined in step A7 of Section 7.2.1. of [@I-D.shen-sm2-ecdsa].
+  `C3`, described in step A7 of Section 7.2.1. of [@I-D.shen-sm2-ecdsa].
 
 ## Signature Packet (Tag 2)
 

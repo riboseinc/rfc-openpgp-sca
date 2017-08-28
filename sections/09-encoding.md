@@ -17,7 +17,7 @@ Algorithm-Specific Fields for SM2DSA keys:
  - a one-octet size of the following field; values 0 and
    0xFF are reserved for future extensions
 
- - octets representing a curve OID, defined in (#sm2-curve)
+ - octets representing a curve OID, described in (#sm2-curve)
 
 *  MPI of an EC point representing a public key
 
@@ -29,7 +29,7 @@ Algorithm-Specific Fields for SM2PKE keys:
  - a one-octet size of the following field; values 0 and
    0xFF are reserved for future extensions
 
- - octets representing a curve OID, defined in (#sm2-curve)
+ - octets representing a curve OID, described in (#sm2-curve)
 
 *  MPI of an EC point representing a public key
 

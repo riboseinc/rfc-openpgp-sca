@@ -68,8 +68,8 @@
   </front>
 </reference>
 
-<reference anchor='SM2-2' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_2.pdf'>
-<!--<reference anchor='SM2-2' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>-->
+<!-- <reference anchor='SM2-2' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_2.pdf'> -->
+<reference anchor='SM2-2' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>
   <front>
   <!--GM/T 0003.2-2012-->
     <title>Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves -- Part 2: Digital Signature Algorithm</title>
