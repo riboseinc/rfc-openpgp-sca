@@ -9,6 +9,10 @@ Compliant applications are a subset of the broader set of OpenPGP
 applications described in [@!RFC4880]. Any [@!RFC2119] keyword within
 this document applies to compliant applications only.
 
+The "||" symbol used in this document refers to the bit-string
+concatenation function. For example, `T = a || b` indicates that `T`
+is the concatenation of bit-strings `a` and `b`.
+
 ##  Definitions
 
 OSCCA-compliant
