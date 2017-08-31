@@ -34,9 +34,23 @@ organization = "Hang Seng Management College"
     region = "New Territories"
     country = "Hong Kong"
 
+[[author]]
+initials = "D. E."
+surname = "Wyatt"
+fullname = "Daniel E. Wyatt"
+organization = "Ribose"
+  [author.address]
+  email = "daniel.wyatt@ribose.com"
+  uri = "https://www.ribose.com"
+    [author.address.postal]
+    street = "Suite 1111, 1 Pedder Street"
+    city = "Central"
+    region = "Hong Kong"
+    country = "Hong Kong"
+
 area = "Internet"
 workgroup = "Network Working Group"
-date = 2017-05-29T00:00:00Z
+date = 2017-08-31T00:00:00Z
 
 %%%
 

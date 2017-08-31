@@ -13,10 +13,10 @@ ID | Description of Algorithm
 :--|:----------
 TBD | SM2
 
-Compliant applications **MUST** support both usages of SM2:
+Compliant applications **MUST** support both usages of SM2 (#sm2-algorithm):
 
-* SM2 Digital Signature Algorithm (SM2DSA) [@SM2-2] [@I-D.shen-sm2-ecdsa]
-* SM2 Public Key Encryption (SM2PKE) [@SM2-4] [@I-D.shen-sm2-ecdsa]
+* SM2 Digital Signature Algorithm (SM2DSA) [@!GBT.32918.2-2016]
+* SM2 Public Key Encryption (SM2PKE) [@!GBT.32918.4-2016]
 
 
 ## Symmetric Key Algorithms
@@ -30,7 +30,7 @@ ID | Description of Algorithm
 :--|:----------
 TBD | SM4
 
-Compliant applications **MUST** support SM4.
+Compliant applications **MUST** support SM4 (#sm4-algorithm).
 
 
 ## Hash Algorithms
@@ -44,7 +44,7 @@ ID | Description of Algorithm
 :--|:----------
 TBD | SM3
 
-Compliant applications **MUST** support SM3.
+Compliant applications **MUST** support SM3 (#sm3-algorithm).
 
 
 

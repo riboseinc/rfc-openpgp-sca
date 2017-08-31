@@ -17,15 +17,14 @@ is the concatenation of bit-strings `a` and `b`.
 
 OSCCA-compliant
 : All algorithms used for encryption and signatures are compliant with
-  OSCCA regulations.
+  OSCCA [@OSCCA] regulations.
 
 SM2DSA
-: The elliptic curve digital signature algorithm defined in [@SM2-2] and
-  [@I-D.shen-sm2-ecdsa]
+: The elliptic curve digital signature algorithm defined in [@!GBT.32918.2-2016]
 
 SM2KEP
-: The elliptic curve key exchange protocol defined in [@SM2-3]
+: The elliptic curve key exchange protocol defined in [@!GBT.32918.3-2016]
 
 SM2PKE
-: The public key encryption algorithm defined in [@SM2-4]
+: The public key encryption algorithm defined in [[@!GBT.32918.4-2016]
 

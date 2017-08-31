@@ -4,7 +4,7 @@
   they must be explicitly approved or certified by OSCCA before being allowed to
   be sold or used in China.
 
-* SM2 [@SM2] is an elliptic curve cryptosystem (ECC) published by OSCCA [@OSCCA].
+* SM2 [@!GBT.32918.1-2016] is an elliptic curve cryptosystem (ECC) published by OSCCA [@OSCCA].
   Its security relies on the assumption that the elliptic curve discrete
   logarithm problem (ECLP) is computationally infeasible. With advances in
   cryptanalysis, new attack algorithms may reduce the complexity of ECLP, making
@@ -12,13 +12,13 @@
   this document is published. You **SHOULD** check current literature to
   determine if the algorithms in SM2 have been found vulnerable.
 
-* SM3 [@SM3] is a cryptographic hash algorithm published by OSCCA [@OSCCA].
+* SM3 [@!GBT.32905-2016] is a cryptographic hash algorithm published by OSCCA [@OSCCA].
   No formal proof of security is provided. As claimed in [@I-D.shen-sm3-hash],
   the security properties of SM3 are under public study. There are no known
   feasible attacks against the SM3 algorithm at the time this document is
   published.
 
-* SM4 [@SM4] is a block cipher certified by OSCCA [@OSCCA].
+* SM4 [@!GBT.32907-2016] is a block cipher certified by OSCCA [@OSCCA].
   No formal proof of security is provided. There are no known feasible
   attacks against SM4 algorithm by the time of publishing this document.
   On the other hand, there are security concerns with regards to

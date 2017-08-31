@@ -2,9 +2,10 @@
 
 A key derivation function (KDF) is necessary to implement EC encryption.
 
-The SM2PKE KDF is defined in Section 5.4.3 of [@I-D.shen-sm2-ecdsa]
-(originally from Section 3.4.3 of [@SM2-4]) and **SHOULD** be used in
-conjunction with an OSCCA-approved hash algorithm, such as SM3 [@SM3].
+The SM2PKE KDF is defined in Section 3.4.3 of [@!GBT.32918.4-2016] (and
+Section 5.4.3 of [@I-D.shen-sm2-ecdsa], Section 3.4.3 of [@SM2-4]).
+It **SHOULD** be used in conjunction with an OSCCA-approved hash algorithm,
+such as SM3 [@!GBT.32905-2016].
 
 The pseudocode is provided here for convenience.
 
@@ -22,6 +23,8 @@ The pseudocode is provided here for convenience.
 * Key `K` of length `klen`
 
 ## Pseudocode
+
+<!-- TODO: Clean up according to OCB RFC -->
 
 ```c
 KDF (Z, klen) {

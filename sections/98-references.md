@@ -20,10 +20,9 @@
   </front>
 </reference>
 
-<reference anchor='GMT-0003.1-2012' target='http://www.oscca.gov.cn/Column/Column_32.htm'>
-<!-- <reference anchor='SM2-1' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'> -->
+<reference anchor='GMT-0003-2012' target='http://www.oscca.gov.cn/Column/Column_32.htm'>
   <front>
-    <title>GM/T 0003.1-2012: Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves Part 1: General</title>
+    <title>GM/T 0003-2012: Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves</title>
     <author>
       <organization>Organization of State Commercial Administration of China</organization>
       <address>
@@ -43,11 +42,116 @@
   </front>
 </reference>
 
+<reference anchor='GBT.32918.1-2016' target='http://www.sac.gov.cn/was5/web/search?channelid=97779&amp;templet=gjcxjg_detail.jsp&amp;searchword=STANDARD_CODE=%27GB/T%2032918.1-2016%27'>
+  <front>
+    <title>GB/T 32918.1-2016 Information Security Technology -- Public Key Cryptographic Algorithm SM2 Based On Elliptic Curves -- Part 1: General</title>
+    <author>
+      <organization>Standardization Administration of the People's Republic of China</organization>
+      <address>
+        <postal>
+         <street>No. 9 Madian Donglu, Haidian District</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100088</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 8226-2609</phone>
+        <uri>http://www.sac.gov.cn</uri>
+      </address>
+    </author>
+    <date day='29' month='August' year='2016'/>
+  </front>
+</reference>
+
+<reference anchor='GBT.32918.2-2016' target='http://www.sac.gov.cn/was5/web/search?channelid=97779&amp;templet=gjcxjg_detail.jsp&amp;searchword=STANDARD_CODE=%27GB/T%2032918.2-2016%27'>
+  <front>
+    <title>GB/T 32918.2-2016 Information Security Technology -- Public Key Cryptographic Algorithm SM2 Based On Elliptic Curves -- Part 2: Digital Signature Algorithm</title>
+    <author>
+      <organization>Standardization Administration of the People's Republic of China</organization>
+      <address>
+        <postal>
+         <street>No. 9 Madian Donglu, Haidian District</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100088</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 8226-2609</phone>
+        <uri>http://www.sac.gov.cn</uri>
+      </address>
+    </author>
+    <date day='29' month='August' year='2016'/>
+  </front>
+</reference>
+
+<reference anchor='GBT.32918.3-2016' target="http://www.sac.gov.cn/was5/web/search?channelid=97779&amp;templet=gjcxjg_detail.jsp&amp;searchword=STANDARD_CODE=%27GB/T%2032918.3-2016%27">
+  <front>
+    <title>GB/T 32918.3-2016 Information Security Technology -- Public Key Cryptographic Algorithm SM2 Based On Elliptic Curves -- Part 3: Key Exchange</title>
+    <author>
+      <organization>Standardization Administration of the People's Republic of China</organization>
+      <address>
+        <postal>
+         <street>No. 9 Madian Donglu, Haidian District</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100088</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 8226-2609</phone>
+        <uri>http://www.sac.gov.cn</uri>
+      </address>
+    </author>
+    <date day='29' month='August' year='2016'/>
+  </front>
+</reference>
+
+<reference anchor='GBT.32918.4-2016' target='http://www.sac.gov.cn/was5/web/search?channelid=97779&amp;templet=gjcxjg_detail.jsp&amp;searchword=STANDARD_CODE=%27GB/T%2032918.4-2016%27'>
+  <front>
+    <title>GB/T 32918.4-2016 Information Security Technology -- Public Key Cryptographic Algorithm SM2 Based On Elliptic Curves -- Part 4: Public Key Encryption Algorithm</title>
+    <author>
+      <organization>Standardization Administration of the People's Republic of China</organization>
+      <address>
+        <postal>
+         <street>No. 9 Madian Donglu, Haidian District</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100088</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 8226-2609</phone>
+        <uri>http://www.sac.gov.cn</uri>
+      </address>
+    </author>
+    <date day='29' month='August' year='2016'/>
+  </front>
+</reference>
+
+<!-- <reference anchor='GBT.32918.5-2017' target='http://www.sac.gov.cn/was5/web/search?channelid=97779&amp;templet=gjcxjg_detail.jsp&amp;searchword=STANDARD_CODE=%27GB/T%2032918.5-2017%27'> -->
+<reference anchor='GBT.32918.5-2017' target='http://www.gb688.cn/bzgk/gb/newGbInfo?hcno=728DEA8B8BB32ACFB6EF4BF449BC3077'>
+  <front>
+    <title>GB/T 32918.5-2017 Information Security Technology -- Public Key Cryptographic Algorithm SM2 Based On Elliptic Curves -- Part 5: Parameter Definition</title>
+    <author>
+      <organization>Standardization Administration of the People's Republic of China</organization>
+      <address>
+        <postal>
+         <street>No. 9 Madian Donglu, Haidian District</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100088</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 8226-2609</phone>
+        <uri>http://www.sac.gov.cn</uri>
+      </address>
+    </author>
+    <date day='12' month='May' year='2017'/>
+  </front>
+</reference>
+
 
 <!-- <reference anchor='SM2-1' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_1.pdf'> -->
 <reference anchor='SM2-1' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>
   <front>
-  <!--GM/T 0003.1-2012-->
     <title>Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves -- Part 1: General</title>
     <author>
       <organization>Organization of State Commercial Administration of China</organization>
@@ -71,7 +175,6 @@
 <!-- <reference anchor='SM2-2' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_2.pdf'> -->
 <reference anchor='SM2-2' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>
   <front>
-  <!--GM/T 0003.2-2012-->
     <title>Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves -- Part 2: Digital Signature Algorithm</title>
     <author>
       <organization>Organization of State Commercial Administration of China</organization>
@@ -95,7 +198,6 @@
 <!-- <reference anchor='SM2-3' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_3.pdf'> -->
 <reference anchor='SM2-3' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>
   <front>
-  <!--GM/T 0003.3-2012-->
     <title>Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves -- Part 3: Key Exchange Protocol</title>
     <author>
       <organization>Organization of State Commercial Administration of China</organization>
@@ -119,7 +221,6 @@
 <reference anchor='SM2-4' target='http://www.oscca.gov.cn/UpFile/2010122214822692.pdf'>
 <!-- <reference anchor='SM2-4' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_4.pdf'> -->
   <front>
-  <!--GM/T 0003.4-2012-->
     <title>Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves -- Part 4: Public Key Encryption Algorithm</title>
     <author>
       <organization>Organization of State Commercial Administration of China</organization>
@@ -165,10 +266,53 @@
   </front>
 </reference>
 
+<!-- <reference anchor='GBT.32905-2016' target='http://www.sac.gov.cn/SACSearch/search?channelid=97779&amp;templet=gjcxjg_detail.jsp&amp;searchword=STANDARD_CODE=%27GB/T%2032905-2016%27'> -->
+<reference anchor='GBT.32905-2016' target='http://www.gb688.cn/bzgk/gb/newGbInfo?hcno=45B1A67F20F3BF339211C391E9278F5E'>
+  <front>
+    <title>GB/T 32905-2016 Information Security Techniques -- SM3 Cryptographic Hash Algorithm</title>
+    <author>
+      <organization>Standardization Administration of the People's Republic of China</organization>
+      <address>
+        <postal>
+         <street>No. 9 Madian Donglu, Haidian District</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100088</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 8226-2609</phone>
+        <uri>http://www.sac.gov.cn</uri>
+      </address>
+    </author>
+    <date day='29' month='August' year='2016'/>
+  </front>
+</reference>
+
+<reference anchor='GMT-0006-2012' target='http://www.oscca.gov.cn/Column/Column_32.htm'>
+  <front>
+    <title>GM/T 0006-2012: Cryptographic Application Identifier Criterion Specification</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+    </author>
+    <date day='21' month='March' year='2012'/>
+  </front>
+</reference>
+
 <reference anchor='SM3' target='http://www.oscca.gov.cn/UpFile/20101222141857786.pdf'>
 <!-- <reference anchor='SM3' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM3.pdf'> -->
   <front>
-  <!--GM/T 0003.5-2012-->
     <title>SM3 Cryptographic Hash Algorithm</title>
     <author>
       <organization>Organization of State Commercial Administration of China</organization>
@@ -186,6 +330,72 @@
       </address>
     </author>
     <date month='December' year='2010'/>
+  </front>
+</reference>
+
+<reference anchor='GMT-0002-2012' target='http://www.oscca.gov.cn/Column/Column_32.htm'>
+  <front>
+    <title>GM/T 0002-2012: SM4 Block Cipher Algorithm</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+    </author>
+    <date day='21' month='March' year='2012'/>
+  </front>
+</reference>
+
+<!-- <reference anchor='GBT.32907-2016' target='http://www.sac.gov.cn/SACSearch/search?channelid=97779&amp;templet=gjcxjg_detail.jsp&amp;searchword=STANDARD_CODE=%27GB/T%2032907-2016%27'> -->
+<reference anchor='GBT.32907-2016' target='http://www.gb688.cn/bzgk/gb/newGbInfo?hcno=7803DE42D3BC5E80B0C3E5D8E873D56A'>
+  <front>
+    <title>GB/T 32907-2016 Information Security Technology -- SM4 Block Cipher Algorithm</title>
+    <author>
+      <organization>Standardization Administration of the People's Republic of China</organization>
+      <address>
+        <postal>
+         <street>No. 9 Madian Donglu, Haidian District</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100088</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 8226-2609</phone>
+        <uri>http://www.sac.gov.cn</uri>
+      </address>
+    </author>
+    <date day='29' month='August' year='2016'/>
+  </front>
+</reference>
+
+<reference anchor='GMT-0004-2012' target='http://www.oscca.gov.cn/Column/Column_32.htm'>
+  <front>
+    <title>GM/T 0004-2012: SM3 Hash Algorithm</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+    </author>
+    <date day='21' month='March' year='2012'/>
   </front>
 </reference>
 
@@ -212,7 +422,7 @@
   </front>
 </reference>
 
-<reference anchor='GB15629.11-2003' target='http://www.gb688.cn/bzgk/gb/newGbInfo?hcno=74B9DD11287E72408C19C4D3A360D1BD'>
+<reference anchor='GB.15629.11-2003' target='http://www.gb688.cn/bzgk/gb/newGbInfo?hcno=74B9DD11287E72408C19C4D3A360D1BD'>
   <front>
     <title>Information technology -- Telecommunications and information exchange between systems -- Local and metropolitan area networks -- Specific requirements -- Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications</title>
     <author>
@@ -256,11 +466,6 @@
     <date month='May' year='2017'/>
   </front>
 </reference>
-
-<!--SM 3 References-->
-<!--https://www.rsaconference.com/writable/presentations/file_upload/cryp-r31.pdf-->
-<!--https://online.tugraz.at/tug_online/voe_main2.getvolltext?pCurrPk=67214-->
-<!--https://pdfs.semanticscholar.org/1a01/eed95fc8d2de92e5b52c2856a76be5b3afa4.pdf-->
 
 <reference anchor='SM3-Boomerang' target='https://doi.org/10.1049/iet-ifs.2013.0380'>
   <front>
@@ -454,7 +659,6 @@
   </front>
 </reference>
 
-
 <reference anchor='SM2-DSA-Nonces2' target='https://doi.acm.org/10.1145/2714576.2714587'>
   <front>
     <title>Mind Your Nonces Moving: Template-Based Partially-Sharing Nonces Attack on SM2 Digital Signature Algorithm</title>
@@ -514,8 +718,6 @@
     <date day='27' month='November' year='2015'/>
   </front>
 </reference>
-
-
 
 <reference anchor='SM2-DSA-Lattice' target='https://doi.org/10.1007/978-3-319-29814-6_6'>
   <front>
