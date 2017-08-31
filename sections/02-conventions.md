@@ -16,8 +16,7 @@ is the concatenation of bit-strings `a` and `b`.
 ##  Definitions
 
 OSCCA-compliant
-: All algorithms used for encryption and signatures are compliant with
-  OSCCA [@OSCCA] regulations.
+: All cryptographic algorithms used are compliant with OSCCA [@OSCCA] regulations.
 
 SM2DSA
 : The elliptic curve digital signature algorithm defined in [@!GBT.32918.2-2016]

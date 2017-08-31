@@ -1,0 +1,20 @@
+<reference anchor='XYWang' target='http://www.infosec.sdu.edu.cn/2person_wangxiaoyun.htm'>
+  <front>
+    <title>Xiaoyun Wang</title>
+    <author>
+      <organization>Key Lab of Cryptographic Technology and Information Security, Ministry of Education, Shandong University</organization>
+      <address>
+        <postal>
+         <street>27 Shangda Nanlu</street>
+         <city>Jinan</city>
+         <region>Shandong</region>
+         <code>250100</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)531 8836-3873</phone>
+        <uri>http://www.infosec.sdu.edu.cn/</uri>
+      </address>
+    </author>
+    <date month='May' year='2017'/>
+  </front>
+</reference>
