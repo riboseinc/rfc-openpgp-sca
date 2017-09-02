@@ -37,7 +37,7 @@ organization = "Hang Seng Management College"
 [[author]]
 initials = "D. E."
 surname = "Wyatt"
-fullname = "Daniel E. Wyatt"
+fullname = "Daniel Elliot Wyatt"
 organization = "Ribose"
   [author.address]
   email = "daniel.wyatt@ribose.com"
