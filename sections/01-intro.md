@@ -31,7 +31,7 @@ This document extends OpenPGP [@!RFC4880] and its ECC extension
 * support the SM3 hash algorithm for data validation purposes
 * support signatures utilizing the combination of SM3 with other digital signing algorithms, such as RSA and SM2
 * support the SM2 asymmetric encryption algorithm for public key operations
-* support usage of SM2 in combination with supported hash algorithms, such as SHA-256 and SM4
+* support usage of SM2 in combination with supported hash algorithms, such as SHA-256 and SM3
 * support the SM4 symmetric encryption algorithm for data protection purposes
 * defines the OpenPGP profile "OSCCA-SM234" to enable usage of OpenPGP
   in an OSCCA-compliant manner.
