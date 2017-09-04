@@ -4,42 +4,52 @@ A key derivation function (KDF) is necessary to implement EC encryption.
 
 The SM2PKE KDF is defined in Section 3.4.3 of [@!GBT.32918.4-2016] (and
 Section 5.4.3 of [@I-D.shen-sm2-ecdsa], Section 3.4.3 of [@SM2-4]).
-It **SHOULD** be used in conjunction with an OSCCA-approved hash algorithm,
-such as SM3 [@!GBT.32905-2016].
 
-The pseudocode is provided here for convenience.
+For OSCCA-compliance, it **SHOULD** be used in conjunction with an
+OSCCA-approved hash algorithm, such as SM3 [@!GBT.32905-2016].
+
+Pseudocode of the SM2KDF function is provided here for convenience. This
+function contains edited variable names for clarity.
 
 ## Prerequisites
 
-* $$H_v()$$ is a hash function that outputs a $$v$$-bit long hash value.
+* $$Hash(S)$$ is a hash function that outputs a $$v$$-bit long hash value
+  based on input $$S$$.
+* $$Left(b, S)$$ is a function that outputs the leftmost $$b$$-bits of
+  the input bitstream $$S$$.
+* $$Floor(r)$$ and $$Ceil(r)$$ are the floor and ceiling functions
+  respectively for the input of real number $$r$$. Both functions
+  outputs an integer.
 
 ## Inputs
 
-* Bit stream `Z`
-* Length of output key `klen` (an integer less than $$(2^32 - 1) x v$$).
+KEYLEN
+: Desired key length. A positive integer less than $$(2^32 - 1) x v$$.
 
-## Output
+Z
+: Plaintext. String of any length.
 
-* Key `K` of length `klen`
+## Outputs
 
-## Pseudocode
+K
+: Generated key. String of length KEYLEN.
 
-<!-- TODO: Clean up according to OCB RFC -->
+K is defined as follows.
 
-```c
-KDF (Z, klen) {
-  Counter = 0x00000001 [a 32-bit register]
-  n = klen / v
+```
+  Counter = 1       // a 32-bit counter
+  n = KEYLEN / v
 
-  Iterate from i = 1 to Ceil(n)
-    Ha[i] = H_v( Z || Counter )
-    Counter++
+  for each 1 <= i <= Ceil(n)
+    Ha_i = Hash( Z || Counter )
+    Counter = Counter + 1
+  end for
 
-  If n is a whole number
-    Ha![Ceil(n)] = Ha[Ceil(n)]
-  Else
-    Ha![Ceil(n)] = leftmost (klen − (v x Floor(n))) bits of Ha[Ceil(n)]
+  if n is a whole number then
+    Ha! = Ha_{Ceil(n)}
+  else
+    Ha! = Left(Ha_{Ceil(n)}, KEYLEN − (v x Floor(n)))
+  end if
 
-  K = Ha[1] || Ha[2] || ... || Ha[Ceil(n)−1] || Ha![Ceil(n)]
-}
+  K = Ha_1 || Ha_2 || ... || Ha_{Ceil(n)−1} || Ha!
 ```
