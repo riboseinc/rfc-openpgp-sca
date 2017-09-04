@@ -9,10 +9,6 @@ Compliant applications are a subset of the broader set of OpenPGP
 applications described in [@!RFC4880]. Any [@!RFC2119] keyword within
 this document applies to compliant applications only.
 
-The "||" symbol used in this document refers to the bit-string
-concatenation function. For example, `T = a || b` indicates that `T`
-is the concatenation of bit-strings `a` and `b`.
-
 ##  Definitions
 
 OSCCA-compliant
@@ -27,3 +23,13 @@ SM2KEP
 SM2PKE
 : The public key encryption algorithm defined in [[@!GBT.32918.4-2016]
 
+## Basic Operations
+
+This document utilizes definitions of operations from [@RFC7253] and
+are included here for reference.
+
+c^i
+: The integer $$c$$ raised to the $$i$$-th power.
+
+S || T
+: String S concatenated with string T (e.g., 000 || 111 == 000111).
