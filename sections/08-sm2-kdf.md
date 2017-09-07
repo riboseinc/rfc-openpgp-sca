@@ -8,6 +8,9 @@ Section 5.4.3 of [@I-D.shen-sm2-ecdsa], Section 3.4.3 of [@SM2-4]).
 For OSCCA-compliance, it **SHOULD** be used in conjunction with an
 OSCCA-approved hash algorithm, such as SM3 [@!GBT.32905-2016].
 
+The SM2PKE KDF is equivalent to the KDF2 function of IEEE 1363
+[@IEEE-1363], leaving KDF2's label and salt parameters empty.
+
 Pseudocode of the SM2KDF function is provided here for convenience. This
 function contains edited variable names for clarity.
 

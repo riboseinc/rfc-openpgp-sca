@@ -21,16 +21,6 @@ Algorithm-Specific Fields for SM2DSA keys:
 
 *  MPI of an EC point representing a public key
 
-* a variable-length field containing parameters, formatted as
-  follows:
-
- - a one-octet size of the following fields; values 0 and 0xff are
-   reserved for future extensions
-
- - a one-octet value 01, reserved for future extensions
-
- - a one-octet hash function ID used in the SM2DSA algorithm
-
 Algorithm-Specific Fields for SM2PKE keys:
 
 * a variable-length field containing a curve OID, formatted
@@ -43,19 +33,9 @@ Algorithm-Specific Fields for SM2PKE keys:
 
 *  MPI of an EC point representing a public key
 
-* a variable-length field containing KDF parameters, formatted as
-  follows:
-
- - a one-octet size of the following fields; values 0 and 0xff are
-   reserved for future extensions
-
- - a one-octet value 01, reserved for future extensions
-
- - a one-octet hash function ID used with a KDF
-
-Note that both SM2DSA and SM2PKE public keys are composed of the same sequence
-of fields, but the second, variable-length field is used for different
-purposes.
+Note that both SM2DSA and SM2PKE public keys are composed of the same
+sequence of fields, and use the same codepoint to identify them.
+They are distinguished by the key usage flags.
 
 
 ## Secret-Key Packet Formats

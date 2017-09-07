@@ -48,6 +48,14 @@ organization = "Ribose"
     region = "VA"
     country = "US"
 
+[[author]]
+initials = "J. E."
+surname = "Lloyd"
+fullname = "Jack E. Lloyd"
+organization = "Ribose"
+  [author.address]
+  email = "jack@randombit.net"
+
 area = "Internet"
 workgroup = "Network Working Group"
 date = 2017-08-31T00:00:00Z
