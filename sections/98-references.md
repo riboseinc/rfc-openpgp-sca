@@ -980,3 +980,13 @@
     <date month='November' year='2001'/>
   </front>
 </reference>
+
+<reference anchor='IEEE.1363' target='http://grouper.ieee.org/groups/1363/'>
+  <front>
+    <title>Standard Specifications for Public Key Cryptography</title>
+    <author>
+      <organization>Institute of Electrical and Electronics Engineers</organization>
+    </author>
+    <date year='2000'/>
+  </front>
+</reference>
