@@ -3,7 +3,7 @@
 <!--TODO: what other curves are available? GmSSL lists 3 other ones.-->
 
 This section provides the curve OID of the "SM2 Recommended Curve"
-[@!GBT.32918.5-2017]described in (#sm2-algorithm), according to the method of
+[@!GBT.32918.5-2017] described in (#sm2-algorithm), according to the method of
 [@RFC6637].
 
 We specify the curve OID of the "SM2 Recommended Curve" to be the registered

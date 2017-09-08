@@ -36,7 +36,7 @@
   e.g., AES-128 [@NIST.FIPS.197].
 
 * SM3 is a hash function that generates a 256-bit hash value. It is considered
-  as an alternative to SHA-256.
+  as an alternative to SHA-256 [@RFC6234].
 
 * SM4 is a block cipher symmetric algorithm with key length of 128 bits. It is
   considered as an alternative to AES-128 [@NIST.FIPS.197].
