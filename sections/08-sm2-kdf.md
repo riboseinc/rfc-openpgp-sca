@@ -8,18 +8,29 @@ Section 5.4.3 of [@I-D.shen-sm2-ecdsa], Section 3.4.3 of [@SM2-4]).
 For OSCCA-compliance, it **SHOULD** be used in conjunction with an
 OSCCA-approved hash algorithm, such as SM3 [@!GBT.32905-2016].
 
-The SM2PKE KDF is equivalent to the KDF2 function of IEEE 1363
-[@IEEE-1363], leaving KDF2's label and salt parameters empty.
+The SM2PKE KDF is equivalent to the KDF2 function defined in
+Section 13.2 of [@IEEE.1363a.2004] given the following assignments:
+
+* Parameter
+  * $$v$$ as $$hBits$$, the output length of the selected hash function $$Hash$$
+
+* Input
+  * $$KEYLEN$$ as $$oBits$$
+  * $$Z$$ as the plaintext string; and
+  * $$PB$$ is set to the empty bit string.
 
 Pseudocode of the SM2KDF function is provided here for convenience. This
 function contains edited variable names for clarity.
 
 ## Prerequisites
 
+<!-- Left() is usually called MSB (most significant bits), but we don't
+need to follow the document's conventions -->
+
 * $$Hash(S)$$ is a hash function that outputs a $$v$$-bit long hash value
   based on input $$S$$.
-* $$Left(b, S)$$ is a function that outputs the leftmost $$b$$-bits of
-  the input bitstream $$S$$.
+* $$MSB(b, S)$$ is a function that outputs the $$b$$ most significant bits of
+  the bitstream $$S$$.
 * $$Floor(r)$$ and $$Ceil(r)$$ are the floor and ceiling functions
   respectively for the input of real number $$r$$. Both functions
   outputs an integer.
@@ -40,7 +51,7 @@ K
 K is defined as follows.
 
 ```
-  Counter = 1       // a 32-bit counter
+  Counter = 1                  // a 32-bit counter
   n = KEYLEN / v
 
   for each 1 <= i <= Ceil(n)
@@ -51,7 +62,7 @@ K is defined as follows.
   if n is a whole number then
     Ha! = Ha_{Ceil(n)}
   else
-    Ha! = Left(Ha_{Ceil(n)}, KEYLEN − (v x Floor(n)))
+    Ha! = MSB(KEYLEN − (v x Floor(n)), Ha_{Ceil(n)})
   end if
 
   K = Ha_1 || Ha_2 || ... || Ha_{Ceil(n)−1} || Ha!

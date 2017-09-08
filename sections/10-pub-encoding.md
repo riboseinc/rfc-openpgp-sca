@@ -9,14 +9,18 @@ in (#sm2-kdf).
 
 Algorithm Specific Fields for SM2 encryption:
 
-* The SM2 ciphertext is formatted in the PGP bitstream as a single MPI.  This
-  consists of `C = (C1 || C2 || C3)`, described in step A2 of Section 7.2.1. of
-  [@I-D.shen-sm2-ecdsa], followed by a single octet giving the code for the hash
-  algorithm used for the calculation of the KDF mask `t` and `C3`, described in
-  step A5 and A7 of Section 7.2.1. of [@I-D.shen-sm2-ecdsa]. For OSCCA
-  compliance this **MUST** be SM3 or another approved hash and in any case it
-  **SHOULD** be a hash which is listed in the receiving keys "Preferred Hash
-  Algorithms" list.
+* The SM2 ciphertext is formatted in the OpenPGP bitstream as a single MPI.
+  This consists of:
+
+  * `C = (C1 || C3 || C2)` (step A8 of Section 4.1 [@SM2-4]), followed by
+
+  * a single octet giving the code for the hash algorithm used within the
+    calculation of the KDF mask `t` (step A5 of Section 4.1 [@SM2-4]) and the
+    calculation of `C3` (step A7 of Section 4.1 [@SM2-4]).
+    For OSCCA compliance, this **MUST** be an OSCCA-approved hash function, and
+    in any case, it **SHOULD** be a hash which is listed in the receiving keys
+    "Preferred Hash Algorithms" list (Section 5.2.3.8 of [@RFC4880]).
+
 
 ## Signature Packet (Tag 2)
 

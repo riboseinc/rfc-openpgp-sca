@@ -981,12 +981,22 @@
   </front>
 </reference>
 
-<reference anchor='IEEE.1363' target='http://grouper.ieee.org/groups/1363/'>
+<reference anchor='IEEE.1363a.2004' target='http://grouper.ieee.org/groups/1363/'>
   <front>
-    <title>Standard Specifications for Public Key Cryptography</title>
-    <author>
+    <title>IEEE Std 1363a-2004: IEEE Standard Specifications for Public-Key Cryptography -- Amendment 1: Additional Techniques</title>
+    <author fullname="Microprocessor and Microcomputer Standards Committee of the IEEE Computer Society">
       <organization>Institute of Electrical and Electronics Engineers</organization>
+      <address>
+        <postal>
+          <street>3 Park Avenue</street>
+          <city>New York</city>
+          <region>NY</region>
+          <code>10016-5997</code>
+          <country>United States</country>
+        </postal>
+        <uri>https://www.ieee.org/</uri>
+      </address>
     </author>
-    <date year='2000'/>
+    <date day='2' month='September' year='2004'/>
   </front>
 </reference>

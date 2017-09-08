@@ -2,7 +2,7 @@
 
 Title = "OSCCA Extensions For OpenPGP"
 category = "std"
-docName = "draft-openpgp-oscca-00"
+docName = "draft-openpgp-oscca-01"
 updates = [4880, 6637]
 ipr = "trust200902"
 
@@ -35,6 +35,15 @@ organization = "Hang Seng Management College"
     country = "Hong Kong"
 
 [[author]]
+initials = "J. E."
+surname = "Lloyd"
+fullname = "Jack E. Lloyd"
+organization = "Ribose"
+  [author.address]
+  email = "jack@randombit.net"
+  uri = "https://www.ribose.com"
+
+[[author]]
 initials = "D. E."
 surname = "Wyatt"
 fullname = "Daniel Elliot Wyatt"
@@ -49,16 +58,21 @@ organization = "Ribose"
     country = "US"
 
 [[author]]
-initials = "J. E."
-surname = "Lloyd"
-fullname = "Jack E. Lloyd"
+initials = "E."
+surname = "Borsboom"
+fullname = "Erick Borsboom"
 organization = "Ribose"
   [author.address]
-  email = "jack@randombit.net"
+  email = "erick.borsboom@ribose.com"
+  uri = "https://www.ribose.com"
+    [author.address.postal]
+    street = "Suite 1111, 1 Pedder Street"
+    city = "Central"
+    region = "Hong Kong"
+    country = "Hong Kong"
 
 area = "Internet"
 workgroup = "Network Working Group"
 date = 2017-08-31T00:00:00Z
 
 %%%
-
