@@ -42,6 +42,8 @@ organization = "Ribose"
   [author.address]
   email = "jack@randombit.net"
   uri = "https://www.ribose.com"
+    [author.address.postal]
+    country = "United States of America"
 
 [[author]]
 initials = "D. E."
@@ -55,7 +57,7 @@ organization = "Ribose"
     street = "608 W Cork St, Apt 2"
     city = "Winchester"
     region = "VA"
-    country = "US"
+    country = "United States of America"
 
 [[author]]
 initials = "E."
