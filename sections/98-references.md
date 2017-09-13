@@ -527,6 +527,65 @@
   </front>
 </reference>
 
+<reference anchor='SM2-SigSecurity' target='https://link.springer.com/chapter/10.1007/978-3-319-27152-1_7'>
+  <front>
+    <title>Security of the SM2 Signature Scheme Against Generalized Key Substitution Attacks</title>
+<!-- International Conference on Research in Security Standardisation
+Security Standardisation Research pp 140-153 -->
+    <author initials="Z." surname="Zhang" fullname="Zhenfeng Zhang">
+      <organization>Laboratory of Trusted Computing and Information Assurance, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>zfzhang@tca.iscas.ac.cn</email>
+        <uri>http://tca.iscas.ac.cn</uri>
+      </address>
+    </author>
+    <author initials="K." surname="Yang" fullname="Kang Yang">
+      <organization>Laboratory of Trusted Computing and Information Assurance, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>yangkang@tca.iscas.ac.cn</email>
+        <uri>http://tca.iscas.ac.cn</uri>
+      </address>
+    </author>
+    <author initials="J." surname="Zhang" fullname="Jiang Zhang">
+      <organization>State Key Laboratory of Cryptology</organization>
+      <address>
+        <postal>
+          <street>P.O. Box 5159</street>
+          <city>Beijing</city>
+          <code>100878</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>jiangzhang09@gmail.com</email>
+      </address>
+    </author>
+    <author initials="C." surname="Chen" fullname="Cheng Chen">
+      <organization>Laboratory of Trusted Computing and Information Assurance, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>chencheng@tca.iscas.ac.cn</email>
+        <uri>http://tca.iscas.ac.cn</uri>
+      </address>
+    </author>
+    <date day='9' month='December' year='2015'/>
+  </front>
+</reference>
 
 <reference anchor='SM2-Template' target='https://doi.org/10.1109/CIS.2014.66'>
   <front>
@@ -998,5 +1057,101 @@
       </address>
     </author>
     <date day='2' month='September' year='2004'/>
+  </front>
+</reference>
+
+<reference anchor='ISO.IEC.18033-3.AMD2' target='https://www.iso.org/standard/54531.html'>
+  <front>
+    <title>ISO/IEC WD1 18033-3/AMD2 -- Information technology -- Security techniques -- Encryption algorithms -- Part 3: Block ciphers -- Amendment 2</title>
+    <author>
+      <organization>International Organization for Standardization</organization>
+      <address>
+        <postal>
+          <street>BIBC II</street>
+          <street>Chemin de Blandonnet 8</street>
+          <street>CP 401</street>
+          <city>Vernier</city>
+          <region>Geneva</region>
+          <code>1214</code>
+          <country>Switzerland</country>
+        </postal>
+        <phone>+41 22 749 01 11</phone>
+        <email>central@iso.org</email>
+        <uri>https://www.iso.org/</uri>
+      </address>
+    </author>
+    <date day='13' month='June' year='2017'/>
+  </front>
+</reference>
+
+<reference anchor='ISO.IEC.10118-3' target='https://www.iso.org/standard/67116.html'>
+  <front>
+    <title>ISO/IEC FDIS 10118-3 -- Information technology -- Security techniques -- Hash-functions -- Part 3: Dedicated hash-functions</title>
+    <author>
+      <organization>International Organization for Standardization</organization>
+      <address>
+        <postal>
+          <street>BIBC II</street>
+          <street>Chemin de Blandonnet 8</street>
+          <street>CP 401</street>
+          <city>Vernier</city>
+          <region>Geneva</region>
+          <code>1214</code>
+          <country>Switzerland</country>
+        </postal>
+        <phone>+41 22 749 01 11</phone>
+        <email>central@iso.org</email>
+        <uri>https://www.iso.org/</uri>
+      </address>
+    </author>
+    <date day='3' month='June' year='2017'/>
+  </front>
+</reference>
+
+<reference anchor='ISO.IEC.14888-3' target='https://www.iso.org/standard/70631.html'>
+  <front>
+    <title>ISO/IEC 14888-3:2016-03 -- Information technology — Security techniques — Digital signatures with appendix — Part 3: Discrete logarithm based mechanisms</title>
+    <author>
+      <organization>International Organization for Standardization</organization>
+      <address>
+        <postal>
+          <street>BIBC II</street>
+          <street>Chemin de Blandonnet 8</street>
+          <street>CP 401</street>
+          <city>Vernier</city>
+          <region>Geneva</region>
+          <code>1214</code>
+          <country>Switzerland</country>
+        </postal>
+        <phone>+41 22 749 01 11</phone>
+        <email>central@iso.org</email>
+        <uri>https://www.iso.org/</uri>
+      </address>
+    </author>
+    <date day='04' month='September' year='2017'/>
+  </front>
+</reference>
+
+<reference anchor='ISO.IEC.11889' target='https://www.iso.org/standard/66510.html'>
+  <front>
+    <title>ISO/IEC 11889-1:2015 -- Information technology -- Trusted platform module library</title>
+    <author>
+      <organization>International Organization for Standardization</organization>
+      <address>
+        <postal>
+          <street>BIBC II</street>
+          <street>Chemin de Blandonnet 8</street>
+          <street>CP 401</street>
+          <city>Vernier</city>
+          <region>Geneva</region>
+          <code>1214</code>
+          <country>Switzerland</country>
+        </postal>
+        <phone>+41 22 749 01 11</phone>
+        <email>central@iso.org</email>
+        <uri>https://www.iso.org/</uri>
+      </address>
+    </author>
+    <date month='August' year='2015'/>
   </front>
 </reference>
