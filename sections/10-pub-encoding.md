@@ -26,11 +26,11 @@ Algorithm Specific Fields for SM2 encryption:
 
 ### Version 3 Signature Packet Format
 
-Section 5.2.2 of [@!RFC4880] define the signature format for "Version 3 Signature Packet Format".
-Similar to ECDSA [@RFC6637], no changes in the format is necessary for SM2DSA.
+Section 5.2.2 of [@!RFC4880] defines the signature format for "Version 3 Signature Packet Format".
+Similar to ECDSA [@RFC6637], no change in the format is necessary for SM2DSA.
 
 
 ### Version 4 Signature Packet Format
 
-Section 5.2.3 of [@!RFC4880] define the signature format for "Version 4 Signature Packet Format".
-Similar to ECDSA [@RFC6637], no changes in the format is necessary for SM2DSA.
+Section 5.2.3 of [@!RFC4880] defines the signature format for "Version 4 Signature Packet Format".
+Similar to ECDSA [@RFC6637], no change in the format is necessary for SM2DSA.

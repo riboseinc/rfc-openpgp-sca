@@ -36,6 +36,6 @@ submissions.
 [source,sh]
 ----
 make draft-openpgp-oscca.txt
-idnits --verbose draft-openpgp-oscca-00.txt
+idnits --verbose draft-openpgp-oscca.txt
 ----
 
