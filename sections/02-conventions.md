@@ -21,7 +21,7 @@ SM2KEP
 : The elliptic curve key exchange protocol defined in [@!GBT.32918.3-2016]
 
 SM2PKE
-: The public key encryption algorithm defined in [[@!GBT.32918.4-2016]
+: The public key encryption algorithm defined in [@!GBT.32918.4-2016]
 
 ## Basic Operations
 
