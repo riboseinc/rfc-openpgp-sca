@@ -18,7 +18,7 @@
   feasible attacks against the SM3 algorithm at the time this document is
   published.
 
-* SM4 [@!GBT.32907-2016] is a block cipher certified by the OSCCA [@OSCCA].
+* SM4 [@!GBT.32907-2016] is a blockcipher certified by the OSCCA [@OSCCA].
   No formal proof of security is provided. There are no known feasible
   attacks against the SM4 algorithm by the time of publishing this document.
   On the other hand, there are security concerns with regards to
@@ -38,7 +38,7 @@
 * SM3 is a hash function that generates a 256-bit hash value. It is considered
   as an alternative to SHA-256 [@RFC6234].
 
-* SM4 is a block cipher symmetric algorithm with a key length of 128 bits. It is
+* SM4 is a blockcipher symmetric algorithm with a key length of 128 bits. It is
   considered as an alternative to AES-128 [@NIST.FIPS.197].
 
 * Security considerations offered in [@RFC6637] and [@RFC4880] also apply.
