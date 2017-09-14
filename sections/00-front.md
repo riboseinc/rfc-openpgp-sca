@@ -5,6 +5,9 @@ category = "std"
 docName = "draft-openpgp-oscca-02"
 updates = [4880, 6637]
 ipr = "trust200902"
+date = 2017-09-14T00:00:00Z
+area = "Internet"
+workgroup = "Network Working Group"
 
 [[author]]
 initials = "R. H."
@@ -72,9 +75,5 @@ organization = "Ribose"
     city = "Central"
     region = "Hong Kong"
     country = "Hong Kong"
-
-area = "Internet"
-workgroup = "Network Working Group"
-date = 2017-09-14T00:00:00Z
 
 %%%
