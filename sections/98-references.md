@@ -399,6 +399,30 @@
   </front>
 </reference>
 
+<reference anchor='GMT-0009-2012' target='http://www.oscca.gov.cn/Column/Column_32.htm'>
+  <front>
+    <title>GM/T 0009-2012: SM2 cryptography algorithm application specification</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+    </author>
+    <date day='21' month='March' year='2012'/>
+  </front>
+</reference>
+
+GM/T 0009-2012
+
 <reference anchor='SM4' target='http://www.oscca.gov.cn/UpFile/200621016423197990.pdf'>
 <!-- <reference anchor='SM4' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM4.pdf'> -->
   <front>
@@ -1104,7 +1128,7 @@ Security Standardisation Research pp 140-153 -->
         <uri>https://www.iso.org/</uri>
       </address>
     </author>
-    <date day='3' month='June' year='2017'/>
+    <date day='15' month='September' year='2017'/>
   </front>
 </reference>
 
