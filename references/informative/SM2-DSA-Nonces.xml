@@ -1,0 +1,45 @@
+<reference anchor='SM2-DSA-Nonces' target='https://dx.doi.org/10.1007/978-3-319-12087-4_22'>
+  <front>
+    <title>Partially Known Nonces and Fault Injection Attacks on SM2 Signature Algorithm</title>
+<!--Information Security and Cryptology: 9th International Conference, Inscrypt 2013, Guangzhou, China, November 27-30, 2013, Revised Selected Papers-->
+    <author initials="M." surname="Liu" fullname="Mingjie Liu">
+      <organization>Beijing International Center for Mathematical Research, Peking University</organization>
+      <address>
+        <postal>
+          <street>No. 5 Yiheyuan Road Haidian District</street>
+          <city>Beijing</city>
+          <code>100871</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.bicmr.org</uri>
+      </address>
+    </author>
+    <author initials="J." surname="Chen" fullname="Jiazhe Chen">
+      <organization>China Information Technology Security Evaluation Center</organization>
+      <address>
+        <postal>
+          <street>Building 1, No.8, Shangdi West Road, Haidian District</street>
+          <city>Beijing</city>
+          <code>100085</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.itsec.gov.cn</uri>
+      </address>
+    </author>
+    <author initials="H." surname="Li" fullname="Hexin Li">
+      <organization>China Information Technology Security Evaluation Center</organization>
+      <address>
+        <postal>
+          <street>Building 1, No.8, Shangdi West Road, Haidian District</street>
+          <city>Beijing</city>
+          <code>100085</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.itsec.gov.cn</uri>
+      </address>
+    </author>
+    <date day='27' month='November' year='2013'/>
+  </front>
+</reference>
+
+

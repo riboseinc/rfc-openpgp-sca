@@ -1,0 +1,23 @@
+<!-- <reference anchor='GBT.32905-2016' target='http://www.sac.gov.cn/SACSearch/search?channelid=97779&amp;templet=gjcxjg_detail.jsp&amp;searchword=STANDARD_CODE=%27GB/T%2032905-2016%27'> -->
+<reference anchor='GBT.32905-2016' target='http://www.gb688.cn/bzgk/gb/newGbInfo?hcno=45B1A67F20F3BF339211C391E9278F5E'>
+  <front>
+    <title>GB/T 32905-2016 Information Security Techniques -- SM3 Cryptographic Hash Algorithm</title>
+    <author>
+      <organization>Standardization Administration of the People's Republic of China</organization>
+      <address>
+        <postal>
+         <street>No. 9 Madian Donglu, Haidian District</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100088</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 8226-2609</phone>
+        <uri>http://www.sac.gov.cn</uri>
+      </address>
+    </author>
+    <date day='29' month='August' year='2016'/>
+  </front>
+</reference>
+
+

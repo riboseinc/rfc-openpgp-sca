@@ -1,0 +1,83 @@
+= OSCCA Extensions For OpenPGP
+:doctype: internet-draft
+:name: draft-ribose-openpgp-oscca-00
+:abbrev: OSCCA Extensions for OpenPGP
+:status: std
+:ipr: trust200902
+:updates: 4880, 6637
+:submissionType: IRTF
+:area: internet
+:intended-series: full-standard
+:workgroup: Network Working Group
+:revdate: 2017-11-13T00:00:00Z
+:fullname: Ronald Henry Tse
+:lastname: Tse
+:forename_initials: R. H.
+:organization: Ribose
+:street: Suite 1111, 1 Pedder Street
+:city: Central
+:region: Hong Kong
+:country: Hong Kong
+:uri: https://www.ribose.com
+:email: ronald.tse@ribose.com
+:fullname_2: Dr. Wai Kit Wong
+:lastname_2: Wong
+:forename_initials_2: W. K.
+:organization_2: Hang Seng Management College
+:street_2: Hang Shin Link, Siu Lek Yuen
+:city_2: Shatin
+:region_2: Hong Kong
+:country_2: Hong Kong
+:uri_2: https://www.hsmc.edu.hk
+:email_2: wongwk@hsmc.edu.hk
+:fullname_3: Jack E. Lloyd
+:lastname_3: Lloyd
+:forename_initials_3: J. E.
+:organization_3: Ribose
+:country_3: United States of America
+:uri_3: https://www.ribose.com
+:email_3: jack.lloyd@ribose.com
+:fullname_4: D. E. Wyatt
+:lastname_4: Wyatt
+:forename_initials_4: D. E.
+:organization_4: Ribose
+:street_4: 608 W Cork St, Apt 2
+:city_4: Winchester
+:region_4: VA
+:country_4: United States of America
+:uri_4: https://www.ribose.com
+:email_4: daniel.wyatt@ribose.com
+:fullname_5: Erick Borsboom
+:lastname_5: Borsboom
+:forename_initials_5: E.
+:organization_5: Ribose
+:street_5: Suite 1111, 1 Pedder Street
+:city_5: Central
+:region_5: Hong Kong
+:country_5: Hong Kong
+:uri_5: https://www.ribose.com
+:email_5: erick.borsboom@ribose.com
+
+include::sections/00-abstract.adoc[leveloffset=+1]
+include::sections/01-intro.adoc[leveloffset=+1]
+include::sections/02-conventions.adoc[leveloffset=+1]
+include::sections/03-symbols.adoc[leveloffset=+1]
+include::sections/04-sm2.adoc[leveloffset=+1]
+include::sections/05-sm3.adoc[leveloffset=+1]
+include::sections/06-sm4.adoc[leveloffset=+1]
+include::sections/07-supported-algs.adoc[leveloffset=+1]
+include::sections/08-conversion.adoc[leveloffset=+1]
+include::sections/09-sm2-kdf.adoc[leveloffset=+1]
+include::sections/10-encoding.adoc[leveloffset=+1]
+include::sections/11-pub-encoding.adoc[leveloffset=+1]
+include::sections/12-ecc-curves.adoc[leveloffset=+1]
+include::sections/13-compatibility.adoc[leveloffset=+1]
+include::sections/14-security.adoc[leveloffset=+1]
+include::sections/15-iana.adoc[leveloffset=+1]
+
+// must give references before appendix!
+
+include::sections/98-references.adoc[leveloffset=+1]
+include::sections/97-examples.adoc[leveloffset=+1]
+include::sections/99-acknowledgements.adoc[leveloffset=+1]
+

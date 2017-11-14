@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='I-D.shen-sm2-ecdsa'>
+<front>
+<title>SM2 Digital Signature Algorithm</title>
+
+<author initials='S' surname='Shen' fullname='Sean Shen'>
+    <organization />
+</author>
+
+<author initials='S' surname='Shen' fullname='Sean Shen'>
+    <organization />
+</author>
+
+<author initials='X' surname='Lee' fullname='XiaoDong Lee'>
+    <organization />
+</author>
+
+<date month='February' day='14' year='2014' />
+
+<abstract><t>This document discribles a set of public key cryptographic algorithms based on elliptic curves which is invented by Xiaoyun Wang et al. These algorithms and recommended parameters are published by Chinese Commercial Cryptography Administration Office ([SM2 Algorithms] and [SM2 Algorithms Parameters]) for the use of electronic authentication service system.  This document gives IETF standard description of the algorithms and parameters in [SM2 Algorithms] and [SM2 Algorithms Parameters].  The document [SM2 Algorithms] published by Chinese Commercial Cryptography Administration Office includes four parts: general introdocution, Digital Signature Algorithm, Key Exchange Protocol and Public Key Encryption Algorithm.  The document [SM2 Algorithms Parameters] gives a set of recommended parameters.</t></abstract>
+
+</front>
+
+<seriesInfo name='Internet-Draft' value='draft-shen-sm2-ecdsa-02' />
+<format type='TXT'
+        target='http://www.ietf.org/internet-drafts/draft-shen-sm2-ecdsa-02.txt' />
+</reference>

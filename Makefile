@@ -1,32 +1,20 @@
-#
-# Makefile to build Internet Drafts using docker image "paulej/rfctools".
-#
+SRC  := $(wildcard draft-*.adoc)
+TXT  := $(patsubst %.adoc,%.txt,$(SRC))
+XML  := $(patsubst %.adoc,%.xml,$(SRC))
+HTML := $(patsubst %.adoc,%.html,$(SRC))
+NITS := $(patsubst %.adoc,%.nits,$(SRC))
 
-SRC  := $(wildcard *.md)
-TXT  := $(patsubst %.md,%.txt,$(SRC))
-XML  := $(patsubst %.md,%.xml,$(SRC))
-UID  := `id -u`
-GID  := `id -g`
-CWD  := `pwd`
-
+SHELL := /bin/bash
 # Ensure the xml2rfc cache directory exists locally
 IGNORE := $(shell mkdir -p $(HOME)/.cache/xml2rfc)
 
-all: $(TXT) $(HTML) $(XML)
+all: $(TXT) $(HTML) $(XML) $(NITS)
 
 clean:
 	rm -f $(TXT) $(HTML) $(XML)
 
-# %.txt: %.md
-# 	docker run --rm \
-# 		--user=$(UID):$(GID) \
-# 		-v $(CWD):/rfc \
-# 		-v $(HOME)/.cache/xml2rfc:/var/cache/xml2rfc \
-# 		paulej/rfctools \
-# 		md2rfc $^
-
-%.xml: %.md
-	mmark -xml2 -page $^ > $@
+%.xml: %.adoc
+	bundle exec asciidoctor -r ./lib/glob-include-processor.rb -r asciidoctor-rfc -b rfc2 $^ --trace > $@
 
 %.txt: %.xml
 	xml2rfc --text $^ $@
@@ -34,5 +22,13 @@ clean:
 %.html: %.xml
 	xml2rfc --html $^ $@
 
+%.nits: %.txt
+	VERSIONED_NAME=`grep :name: $*.adoc | cut -f 2 -d ' '`; \
+	cp $^ $${VERSIONED_NAME}.txt && \
+	idnits --verbose $${VERSIONED_NAME}.txt > $@ && \
+	cp $@ $${VERSIONED_NAME}.nits && \
+	cat $${VERSIONED_NAME}.nits
+
 open:
 	open *.txt
+

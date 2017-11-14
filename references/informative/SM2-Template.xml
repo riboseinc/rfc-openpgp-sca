@@ -1,0 +1,56 @@
+<reference anchor='SM2-Template' target='https://doi.org/10.1109/CIS.2014.66'>
+  <front>
+    <title>A Novel Template Attack on wNAF Algorithm of ECC</title>
+<!--2014 Tenth International Conference on Computational Intelligence and Security, Kunming, 2014, pp. 671-675.-->
+    <author initials="Z." surname="Zhang" fullname="Zhenbin Zhang">
+      <organization>Institute of Microelectronics, Tsinghua University</organization>
+      <address>
+        <postal>
+          <street>Tsinghua University</street>
+          <city>Beijing</city>
+          <code>100084</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.tsinghua.edu.cn</uri>
+      </address>
+    </author>
+    <author initials="L." surname="Wu" fullname="Liji Wu">
+      <organization>Institute of Microelectronics, Tsinghua University</organization>
+      <address>
+        <postal>
+          <street>Tsinghua University</street>
+          <city>Beijing</city>
+          <code>100084</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.tsinghua.edu.cn</uri>
+      </address>
+    </author>
+    <author initials="Z." surname="Mu" fullname="Zhaoli Mu">
+      <organization>Institute of Microelectronics, Tsinghua University</organization>
+      <address>
+        <postal>
+          <street>Tsinghua University</street>
+          <city>Beijing</city>
+          <code>100084</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.tsinghua.edu.cn</uri>
+      </address>
+    </author>
+    <author initials="X." surname="Zhang" fullname="Xiangmin Zhang">
+      <organization>Datang Microelectronics Technololgy Co., Ltd</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Beijing</city>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.dmt.com.cn</uri>
+      </address>
+    </author>
+    <date month='November' year='2014'/>
+  </front>
+</reference>
+
+

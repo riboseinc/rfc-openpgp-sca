@@ -1,0 +1,10 @@
+<reference anchor='SEC1' target='http://www.secg.org/SEC1-Ver-1.0.pdf'>
+  <front>
+    <title>SEC 1: Elliptic Curve Cryptography</title>
+    <author>
+      <organization>Standards for Efficient Cryptography Group</organization>
+    </author>
+    <date month='September' year='2010'/>
+  </front>
+</reference>
+

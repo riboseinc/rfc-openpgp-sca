@@ -1,0 +1,24 @@
+<reference anchor='ISO.IEC.11889' target='https://www.iso.org/standard/66510.html'>
+  <front>
+    <title>ISO/IEC 11889-1:2015 -- Information technology -- Trusted platform module library</title>
+    <author>
+      <organization>International Organization for Standardization</organization>
+      <address>
+        <postal>
+          <street>BIBC II</street>
+          <street>Chemin de Blandonnet 8</street>
+          <street>CP 401</street>
+          <city>Vernier</city>
+          <region>Geneva</region>
+          <code>1214</code>
+          <country>Switzerland</country>
+        </postal>
+        <phone>+41 22 749 01 11</phone>
+        <email>central@iso.org</email>
+        <uri>https://www.iso.org/</uri>
+      </address>
+    </author>
+    <date month='August' year='2015'/>
+  </front>
+</reference>
+

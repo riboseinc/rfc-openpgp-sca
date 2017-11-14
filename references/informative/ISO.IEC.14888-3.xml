@@ -1,0 +1,25 @@
+<reference anchor='ISO.IEC.14888-3' target='https://www.iso.org/standard/70631.html'>
+  <front>
+    <title>ISO/IEC 14888-3:2016-03 -- Information technology -- Security techniques -- Digital signatures with appendix -- Part 3: Discrete logarithm based mechanisms</title>
+    <author>
+      <organization>International Organization for Standardization</organization>
+      <address>
+        <postal>
+          <street>BIBC II</street>
+          <street>Chemin de Blandonnet 8</street>
+          <street>CP 401</street>
+          <city>Vernier</city>
+          <region>Geneva</region>
+          <code>1214</code>
+          <country>Switzerland</country>
+        </postal>
+        <phone>+41 22 749 01 11</phone>
+        <email>central@iso.org</email>
+        <uri>https://www.iso.org/</uri>
+      </address>
+    </author>
+    <date day='04' month='September' year='2017'/>
+  </front>
+</reference>
+
+

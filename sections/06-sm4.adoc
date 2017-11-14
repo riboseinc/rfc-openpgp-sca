@@ -1,0 +1,21 @@
+[#sm4-algorithm]
+= SM4 Symmetric Encryption Algorithm
+
+SM4 <<GBT.32907-2016>> <<I-D.ribose-cfrg-sm4>> <<ISO.IEC.18033-3.AMD2>>
+<<GMT-0002-2012>> <<SM4>> is a symmetric encryption algorithm designed by
+Shuwang Lu et al. originally intended for the usage of wireless local area
+network (Wireless LAN) products.
+
+SM4 is a 128-bit blockcipher, uses a key size of 128 bits and
+internally uses an 8-bit S-box. It performs 32 rounds per block.
+Decryption is achieved by reversing the order of encryption.
+
+SMS4 was first published in public as part of WAPI (Wired Authentication
+and Privacy Infrastructure), the Chinese National Standard for Wireless LAN
+<<GB.15629.11-2003>>. It was then published independently by the OSCCA in 2006
+<<SM4>>, formally renamed to SM4 in 2012 <<GMT-0002-2012>>,
+published as a Chinese National Standard in 2016 <<GBT.32907-2016>>, and
+included in <<ISO.IEC.18033-3.AMD2>> in 2017.
+
+It is a required encryption algorithm specified in WAPI <<GB.15629.11-2003>>.
+

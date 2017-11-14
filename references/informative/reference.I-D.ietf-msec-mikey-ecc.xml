@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='I-D.ietf-msec-mikey-ecc'>
+<front>
+<title>ECC Algorithms for MIKEY</title>
+
+<author initials='A' surname='Milne' fullname='Andrew Milne'>
+    <organization />
+</author>
+
+<date month='June' day='20' year='2007' />
+
+<abstract><t>This document proposes extensions to the authentication, encryption and digital signature methods described for use in MIKEY, employing elliptic-curve cryptography (ECC). These extensions are defined to align MIKEY with other ECC implementations and standards. It should be noted that this document is not self-contained; it uses the notations and definitions of [RFC3830].</t></abstract>
+
+</front>
+
+<seriesInfo name='Internet-Draft' value='draft-ietf-msec-mikey-ecc-03' />
+<format type='TXT'
+        target='http://www.ietf.org/internet-drafts/draft-ietf-msec-mikey-ecc-03.txt' />
+</reference>

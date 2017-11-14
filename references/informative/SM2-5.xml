@@ -1,0 +1,25 @@
+<!-- <reference anchor='SM2-5' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM2_5.pdf'> -->
+<reference anchor='SM2-5' target='http://www.oscca.gov.cn/UpFile/2010122214836668.pdf'>
+  <front>
+    <!--<title>Public Key Cryptographic Algorithm SM2 Recommended Elliptic Curves Parameters</title>-->
+    <title>Public Key Cryptographic Algorithm SM2 Based on Elliptic Curves -- Part 5: Parameter definitions</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+    </author>
+    <date month='December' year='2010'/>
+  </front>
+</reference>
+
+

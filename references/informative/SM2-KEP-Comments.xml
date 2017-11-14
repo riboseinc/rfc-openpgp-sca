@@ -1,0 +1,34 @@
+<reference anchor='SM2-KEP-Comments' target='https://dx.doi.org/10.1007/978-3-642-25513-7_12'>
+  <front>
+    <title>Comments on the SM2 Key Exchange Protocol</title>
+<!--bookTitle="Cryptology and Network Security: 10th International Conference, CANS 2011, Sanya, China, December 10-12, 2011. Proceedings",-->
+    <author initials="X." surname="Xu" fullname="Jing Xu">
+      <organization>State Key Laboratory of Information Security, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>xujing@is.iscas.ac.cn</email>
+        <uri>http://english.is.cas.cn</uri>
+      </address>
+    </author>
+    <author initials="D." surname="Feng" fullname="Dengguo Feng">
+      <organization>State Key Laboratory of Information Security, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://english.is.cas.cn</uri>
+      </address>
+    </author>
+    <date day='10' month='December' year='2011'/>
+  </front>
+</reference>
+
+

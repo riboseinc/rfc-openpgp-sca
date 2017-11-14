@@ -1,0 +1,230 @@
+[#sm2-algorithm]
+= SM2 Algorithms
+
+SM2 is an elliptic curve based cryptosystem (ECC) <<GBT.32918.1-2016>>
+<<I-D.shen-sm2-ecdsa>> designed by Xiaoyun Wang et al. and published by
+<<OSCCA>>.
+
+It was first published by the OSCCA in public in 2010 <<OSCCA-SM2>>, then
+standardized as <<GMT-0003-2012>> in 2012, included in <<ISO.IEC.11889>> in
+2015, published as a Chinese National Standard as <<GBT.32918.1-2016>>, and
+published in <<ISO.IEC.14888-3>> in 2017.
+
+The SM2 cryptosystem is composed of three distinct algorithms:
+
+* an elliptical curve digital signature algorithm ("SM2DSA")
+  <<GBT.32918.2-2016>> <<ISO.IEC.14888-3>> <<SM2-2>>, also described in
+  <<I-D.shen-sm2-ecdsa>>;
+* a key exchange protocol ("SM2KEP") <<GBT.32918.3-2016>>; and
+* a public key encryption algorithm ("SM2PKE") <<GBT.32918.4-2016>>.
+
+This document refers to the SM2DSA and SM2PKE algorithms for the usage of
+OpenPGP <<RFC4880>>.
+
+<<GMT-0009-2012>> provides specifications on interoperable usage of SM2 data
+formats, and they are adhered to within within this document.
+
+== SM2 Digital Signature Algorithm
+
+The SM2 Digital Signature Algorithm is intended for digital signature
+and verifications in commercial cryptographic applications, including,
+but not limited to:
+
+* identity authentication
+* protection of data integrity
+* verification of data authenticity
+
+The process of digital signature signing and verification along with their
+examples are found in <<GBT.32918.2-2016>>, <<ISO.IEC.14888-3>>, <<SM2-2>>,
+and also described in <<I-D.shen-sm2-ecdsa>>.
+
+The SM2DSA process requires usage of a hash function within. For
+OSCCA-compliant usage, a OSCCA-compliant hash function such as
+SM3 <<GBT.32905-2016>> **MUST** also be used.
+
+Formal security proofs for SM2 are provided in <<SM2-SigSecurity>> indicating
+that it satisfies both EUF-CMA security and security against generalized
+strong key substitution attacks.
+
+The SM2DSA algorithm has been cryptanalyzed by multiple parties with the
+current strongest attack being nonce <<SM2-DSA-Nonces>> <<SM2-DSA-Nonces2>>
+and lattice attacks <<SM2-DSA-Lattice>>.
+
+In terms of OpenPGP usage, SM2DSA is an alternative to the ECDSA algorithm
+specified in <<RFC6637>>.
+
+For OpenPGP compatibility, these additional requirements **MUST** be adhered
+to:
+
+* SM2DSA allows use of an optional "user identity" string which is
+  hashed into `ZA` (Section 3.5 of <<SM2-2>> and Section 5.1.4.4 of
+  <<I-D.shen-sm2-ecdsa>>). In OpenPGP, the user identifier `IDA`
+  **MUST** be the empty string.
+
+* While SM2DSA usually signs `H(ZA || msg)` (Section 4.1 of <<SM2-2>>),
+  this document follows the OpenPGP convention of <<RFC6637>> of not directly
+  signing the raw message `msg`, but its hash `H(msg)`. Therefore when
+  a message is signed by SM2DSA in OpenPGP, the algorithm **MUST** sign
+  the content of `H(ZA || H(msg))` instead of `H(ZA || msg)`.
+  Both hash algorithms used here **MUST** be identical.
+
+== SM2 Key Exchange Protocol
+
+The SM2 Key Exchange Protocol is used for cryptographic key exchange,
+allowing the negotiation and exchange of a session key within two to
+three message transfers.
+
+The process of key exchange and verification along with their examples
+are found in <<GBT.32918.3-2016>> <<SM2-3>>, and also described in
+<<I-D.shen-sm2-ecdsa>>.
+
+SM2KEP is not used with OpenPGP as it is a two- to three- pass key
+exchange mechanism, while in OpenPGP, public keys of recipients are
+available initially.
+
+The SM2KEP is now considered insecure due to <<SM2-KEP-Comments>>, similar
+in status to the Unified Model and MQV schemes described in
+<<NIST.SP.800-56Ar2>>.
+
+
+== SM2 Public Key Encryption
+
+The SM2 Public Key Encryption algorithm is an elliptic curve
+based asymmetric encryption algorithm. It is used for
+cryptographic encryption and decryption, allowing the message sender to
+utilize the public key of the message receiver to encrypt the message,
+with the recipient decrypting the messaging using his private key.
+
+The full description of SM2PKE is provided in <<GBT.32918.4-2016>>.
+
+It utilizes a public key size of 512 bits and private key size of 256
+bits <<GBT.32918.4-2016>> <<GMT-0003-2012>>.
+
+The process of encryption and decryption, along with their examples are
+found in <<GBT.32918.4-2016>> and <<SM2-4>>.
+
+The SM2PKE process requires usage of a hash function within. For
+OSCCA-compliant usage, a OSCCA-compliant hash function such as
+SM3 <<GBT.32905-2016>> **MUST** also be used.
+
+In OpenPGP, SM2PKE is an alternative to RSA specified in <<RFC4880>>.
+
+
+== Recommended SM2 Curve
+
+The recommended curve is specified in <<GBT.32918.5-2017>> <<SM2-5>>
+and provided here for reference. SM2 uses a 256-bit elliptic curve.
+
+=== Definitions
+
+p::
+  an integer larger than 3
+
+a, b::
+  elements of $$F_q$$, defines an elliptic curve $$E$$ on $$F_q$$
+
+n::
+  Order of base point $$G$$ ($$n$$ is a prime factor of $$E(F_q))$$
+
+$$x_G$$::
+  x-coordinate of generator $$G$$
+
+$$y_G$$::
+  y-coordinate of generator $$G$$
+
+=== Elliptic Curve Formula
+
+----
+y^2 = x^3 + ax + b
+----
+
+=== Curve Parameters
+
+----
+p   = FFFFFFFE FFFFFFFF FFFFFFFF FFFFFFFF
+      FFFFFFFF 00000000 FFFFFFFF FFFFFFFF
+a   = FFFFFFFE FFFFFFFF FFFFFFFF FFFFFFFF
+      FFFFFFFF 00000000 FFFFFFFF FFFFFFFC
+b   = 28E9FA9E 9D9F5E34 4D5A9E4B CF6509A7
+      F39789F5 15AB8F92 DDBCBD41 4D940E93
+n   = FFFFFFFE FFFFFFFF FFFFFFFF FFFFFFFF
+      7203DF6B 21C6052B 53BBF409 39D54123
+x_G = 32C4AE2C 1F198119 5F990446 6A39C994
+      8FE30BBF F2660BE1 715A4589 334C74C7
+y_G = BC3736A2 F4F6779C 59BDCEE3 6B692153
+      D0A9877C C62A4740 02DF32E5 2139F0A0
+----
+
+
+[#sm2-data-formats]
+== Data Formats
+
+<<GMT-0009-2012>> defines a number of data formats for the
+SM2 algorithm to allow interoperable implementations. 
+This document adheres to these conventions.
+
+=== Secret Key Data Format
+
+SM2 secret key data format is described in ASN.1 as <<GMT-0009-2012>>:
+
+[source]
+----
+SM2PrivateKey ::= INTEGER
+----
+
+SM2 public key data format is described in ASN.1 as <<GMT-0009-2012>>:
+
+[source]
+----
+SM2PublicKey ::= BIT STRING
+----
+
+Where:
+
+* `SM2PublicKey` is of type `BIT STRING` and with content `04 | X | Y`.
+
+** `X` and `Y` specifies the x- and y-coordinates of the public key, each of
+  256-bits long.
+
+
+[#sm2-enc-format]
+=== Encrypted Data Format
+
+The SM2 encrypted data format is provided by <<GMT-0009-2012>> as
+the following in ASN.1 format:
+
+[source]
+----
+SM2Cipher ::= SEQENCE{
+  XCoordinate     INTEGER,                -- x-coordinate
+  YCoordinate     INTEGER,                -- y-coordinate
+  HASH            OCTET STRING SIZE(32),  -- hash value
+  CipherText      OCTET STRING            -- ciphertext
+}
+----
+
+Where:
+
+* `XCoordinate` and `YCoordinate` are x- and y-coordinates on the
+  elliptic curve, both 256 bits long.
+* `HASH` is the hash value calculated from the hash function used in
+  `KDF` of a fixed bit length of 256-bits.
+* `CipherText` is of same length as its plaintext.
+
+
+=== Signature Data Format
+
+SM2 signature data format is described in ASN.1 as <<GMT-0009-2012>>:
+
+[source]
+----
+SM2Signature ::= SEQUENCE{
+  R   INTEGER,  -- first portion of signature
+  S   INTEGER   -- second portion of signature
+}
+----
+
+`R` and `S` represent the first and second portion of the signature,
+and both are 256 bits long.
+
+

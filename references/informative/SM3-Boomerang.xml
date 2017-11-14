@@ -1,0 +1,61 @@
+<reference anchor='SM3-Boomerang' target='https://doi.org/10.1049/iet-ifs.2013.0380'>
+  <front>
+    <title>Improved Boomerang Attacks on Round-Reduced SM3 and Keyed Permutation of BLAKE-256</title>
+      <!--IET Information Security ( Volume: 9, Issue: 3, 5 2015 )-->
+    <author initials="D." surname="Bai" fullname="Dongxia Bai">
+      <organization>Department of Computer Science and Technology, Tsinghua University</organization>
+      <address>
+        <postal>
+          <street>Tsinghua University</street>
+          <city>Beijing</city>
+          <code>100084</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>baidx10@mails.tsinghua.edu.cn</email>
+        <uri>http://www.tsinghua.edu.cn</uri>
+      </address>
+    </author>
+    <author initials="H." surname="Yu" fullname="Hongbo Yu">
+      <address>
+        <postal>
+          <street>Tsinghua University</street>
+          <city>Beijing</city>
+          <code>100084</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>yuhongbo@mail.tsinghua.edu.cn</email>
+        <uri>http://www.tsinghua.edu.cn</uri>
+      </address>
+    </author>
+    <author initials="G." surname="Wang" fullname="Gaoli Wang">
+      <organization>School of Computer Science and Technology, Donghua University</organization>
+      <address>
+        <postal>
+         <street>Donghua University</street>
+         <city>Shanghai</city>
+         <!--<region>CA</region>-->
+         <code>201620</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <email>wanggaoli@dhu.edu.cn</email>
+        <uri>https://www.dhu.edu.cn</uri>
+      </address>
+    </author>
+    <author initials="X." surname="Wang" fullname="Xiaoyun Wang">
+      <organization>Institute for Advanced Study, Tsinghua University</organization>
+      <address>
+        <postal>
+          <street>Tsinghua University</street>
+          <city>Beijing</city>
+          <code>100084</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>xiaoyunwang@mail.tsinghua.edu.cn</email>
+        <uri>http://www.tsinghua.edu.cn</uri>
+      </address>
+    </author>
+    <date day='16' month='April' year='2015'/>
+  </front>
+</reference>
+
+

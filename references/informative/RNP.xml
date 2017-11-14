@@ -1,0 +1,21 @@
+<reference anchor='RNP' target='https://open.ribose.com'>
+  <front>
+    <title>Botan: Crypto and TLS for C++11</title>
+    <author>
+      <organization>Ribose Inc.</organization>
+      <address>
+        <postal>
+          <street>Suite 1111, 1 Pedder Street</street>
+          <city>Central</city>
+          <region>Hong Kong</city>
+          <country>Hong Kong</country>
+        </postal>
+        <email>open.source@ribose.com</email>
+        <uri>https://www.ribose.com</uri>
+      </address>
+    </author>
+    <date day='31' month='October' year='2017'/>
+  </front>
+</reference>
+
+

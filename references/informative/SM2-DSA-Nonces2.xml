@@ -1,0 +1,61 @@
+<reference anchor='SM2-DSA-Nonces2' target='https://doi.acm.org/10.1145/2714576.2714587'>
+  <front>
+    <title>Mind Your Nonces Moving: Template-Based Partially-Sharing Nonces Attack on SM2 Digital Signature Algorithm</title>
+<!--Proceedings of the 10th ACM Symposium on Information, Computer and Communications Security (ASIA CCS '15)-->
+    <author initials="J." surname="Chen" fullname="Jiazhe Chen">
+      <organization>China Information Technology Security Evaluation Center</organization>
+      <address>
+        <postal>
+          <street>Building 1, No.8, Shangdi West Road, Haidian District</street>
+          <city>Beijing</city>
+          <code>100085</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>jiazhechen@gmail.com</email>
+        <uri>http://www.itsec.gov.cn</uri>
+      </address>
+    </author>
+    <author initials="M." surname="Liu" fullname="Mingjie Liu">
+      <organization>Beijing Research Institute of Telemetry, China Aerospace Science and Technology Corporation</organization>
+      <address>
+        <postal>
+          <street>1 Nan Da Hong Men Lu, Fengtai Qu</street>
+          <city>Beijing</city>
+          <code>100194</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>liumj9705@gmail.com</email>
+        <uri>http://www.spacechina.com</uri>
+      </address>
+    </author>
+    <author initials="H." surname="Shi" fullname="Hongsong Shi">
+      <organization>China Information Technology Security Evaluation Center</organization>
+      <address>
+        <postal>
+          <street>Building 1, No.8, Shangdi West Road, Haidian District</street>
+          <city>Beijing</city>
+          <code>100085</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.itsec.gov.cn</uri>
+        <!--<email>unknown</email>-->
+      </address>
+    </author>
+    <author initials="H." surname="Li" fullname="Hexin Li">
+      <organization>China Information Technology Security Evaluation Center</organization>
+      <address>
+        <postal>
+          <street>Building 1, No.8, Shangdi West Road, Haidian District</street>
+          <city>Beijing</city>
+          <code>100085</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>lihx@secemail.cn</email>
+        <uri>http://www.itsec.gov.cn</uri>
+      </address>
+    </author>
+    <date day='27' month='November' year='2015'/>
+  </front>
+</reference>
+
+

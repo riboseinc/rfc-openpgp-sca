@@ -1,0 +1,21 @@
+<reference anchor='NIST.FIPS.180-4' target='http://dx.doi.org/10.6028/NIST.FIPS.180-4'>
+  <front>
+    <title>FIPS 180-4 Secure Hash Standard (SHS)</title>
+    <author>
+      <organization>National Institute of Standards and Technology</organization>
+      <address>
+        <postal>
+          <street>100 Bureau Drive</street>
+          <city>Gaithersburg</city>
+          <region>MD</region>
+          <code>20899-8900</code>
+          <country>United States</country>
+        </postal>
+        <uri>http://www.nist.gov/</uri>
+      </address>
+    </author>
+    <date month='August' year='2015'/>
+  </front>
+</reference>
+
+

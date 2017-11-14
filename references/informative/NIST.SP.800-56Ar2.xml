@@ -1,0 +1,61 @@
+<reference anchor='NIST.SP.800-56Ar2' target='http://dx.doi.org/10.6028/NIST.SP.800-56Ar2'>
+  <front>
+    <title>SP 800-56Ar2 Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography</title>
+    <author initials="B." surname="Barker" fullname="Elaine B. Barker">
+      <organization>National Institute of Standards and Technology</organization>
+      <address>
+        <postal>
+          <street>100 Bureau Drive</street>
+          <city>Gaithersburg</city>
+          <region>MD</region>
+          <code>20899</code>
+          <country>United States</country>
+        </postal>
+        <uri>http://www.nist.gov/</uri>
+      </address>
+    </author>
+    <author initials="L." surname="Chen" fullname="Lily Chen">
+      <organization>National Institute of Standards and Technology</organization>
+      <address>
+        <postal>
+          <street>100 Bureau Drive</street>
+          <city>Gaithersburg</city>
+          <region>MD</region>
+          <code>20899</code>
+          <country>United States</country>
+        </postal>
+        <uri>http://www.nist.gov/</uri>
+      </address>
+    </author>
+    <author initials="A." surname="Roginsky" fullname="Allen Roginsky">
+      <organization>National Institute of Standards and Technology</organization>
+      <address>
+        <postal>
+          <street>100 Bureau Drive</street>
+          <city>Gaithersburg</city>
+          <region>MD</region>
+          <code>20899</code>
+          <country>United States</country>
+        </postal>
+        <uri>http://www.nist.gov/</uri>
+      </address>
+    </author>
+    <author initials="M." surname="Smid" fullname="Miles Smid">
+      <organization>Orion Security Solutions, Inc.</organization>
+      <address>
+        <postal>
+          <street>1489 Chain Bridge Road</street>
+          <street>Suite 300</street>
+          <city>McLean</city>
+          <region>VA</region>
+          <code>22101</code>
+          <country>United States</country>
+        </postal>
+        <uri>http://www.orionsecuritysolutions.com</uri>
+      </address>
+    </author>
+    <date month='May' year='2013'/>
+  </front>
+</reference>
+
+

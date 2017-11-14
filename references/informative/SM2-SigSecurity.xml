@@ -1,0 +1,61 @@
+<reference anchor='SM2-SigSecurity' target='https://link.springer.com/chapter/10.1007/978-3-319-27152-1_7'>
+  <front>
+    <title>Security of the SM2 Signature Scheme Against Generalized Key Substitution Attacks</title>
+<!-- International Conference on Research in Security Standardisation
+Security Standardisation Research pp 140-153 -->
+    <author initials="Z." surname="Zhang" fullname="Zhenfeng Zhang">
+      <organization>Laboratory of Trusted Computing and Information Assurance, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>zfzhang@tca.iscas.ac.cn</email>
+        <uri>http://tca.iscas.ac.cn</uri>
+      </address>
+    </author>
+    <author initials="K." surname="Yang" fullname="Kang Yang">
+      <organization>Laboratory of Trusted Computing and Information Assurance, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>yangkang@tca.iscas.ac.cn</email>
+        <uri>http://tca.iscas.ac.cn</uri>
+      </address>
+    </author>
+    <author initials="J." surname="Zhang" fullname="Jiang Zhang">
+      <organization>State Key Laboratory of Cryptology</organization>
+      <address>
+        <postal>
+          <street>P.O. Box 5159</street>
+          <city>Beijing</city>
+          <code>100878</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>jiangzhang09@gmail.com</email>
+      </address>
+    </author>
+    <author initials="C." surname="Chen" fullname="Cheng Chen">
+      <organization>Laboratory of Trusted Computing and Information Assurance, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>chencheng@tca.iscas.ac.cn</email>
+        <uri>http://tca.iscas.ac.cn</uri>
+      </address>
+    </author>
+    <date day='9' month='December' year='2015'/>
+  </front>
+</reference>
+
+

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='I-D.shen-sm3-hash'>
+<front>
+<title>SM3 Hash function</title>
+
+<author initials='S' surname='Shen' fullname='Sean Shen'>
+    <organization />
+</author>
+
+<author initials='S' surname='Shen' fullname='Sean Shen'>
+    <organization />
+</author>
+
+<date month='February' day='14' year='2014' />
+
+<abstract><t>This document discribles a hash function which is invented by Xiaoyun Wang et al.  This algorithm is published by Chinese Commercial Cryptography Administration Office ([SM3]) for the use of electronic authentication service system.  This document gives IETF standard description of the algorithm.</t></abstract>
+
+</front>
+
+<seriesInfo name='Internet-Draft' value='draft-shen-sm3-hash-01' />
+<format type='TXT'
+        target='http://www.ietf.org/internet-drafts/draft-shen-sm3-hash-01.txt' />
+</reference>

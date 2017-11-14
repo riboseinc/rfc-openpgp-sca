@@ -1,0 +1,11 @@
+= Symbols And Abbreviations
+
+This document utilizes definitions of operations from <<RFC7253>> and
+are included here for reference.
+
+$$c^i$$::
+  The integer $$c$$ raised to the $$i$$-th power.
+
+$$S || T$$::
+  String S concatenated with string T (e.g., 000 || 111 == 000111).
+

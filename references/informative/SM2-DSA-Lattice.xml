@@ -1,0 +1,93 @@
+<reference anchor='SM2-DSA-Lattice' target='https://doi.org/10.1007/978-3-319-29814-6_6'>
+  <front>
+    <title>Practical Lattice-Based Fault Attack and Countermeasure on SM2 Signature Algorithm</title>
+<!--Information and Communications Security. ICICS 2015. Lecture Notes in Computer Science, vol 9543. Springer, Cham-->
+    <author initials="W." surname="Cao" fullname="Weiqiong Cao">
+      <organization>Trusted Computing and Information Assurance Laboratory, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://english.is.cas.cn</uri>
+      </address>
+    </author>
+    <author initials="J." surname="Feng" fullname="Jingyi Feng">
+      <organization>Trusted Computing and Information Assurance Laboratory, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://english.is.cas.cn</uri>
+      </address>
+    </author>
+    <author initials="S." surname="Zhu" fullname="Shaofeng Zhu">
+      <organization>Trusted Computing and Information Assurance Laboratory, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://english.is.cas.cn</uri>
+      </address>
+    </author>
+    <author initials="H." surname="Chen" fullname="Hua Chen">
+      <organization>Trusted Computing and Information Assurance Laboratory, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://english.is.cas.cn</uri>
+      </address>
+    </author>
+    <author initials="W." surname="Wu" fullname="Wenling Wu">
+      <organization>Trusted Computing and Information Assurance Laboratory, Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street>4# South Fourth Street, Zhong Guan Cun</street>
+          <city>Beijing</city>
+          <code>100190</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://english.is.cas.cn</uri>
+      </address>
+    </author>
+    <author initials="X." surname="Han" fullname="Xucang Han">
+      <organization>Beijing Key Laboratory of RFID Chip Test Technology, CEC Huada Electronic Design Co., Ltd</organization>
+      <address>
+        <postal>
+          <street>Building C, CEC Network Security and Information Technology Base, South Region of Future Science And Technology Park, Beiqijia county, Changping District</street>
+          <city>Beijing</city>
+          <code>102209</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.hed.com.cn</uri>
+      </address>
+    </author>
+    <author initials="X." surname="Zheng" fullname="Xiaoguang Zheng">
+      <organization>Beijing Key Laboratory of RFID Chip Test Technology, CEC Huada Electronic Design Co., Ltd</organization>
+      <address>
+        <postal>
+          <street>Building C, CEC Network Security and Information Technology Base, South Region of Future Science And Technology Park, Beiqijia county, Changping District</street>
+          <city>Beijing</city>
+          <code>102209</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>http://www.hed.com.cn</uri>
+      </address>
+    </author>
+    <date month='November' year='2016'/>
+  </front>
+</reference>
+
+

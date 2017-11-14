@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<reference anchor='I-D.ribose-cfrg-sm4'>
+<front>
+<title>The SM4 Block Cipher Algorithm And Its Modes Of Operations</title>
+
+<author initials='R' surname='Tse' fullname='Ronald Tse'>
+    <organization />
+</author>
+
+<author initials='W' surname='Wong' fullname='Wai Wong'>
+    <organization />
+</author>
+
+<date month='October' day='19' year='2017' />
+
+<abstract><t>This document describes the SM4 symmetric blockcipher algorithm published as GB/T 32907-2016 by the Organization of State Commercial Administration of China (OSCCA).  This document is a product of the Crypto Forum Research Group (CFRG).</t></abstract>
+
+</front>
+
+<seriesInfo name='Internet-Draft' value='draft-ribose-cfrg-sm4-02' />
+<format type='TXT'
+        target='http://www.ietf.org/internet-drafts/draft-ribose-cfrg-sm4-02.txt' />
+</reference>

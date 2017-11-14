@@ -1,0 +1,9 @@
+= Conversion Primitives
+
+The encoding method of <<RFC6637>> Section 6 **MUST** be used, and is
+compatible with the definition given in <<SEC1>>.
+
+For clarity, according to the EC curve MPI encoding method of <<RFC6637>>,
+the exact size of the MPI payload for the "SM2 Recommended" 256-bit curve
+<<GBT.32918.5-2017>>, is 515 bits.
+
