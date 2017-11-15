@@ -70,18 +70,3 @@ export ID_NAME=ribose-openpgp-oscca
 make clean all; open draft-${ID_NAME}.txt
 ----
 
-== Generating Examples From Code
-
-[source,sh]
-----
-cd code
-make clean sm3_test
-./sm3_test
-----
-
-If you want to see the inner states, enable `#define DEBUG 1` in
-`code/print.h`, which will give you the exact output seen in
-the examples section with message extension, compression, etc.
-
-Which is quite awesome.
-
