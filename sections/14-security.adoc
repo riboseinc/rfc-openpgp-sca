@@ -19,26 +19,23 @@
   implementer of ECC systems **SHOULD** be aware of potential 
   vulnerabilities in this regard.
 
-* SM3 <<GBT.32905-2016>> is a cryptographic hash algorithm approved 
-  by the OSCCA <<OSCCA>>.  No formal proof of security is provided. As 
-  claimed in <<I-D.shen-sm3-hash>>, the security properties of SM3 are 
-  under public study.  There are no known feasible attacks against the 
-  SM3 algorithm at the time this document is published.
+* SM3 <<GBT.32905-2016>> is a cryptographic hash algorithm approved by the
+  OSCCA <<OSCCA>>. Security considerations provided in <<I-D.oscca-cfrg-sm3>>
+  apply. There are no known practical attacks against
+  the SM3 algorithm at the time this document is published.
 
 * SM4 <<GBT.32907-2016>> is a blockcipher approved by the OSCCA 
-  <<OSCCA>>.  Security considerations of SM4 offered in 
-  <<I-D.ribose-cfrg-sm4>> apply.  No formal proof of security is 
-  provided but there are no known feasible attacks against the SM4 
-  algorithm by the time of publishing this document.
+  <<OSCCA>>. Security considerations of SM4 offered in 
+  <<I-D.ribose-cfrg-sm4>> apply. No formal proof of security is 
+  provided but there are no known practical attacks against the SM4 
+  algorithm by the time of publishing this document. 
 +
-There are, however, security concerns with regards to side-channel
+There are security concerns with regards to side-channel
   attacks, when the SM4 algorithm is implemented in a device 
-  <<SM4-Power>>. For instance, <<SM4-Power>> illustrated an attack by 
-  measuring the power consumption of the device. A chosen ciphertext 
-  attack, assuming a fixed correlation between the sub-keys and data 
-  mask, is able to recover the round key successfully. When the SM4 
-  algorithm is implemented in hardware, the parameters/keys **SHOULD** 
-  be randomly generated without fixed correlation.  
+  <<SM4-Power>>. Side-channel security concerns are described in
+  <<I-D.ribose-cfrg.sm4>>. When the SM4 algorithm is implemented in hardware,
+  the parameters/keys **SHOULD** be randomly generated without fixed
+  correlation.  
 
 * SM2 has a key length of 512 bits for the public key and 256 bits 
   for the private key.  It is considered an alternative to ECDSA P-256 

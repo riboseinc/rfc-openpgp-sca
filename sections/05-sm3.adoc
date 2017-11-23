@@ -5,10 +5,13 @@ The SM3 Cryptographic Hash Algorithm <<GBT.32905-2016>> is an iterative hash
 function designed by Xiaoyun Wang et al., published by <<OSCCA>> as an
 alternative to SHA-2 <<NIST.FIPS.180-4>>.
 
+The specification, security considerations and cryptanalysis results of SM3 are
+thoroughly presented in <<I-D.oscca-sm3-hash>>.
+
 It was first published by the OSCCA in public in 2010 <<SM3>>, then published
-in the OSCCA standard <<GMT-0004-2012>> in 2012, published as a Chinese National
-Standard as <<GBT.32905-2016>> in 2016, and included in the <<ISO.IEC.10118-3>>
-standard in 2017.
+as an industry cryptogrpahic standard in 2012 <<GMT-0004-2012>>, published as a
+Chinese National Standard in 2016 as <<GBT.32905-2016>>, and included in the
+<<ISO.IEC.10118-3>> standard in 2017.
 
 The algorithm is designed to be used for commercial cryptographic applications
 including, but not limited to:
@@ -27,6 +30,4 @@ message dependency than SHA-256 <<SM3-Boomerang>>.
 SM3 produces an output hash value of 256 bits long, based on 512-bit
 input message blocks <<GBT.32905-2016>>, on input lengths up to $$2^(m)$$.
 
-The specification of SM3 is described in <<GBT.32905-2016>>, <<SM3>> and
-<<I-D.shen-sm3-hash>>.
 

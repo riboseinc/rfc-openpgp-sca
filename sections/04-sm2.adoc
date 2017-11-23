@@ -66,7 +66,7 @@ to:
   signing the raw message `msg`, but its hash `H(msg)`. Therefore when
   a message is signed by SM2DSA in OpenPGP, the algorithm **MUST** sign
   the content of `H(ZA || H(msg))` instead of `H(ZA || msg)`.
-  Both hash algorithms used here **MUST** be identical.
+  The hash algorithm used here **MUST** be identical.
 
 == SM2 Key Exchange Protocol
 
@@ -160,7 +160,7 @@ y_G = BC3736A2 F4F6779C 59BDCEE3 6B692153
 == Data Formats
 
 <<GMT-0009-2012>> defines a number of data formats for the
-SM2 algorithm to allow interoperable implementations. 
+SM2 algorithm to allow interoperable implementations.
 This document adheres to these conventions.
 
 === Secret Key Data Format
@@ -181,7 +181,7 @@ SM2PublicKey ::= BIT STRING
 
 Where:
 
-* `SM2PublicKey` is of type `BIT STRING` and with content `04 | X | Y`.
+* `SM2PublicKey` is of type `BIT STRING` and with content `04 || X || Y`.
 
 ** `X` and `Y` specifies the x- and y-coordinates of the public key, each of
   256-bits long.
@@ -226,5 +226,4 @@ SM2Signature ::= SEQUENCE{
 
 `R` and `S` represent the first and second portion of the signature,
 and both are 256 bits long.
-
 

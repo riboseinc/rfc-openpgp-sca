@@ -1,10 +1,12 @@
 [#sm4-algorithm]
 = SM4 Symmetric Encryption Algorithm
 
-SM4 <<GBT.32907-2016>> <<I-D.ribose-cfrg-sm4>> <<ISO.IEC.18033-3.AMD2>>
-<<GMT-0002-2012>> <<SM4>> is a symmetric encryption algorithm designed by
+SM4 <<GBT.32907-2016>> is a symmetric encryption algorithm designed by
 Shuwang Lu et al. originally intended for the usage of wireless local area
 network (Wireless LAN) products.
+
+The specification, security considerations and cryptanalysis results of SM4 are
+thoroughly presented in <<I-D.ribose-cfrg-sm4>> .
 
 SM4 is a 128-bit blockcipher, uses a key size of 128 bits and
 internally uses an 8-bit S-box. It performs 32 rounds per block.
