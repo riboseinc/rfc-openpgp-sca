@@ -6,7 +6,7 @@ function designed by Xiaoyun Wang et al., published by <<OSCCA>> as an
 alternative to SHA-2 <<NIST.FIPS.180-4>>.
 
 The specification, security considerations and cryptanalysis results of SM3 are
-thoroughly presented in <<I-D.oscca-sm3-hash>>.
+thoroughly presented in <<I-D.oscca-cfrg-sm3>>.
 
 It was first published by the OSCCA in public in 2010 <<SM3>>, then published
 as an industry cryptogrpahic standard in 2012 <<GMT-0004-2012>>, published as a

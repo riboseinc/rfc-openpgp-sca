@@ -1,7 +1,7 @@
 = Introduction
 
 SM2 <<GBT.32918.1-2016>> <<I-D.shen-sm2-ecdsa>>,
-SM3 <<GBT.32905-2016>> <<I-D.oscca-sm3-hash>> and 
+SM3 <<GBT.32905-2016>> <<I-D.oscca-cfrg-sm3>> and 
 kM4 <<GBT.32907-2016>> <<I-D.ribose-cfrg-sm4>> are
 cryptographic standards issued by the Organization of State 
 Commercial Cipher Administration of China <<OSCCA>> as authorized 

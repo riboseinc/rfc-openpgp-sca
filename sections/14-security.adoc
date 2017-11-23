@@ -1,4 +1,4 @@
-#  Security Considerations
+=  Security Considerations
 
 * Products and services that utilize cryptography are regulated by 
   the OSCCA <<OSCCA>>; they must be explicitly approved or certified by 
@@ -33,7 +33,7 @@
 There are security concerns with regards to side-channel
   attacks, when the SM4 algorithm is implemented in a device 
   <<SM4-Power>>. Side-channel security concerns are described in
-  <<I-D.ribose-cfrg.sm4>>. When the SM4 algorithm is implemented in hardware,
+  <<I-D.ribose-cfrg-sm4>>. When the SM4 algorithm is implemented in hardware,
   the parameters/keys **SHOULD** be randomly generated without fixed
   correlation.  
 
