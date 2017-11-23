@@ -1,4 +1,4 @@
-#  IANA Considerations
+=  IANA Considerations
 
 The IANA "Pretty Good Privacy (PGP)" registry <<RFC8126>> has made the
 following assignments for algorithms described in this document, namely:

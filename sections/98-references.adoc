@@ -15,4 +15,3 @@ include::../references/normative/*[]
 include::../references/informative/*.xml[]
 ++++
 
-
