@@ -1,6 +1,6 @@
 = OSCCA Extensions For OpenPGP
 :doctype: internet-draft
-:name: draft-ribose-openpgp-oscca-00
+:name: draft-ribose-openpgp-oscca-01
 :abbrev: OSCCA Extensions for OpenPGP
 :status: std
 :ipr: trust200902
@@ -9,7 +9,7 @@
 :area: internet
 :intended-series: full-standard
 :workgroup: Network Working Group
-:revdate: 2017-11-13T00:00:00Z
+:revdate: 2017-11-27T00:00:00Z
 :fullname: Ronald Henry Tse
 :lastname: Tse
 :forename_initials: R. H.

@@ -2,19 +2,25 @@
 = SM2 Algorithms
 
 SM2 is an elliptic curve based cryptosystem (ECC) <<GBT.32918.1-2016>>
-<<I-D.shen-sm2-ecdsa>> designed by Xiaoyun Wang et al. and published by
-<<OSCCA>>.
+<<I-D.shen-sm2-ecdsa>> published by <<OSCCA>>.
 
 It was first published by the OSCCA in public in 2010 <<OSCCA-SM2>>, then
 standardized as <<GMT-0003-2012>> in 2012, included in <<ISO.IEC.11889>> in
 2015, published as a Chinese National Standard as <<GBT.32918.1-2016>>, and
 published in <<ISO.IEC.14888-3>> in 2017.
 
-The SM2 cryptosystem is composed of three distinct algorithms:
+The SM2 cryptosystem <<I-D.shen-sm2-ecdsa>> is published in 5 parts, covering:
+
+* Part 1: General <<GBT.32918.1-2016>> 
+* Part 2: Digital Signature Algorithm <<GBT.32918.2-2016>> 
+* Part 3: Key Exchange <<GBT.32918.3-2016>> 
+* Part 4: Public Key Encryption Algorithm <<GBT.32918.4-2016>> 
+* Part 5: Parameter Definition <<GBT.32918.5-2017>> 
+
+Specifically, it is composed of three distinct algorithms:
 
 * an elliptical curve digital signature algorithm ("SM2DSA")
-  <<GBT.32918.2-2016>> <<ISO.IEC.14888-3>> <<SM2-2>>, also described in
-  <<I-D.shen-sm2-ecdsa>>;
+  <<GBT.32918.2-2016>> <<ISO.IEC.14888-3>> <<SM2-2>>
 * a key exchange protocol ("SM2KEP") <<GBT.32918.3-2016>>; and
 * a public key encryption algorithm ("SM2PKE") <<GBT.32918.4-2016>>.
 
@@ -23,6 +29,7 @@ OpenPGP <<RFC4880>>.
 
 <<GMT-0009-2012>> provides specifications on interoperable usage of SM2 data
 formats, and they are adhered to within within this document.
+
 
 == SM2 Digital Signature Algorithm
 
