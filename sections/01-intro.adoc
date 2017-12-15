@@ -1,15 +1,15 @@
 = Introduction
 
-SM2 <<GBT.32918.1-2016>> <<I-D.shen-sm2-ecdsa>>,
-SM3 <<GBT.32905-2016>> <<I-D.oscca-cfrg-sm3>> and 
-kM4 <<GBT.32907-2016>> <<I-D.ribose-cfrg-sm4>> are
-cryptographic standards issued by the Organization of State 
-Commercial Cipher Administration of China <<OSCCA>> as authorized 
-cryptographic algorithms for use within China. These algorithms are 
-published in public.
+SM2 <<GBT.32918.1-2016>> <<I-D.shen-sm2-ecdsa>>, SM3
+<<GBT.32905-2016>> <<I-D.sca-cfrg-sm3>> and kM4 <<GBT.32907-2016>>
+<<I-D.ribose-cfrg-sm4>> are cryptographic standards issued by the
+State Cryptography Administration <<SCA>> (formerly OSCCA, the
+Office of State Commercial Cryptography Administration of China)
+as authorized cryptographic algorithms for use within China. These
+algorithms are published in public.
 
-Adoption of this document enables exchange of OpenPGP-secured email 
-<<RFC4880>> in a OSCCA-compliant manner through usage of the 
+Adoption of this document enables exchange of OpenPGP-secured email
+<<RFC4880>> in a SCA-compliant manner through usage of the
 authorized combination of SM2, SM3 and SM4.
 
 SM2 is an elliptic curve cryptosystem (ECC) that is composed of
@@ -22,9 +22,9 @@ elliptic curves and also a recommended elliptic curve:
 * SM2 Recommended Elliptic Curve <<GBT.32918.5-2017>>
 
 SM3 <<GBT.32905-2016>> is a hash algorithm designed for electronic
-authentication purposes. 
+authentication purposes.
 
-SM4 <<GBT.32907-2016>> is a symmetric encryption algorithm designed 
+SM4 <<GBT.32907-2016>> is a symmetric encryption algorithm designed
 for data encryption.
 
 SM2, SM3 and SM4 are standardized at ISO as <<ISO.IEC.14888-3>>,
@@ -34,14 +34,14 @@ This document extends OpenPGP <<RFC4880>> and its ECC extension
 <<RFC6637>> to support SM2, SM3 and SM4:
 
 * support the SM3 hash algorithm for data validation purposes
-* support signatures utilizing the combination of SM3 with other 
-  digital signing algorithms, such as RSA, ECDSA and SM2 
+* support signatures utilizing the combination of SM3 with other
+  digital signing algorithms, such as RSA, ECDSA and SM2
 * support the SM2 asymmetric encryption algorithm for public key
   operations
-* support usage of SM2 in combination with supported hash algorithms, 
+* support usage of SM2 in combination with supported hash algorithms,
   such as SHA-256 and SM3
-* support the SM4 symmetric encryption algorithm for data protection 
+* support the SM4 symmetric encryption algorithm for data protection
   purposes
-* defines the OpenPGP profile "OSCCA-SM234" to enable usage of OpenPGP
-  in an OSCCA-compliant manner.
+* defines the OpenPGP profile "SCA-SM234" to enable usage of OpenPGP
+  in an SCA-compliant manner.
 

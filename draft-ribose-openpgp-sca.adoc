@@ -1,15 +1,17 @@
-= OSCCA Extensions For OpenPGP
+= SCA Extensions For OpenPGP
 :doctype: internet-draft
-:name: draft-ribose-openpgp-oscca-01
-:abbrev: OSCCA Extensions for OpenPGP
+:name: draft-ribose-openpgp-sca-00
+:abbrev: SCA Extensions for OpenPGP
 :status: std
 :ipr: trust200902
 :updates: 4880, 6637
-:submissionType: IRTF
-:area: internet
+:submission-type: IRTF
+:area: sec
 :intended-series: full-standard
-:workgroup: Network Working Group
-:revdate: 2017-11-27T00:00:00Z
+:workgroup: Internet Research Task Force
+//:workgroup: Crypto Forum Research Group
+:revdate: 2017-12-15T00:00:00Z
+:rfc2629xslt: true
 :fullname: Ronald Henry Tse
 :lastname: Tse
 :forename_initials: R. H.

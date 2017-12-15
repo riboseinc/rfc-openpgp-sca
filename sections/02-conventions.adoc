@@ -11,9 +11,9 @@ this document applies to compliant applications only.
 
 The following terms and definitions apply to this document.
 
-OSCCA-compliant::
-  All cryptographic algorithms used are compliant with OSCCA 
-  <<OSCCA>> regulations.
+SCA-compliant::
+  All cryptographic algorithms used are compliant with SCA 
+  <<SCA>> regulations.
 
 SM2DSA::
   The elliptic curve digital signature algorithm defined in 

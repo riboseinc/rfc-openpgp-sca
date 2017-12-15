@@ -1,7 +1,7 @@
-= Internet Draft: OpenPGP OSCCA Extensions
+= Internet Draft: OpenPGP SCA Extensions
 
-image:https://img.shields.io/travis/riboseinc/rfc-openpgp-oscca/master.svg[
-	Build Status, link="https://travis-ci.org/riboseinc/rfc-openpgp-oscca"]
+image:https://img.shields.io/travis/riboseinc/rfc-openpgp-sca/master.svg[
+	Build Status, link="https://travis-ci.org/riboseinc/rfc-openpgp-sca"]
 
 This Internet-Draft is written in pure AsciiDoc using the excellent
 https://github.com/riboseinc/asciidoctor-rfc[`asciidoctor-rfc` gem].
@@ -10,7 +10,7 @@ https://github.com/riboseinc/asciidoctor-rfc[`asciidoctor-rfc` gem].
 
 [source,sh]
 ----
-git clone https://github.com/riboseinc/rfc-openpgp-oscca
+git clone https://github.com/riboseinc/rfc-openpgp-sca
 ----
 
 == Installing Build Tools
@@ -35,7 +35,7 @@ bundle install
 ----
 make all
 # or
-export ID_NAME=ribose-openpgp-oscca
+export ID_NAME=ribose-openpgp-sca
 make draft-${ID_NAME}.txt
 ----
 
@@ -50,7 +50,7 @@ prevent it complaining about the location.
 
 [source,sh]
 ----
-export ID_NAME=ribose-openpgp-oscca
+export ID_NAME=ribose-openpgp-sca
 make draft-${ID_NAME}.nits
 ----
 
@@ -58,7 +58,7 @@ make draft-${ID_NAME}.nits
 
 [source,sh]
 ----
-export ID_NAME=ribose-openpgp-oscca
+export ID_NAME=ribose-openpgp-sca
 pcregrep --color='auto' -n "[\x80-\xFF]" draft-${ID_NAME}.xml
 ----
 
@@ -66,7 +66,7 @@ pcregrep --color='auto' -n "[\x80-\xFF]" draft-${ID_NAME}.xml
 
 [source,sh]
 ----
-export ID_NAME=ribose-openpgp-oscca
+export ID_NAME=ribose-openpgp-sca
 make clean all; open draft-${ID_NAME}.txt
 ----
 

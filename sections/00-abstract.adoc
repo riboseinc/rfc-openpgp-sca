@@ -1,11 +1,12 @@
 [abstract]
 
-This document enables OpenPGP (RFC4880) usage in an compliant manner with OSCCA
-(Office of State Commercial Cipher Administration) regulations for use within
-China.
+This document enables OpenPGP (RFC4880) to be used in a compliant
+manner according to regulations set by the SCA (the State Cryptography
+Administration of China) within China.
 
-Specifically, it extends OpenPGP to support the usage of SM2, SM3 and SM4
-algorithms, and provides the OSCCA-compliant OpenPGP profile "OSCCA-SM234".
+Specifically, it extends OpenPGP to support the usage of SM2, SM3 and
+SM4 algorithms, and provides the SCA-compliant OpenPGP profile
+"SCA-SM234".
 
 // No references allowed in the Abstract
 
