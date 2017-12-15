@@ -4,7 +4,7 @@ rvm:
   - 2.4.0
 env:
   global:
-  - GH_REF: "https://github.com/riboseinc/rfc-openpgp-oscca"
+  - GH_REF: "https://github.com/riboseinc/rfc-openpgp-sca"
 before_install: gem install bundler -v 1.16.0
 install:
   - curl -SL https://tools.ietf.org/tools/idnits/idnits-2.15.00.tgz | tar xzv
