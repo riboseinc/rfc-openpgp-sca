@@ -1,34 +1,80 @@
 = Examples
 
-== Public Key Example
+These examples are generated using the OpenPGP implementation RNP <<RNP>>,
+which uses the SM2/SM3/SM4 implementations from Botan <<BOTAN>>.
 
-This example is generated using the OpenPGP implementation RNP <<RNP>>,
-with the SM2 and SM3 implementations from Botan <<BOTAN>>.
+== Public Key Example
 
 [source]
 ----
 -----BEGIN PGP PUBLIC KEY BLOCK-----
-xlIEWbGKWmMIKoEcz1UBgi0CAwQx5lUJNwGp01AB7YfAye0oMmyIPYe/cQPVwh8/7RCu
-ywZLMDDAM7qn6TNqTtdKW+7tLFhtOC4yzDVK8UjN/ccazSBTTTIgMjU2LWJpdCBrZXkg
-PGphY2tAbG9jYWxob3N0PsJ0BBNjaQAmBQJZsYpfAhsDBQsJCAcCBhUICQoLAgUWAgMB
-AAkQC/UcNw0bAZcAAJt5AP4oXvi3xl2RUwAvVjlzXtLL87g6x9cIBS7EB/cvAsw78AEA
-/Wt6qWlBVZ6TYiqNPt9An/4cjKyNpAv7S9u3neGXWUU=
-=RJ3C
+
+mFIEWkgWCGMIKoEcz1UBgi0CAwQDltfKe688EnlmAXyGFzH7WSNDzw8eXXs+iJvT
+2ttO3mopfVOLZvZUhDI5vKbcA0OVTHMGxg+UlL6BMCVTnqZZtAVhbGljZYh2BBNj
+aQAoBQJaSBYIAhsDBgtpCQgHAgcVaQgJCgsCBRYCAwEACRBasTzcJur12AAA1kwB
+APsn8kQLF9Jy6RkE9ffZFmP7aQU3BLioKLxluu6izkpVAQDjdXWmfuL0ubMNVkbp
+9ZnQsQ4CD3kQWPXwfveZFxXGVLhSBFpIFgljCCqBHM9VAYItAgMEoSB1bZ/UbxF6
+f7kwmdwiVQWEkmDCelCctIw9g0pBLWOm12p42frpcEwt4yyAb6tIQs2IUp5EzzQD
+39ytC+g/uohhBBhjaQATBQJaSBYJAhsMCRBasTzcJur12AAA8N8BAM+uG4g9zmmr
+fwJpwJVQqxxazDyKWtIPKnSaayvfC7lQAQDgD0bSB7JJU9WR0FYe5qIXPPuFaWCj
+9UJkwFQ98wIHtQ==
+=FeYZ
 -----END PGP PUBLIC KEY BLOCK-----
+----
+
+== Secret Key Example
+
+The password for this secret key and subkey is "password".
+
+[source]
+----
+-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+xZ0EWkgWCGMIKoEcz1UBgi0CAwQDltfKe688EnlmAXyGFzH7WSNDzw8eXXs+iJvT
+2ttO3mopfVOLZvZUhDI5vKbcA0OVTHMGxg+UlL6BMCVTnqZZ/gMDafJ5DsAknDPF
+YAC2r/43S9rWK32HrycwGysd1aiJXXu5QR0njcgFFvym+jVI8xf/n7xQyBPNAjO0
+UHnOlxiPdWS0FQtvSCNgzQVhbGljZcJ2BBNjaQAoBQJaSBYIAhsDBgtpCQgHAgcV
+aQgJCgsCBRYCAwEACRBasTzcJur12AAA1kwA/0RZ6f5jLI3w+Nmdp83BDWbsNOpc
+TqD+50KOOOtZwwlIAQC/NA7OZl/E3QunokSi8pkmk/UH2DBEeIb2MnaGQIquB8ed
+BFpIFgljCCqBHM9VAYItAgMEoSB1bZ/UbxF6f7kwmdwiVQWEkmDCelCctIw9g0pB
+LWOm12p42frpcEwt4yyAb6tIQs2IUp5EzzQD39ytC+g/uv4DA2ko5kdkOJ1bR2Bc
+RzDsWng+ph4VnR370bORaSg7ubNlxb1wIZlILLdFTpomMFQwcGRnpxjJmAId2unm
+9i3LWefe8p23ErYHo8JhBBhjaQATBQJaSBYJAhsMCRBasTzcJur12AAA8N8BALhR
+oNdHbYZYLwOlFUaoseBbHJiAkE5pGYI6TnxtCBEdAPkB6JPw5fXvbLrbyVznthwJ
+QUHLPd/Kw50V31iOGktbOA==
+=8b07
+-----END PGP PRIVATE KEY BLOCK-----
 ----
 
 == Signature Example
 
-This example is also created using RNP <<RNP>> and Botan <<BOTAN>>.
-
-Detached signature of the string "SM2 example" using the above key:
+This is a detached signature of the string "SM2 example" using the above key:
 
 [source]
 ----
------BEGIN PGP SIGNATURE-----
-wmQEAGMIABYFAlmxj+cFAwAAAAAJEAv1HDcNGwGXAAB+SQEAy5AHKgiRxgOogB/2sfge
-JaVoLgpxvDp9yIcaLfP++xkBAPGuZ1f9FjxVd5jlCGd1jFzAPpt8N2Lc3FQDqVjgJvV9
-=Xbbj
------END PGP SIGNATURE-----
+-----BEGIN PGP MESSAGE-----
+
+yJYBO8LLzJCZHLXR5o7aq683GE8LJjGAQLCvkUJqRWJuQU7qoWoWhuRMBmUxRRarpLvSP2bv/cjZ
+f9QNpoWVKcrrrjArM1gbF6cATPzJJEaGP0t2bfv7aVE+4zaX8IK1JWdem+/MV9687Z+yfOZtpluu
++gx/uH90nhCPqs5fpnMkJjssSjhIYSmnz5QJbkZHxFeGzpjnDgA=
+=kQL3
+-----END PGP MESSAGE-----
+----
+
+== Encryption Example
+
+This is the message "SM2 example" encrypted with the SM2 key above,
+using an SM4 cipher.
+
+[source]
+----
+-----BEGIN PGP MESSAGE-----
+
+wYwDsSN1K6QCAO1jA/4wfQIhAJTwIUceQnfL4wzFt3I+1tE8IeDYDWchali521eYXaOuAiEA76+c
+/zzTKVF5gnjsblDFyC948Y7I8omkyAudrTS6TFMEIHvE5bVzAvnIDrD0PHO1VG6rHnjeU4Yf/2Il
+ytjzf1j1BBM1D4SviTagB45VJEi6dhsHjZA5adI+AcscO86Q4D4HHFNxkVOiDHZVYk/rw7rAlJGn
+1Kd759B7pQsqereGJopr9nU9XBm+aEny3IPASZL4EopTO1g=
+=sNY7
+-----END PGP MESSAGE-----
 ----
 
